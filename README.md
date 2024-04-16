@@ -35,4 +35,4 @@
     - SonarQube
 
 #### What do next!
-    - TBU
+    - Migrate build.gradew from Groovy to kts
