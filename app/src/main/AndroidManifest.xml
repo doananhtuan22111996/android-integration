@@ -6,9 +6,10 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="vn.geekup.app.application.AppApplication"
+        android:name="vn.root.app.application.AppApplication"
         android:allowBackup="false"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
         android:label="${applicationName}"
         android:networkSecurityConfig="@xml/network_security_config"
@@ -17,7 +18,7 @@
         tools:targetApi="s">
 
         <activity
-            android:name="vn.geekup.app.pages.root.RootActivity"
+            android:name="vn.root.app.pages.root.RootActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.SkeletonTheme.NoActionBar.SplashBackground"

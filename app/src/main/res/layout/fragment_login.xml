@@ -6,7 +6,7 @@
 
         <variable
             name="fragment"
-            type="vn.geekup.app.pages.login.LoginFragment" />
+            type="vn.root.app.pages.login.LoginFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
