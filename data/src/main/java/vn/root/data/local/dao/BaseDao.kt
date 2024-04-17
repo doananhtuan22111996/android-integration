@@ -9,8 +9,8 @@ import vn.root.data.model.BaseRaw
 interface BaseDao<Raw : BaseRaw> {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(obj: List<Raw>)
+    fun insertAll(obj: List<Raw>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(vararg obj: Raw)
+    fun insert(vararg obj: Raw)
 }

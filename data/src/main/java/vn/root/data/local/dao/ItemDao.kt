@@ -14,6 +14,5 @@ interface ItemDao : BaseDao<ItemRaw> {
     fun getPagingItems(limit: Int?, offset: Int?): List<ItemRaw>
 
     @Query("DELETE FROM ItemRaw")
-    suspend fun delete()
-
+    fun delete()
 }

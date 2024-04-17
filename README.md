@@ -1,38 +1,30 @@
-# Android MVVM
+# Android
     - Target Version: SDK 34
-    - Min Version: SDK 26
-### Clean Architecture Pattern
-    - App Module
-    - Data Module
-    - Domain Module 
+    - Min Version: SDK 24
 
-### Dependency Injection
-    - Dagger2 (old version)
-    - Hilt (ignore)
-    - Koin (Applied)
+### DI
+    - Koin: https://insert-koin.io/docs/setup/koin/
 
 ### Asynchronous
-    - RxJava, RxAndroid (old version)
-    - Kotlin Coroutine
-    - Kotlin Coroutine - Flow
+    - Kotlin Coroutine and Flow: https://kotlinlang.org/docs/coroutines-overview.html
 
-### Android Architecture Components
-#### UI Layer
-    - View binding
-    - Data binding
-    - Paging library: Paging 3
-    - Navigation
-    - Camera X
-    - Coil (load image)
+### Domain Layer
+    - Android Libarary
 
-#### Data Layer
-    - Live data
-    - Room
-    - Share preference (Upgrade to Data Store)
+### UI Layer
+    - Android Architecture: https://developer.android.com/topic/architecture
+    - Paging: https://developer.android.com/topic/libraries/architecture/paging/v3-overview
+    - Navigation: https://developer.android.com/guide/navigation
+    - Coil: https://coil-kt.github.io/coil/
 
-#### CI/CD
-    - Gitlab CI
-    - SonarQube
+### Data Layer
+    - Room: https://developer.android.com/jetpack/androidx/releases/room
+    - EncryptedSharedPreferences: https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences
+    - Retrofit: https://square.github.io/retrofit/
+    - OkHttp: https://square.github.io/okhttp/
 
-#### What do next!
-    - Migrate build.gradew from Groovy to kts
+### CI/CD
+    - Comming soon
+
+### What do next!
+    - Remove unused code on UI layer
