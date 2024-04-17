@@ -1,6 +1,18 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Feat
+- Update README.md
+
+
+<a name="prod/3.0.0/1"></a>
+## [prod/3.0.0/1] - 2024-04-17
+
+<a name="dev/3.0.0/1"></a>
+## [dev/3.0.0/1] - 2024-04-17
+### Feat
+- Migrate Groovy to Kotlin gradle
+
 
 <a name="prod/2.0.0/3"></a>
 ## [prod/2.0.0/3] - 2024-04-16
@@ -70,7 +82,9 @@
 - setup + config template CHANGELOG
 
 
-[Unreleased]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/2.0.0/3...HEAD
+[Unreleased]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/3.0.0/1...HEAD
+[prod/3.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/dev/3.0.0/1...prod/3.0.0/1
+[dev/3.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/2.0.0/3...dev/3.0.0/1
 [prod/2.0.0/3]: https://github.com/doananhtuan22111996/android_architecture/compare/dev/2.0.0/3...prod/2.0.0/3
 [dev/2.0.0/3]: https://github.com/doananhtuan22111996/android_architecture/compare/v1.0.4...dev/2.0.0/3
 [v1.0.4]: https://github.com/doananhtuan22111996/android_architecture/compare/v1.0.2...v1.0.4
