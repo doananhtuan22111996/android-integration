@@ -6,7 +6,6 @@ plugins {
 dependencies {
     implementation(libs.androidx.core.coroutines)
     implementation(libs.androidx.paging.common)
-//    implementation(libs.androidx.room.common)
 }
 
 java {
