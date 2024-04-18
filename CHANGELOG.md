@@ -2,7 +2,7 @@
 ## [Unreleased]
 
 ### Feat
-- Update README.md
+- Migrate Groovy to Kotlin gradle ([#4](https://github.com/doananhtuan22111996/android_architecture/issues/4))
 
 
 <a name="prod/3.0.0/1"></a>
