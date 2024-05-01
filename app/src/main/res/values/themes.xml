@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.SkeletonTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.ApplicationTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary_dark</item>
@@ -12,23 +12,15 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="Theme.SkeletonTheme.NoActionBar" parent="Theme.SkeletonTheme">
-        <item name="windowNoTitle">true</item>
-        <item name="windowActionBar">false</item>
-    </style>
-
-    <style name="Theme.SkeletonTheme.NoActionBar.SplashBackground" parent="Theme.SkeletonTheme.NoActionBar">
-        <item name="android:statusBarColor">@color/color_white</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:windowSplashscreenContent">@drawable/bg_window_splash</item>
-    </style>
-
-    <style name="Theme.MaterialComponents.DayNight.BottomSheetDialog.App" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
-        <item name="bottomSheetStyle">@style/Widget.Design.BottomSheet.Modal.App</item>
-    </style>
-
-    <style name="Widget.Design.BottomSheet.Modal.App" parent="Widget.Design.BottomSheet.Modal">
-        <item name="android:background">@drawable/bg_bottom_navigation_shadow</item>
+    <style name="Theme.ApplicationTheme.SplashScreen" parent="Theme.SplashScreen">
+        <!--        TODO set color-->
+        <!--        <item name="windowSplashScreenBackground">@color/md_theme_primary</item>-->
+        <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
+       drawable. One of these is required. -->
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
+        <!-- Required for animated icons. -->
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.ApplicationTheme</item>
     </style>
 
 </resources>
