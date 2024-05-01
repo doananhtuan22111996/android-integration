@@ -6,6 +6,4 @@
         android:topLeftRadius="@dimen/radius_12"
         android:topRightRadius="@dimen/radius_12" />
 
-    <solid android:color="@color/color_bottom_navigation" />
-
 </shape>
