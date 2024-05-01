@@ -4,25 +4,21 @@
     <style name="TextAppearance.FontPath.Gilroy.Medium" parent="android:TextAppearance">
         <item name="fontFamily">@font/gilroy_medium</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/color_4</item>
     </style>
 
     <style name="TextAppearance.FontPath.Gilroy.Regular" parent="android:TextAppearance">
         <item name="fontFamily">@font/gilroy_regular</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/color_4</item>
     </style>
 
     <style name="TextAppearance.FontPath.Gilroy.SemiBold" parent="android:TextAppearance">
         <item name="fontFamily">@font/gilroy_semibold</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/color_4</item>
     </style>
 
     <style name="TextAppearance.FontPath.Gilroy.Bold" parent="android:TextAppearance">
         <item name="fontFamily">@font/gilroy_bold</item>
         <item name="android:includeFontPadding">false</item>
-        <item name="android:textColor">@color/color_4</item>
     </style>
 
     <!--    ============ Match UIkit =============-->
@@ -93,12 +89,9 @@
 
     <!--====================================-->
     <style name="TextAppearance.FontPath.Gilroy.Date_Text_Calendar" parent="TextAppearance.FontPath.Gilroy.Title_Medium">
-        <item name="android:textColor">@color/color_text_calendar_selector</item>
-        <item name="android:textColorPrimary">@color/color_4</item>
     </style>
 
     <style name="TextAppearance.FontPath.Gilroy.Week_Day_Calendar" parent="TextAppearance.FontPath.Gilroy.Body_14_Medium">
-        <item name="android:textColor">@color/color_5</item>
     </style>
 
 </resources>

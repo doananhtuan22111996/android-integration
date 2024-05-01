@@ -11,8 +11,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/color_bg_login">
+        android:layout_height="match_parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ivAppIcon"
@@ -29,7 +28,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_40"
-            android:textColor="@color/color_white"
             android:text="@string/login_page"
             app:layout_constraintBottom_toTopOf="@id/btnLoginOTable"
             app:layout_constraintEnd_toEndOf="@id/btnLoginOTable"
