@@ -1,6 +1,7 @@
 package vn.root.app.pages.root
 
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -17,6 +18,11 @@ class RootActivity : BaseActivity<RootViewModel>() {
     override val viewModel: RootViewModel by viewModel()
 
     private lateinit var navController: NavController
+    
+    override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onInit(savedInstanceState: Bundle?) {
         setupRootNavigation(RootNavigation.Login)
