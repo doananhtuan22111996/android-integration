@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Theme.ApplicationTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>
@@ -46,15 +47,44 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
+
+        <item name="textAppearanceDisplayLarge">@style/App.TextAppearance.Material3.DisplayLarge
+        </item>
+        <item name="textAppearanceDisplayMedium">@style/App.TextAppearance.Material3.DisplayMedium
+        </item>
+        <item name="textAppearanceDisplaySmall">@style/App.TextAppearance.Material3.DisplaySmall
+        </item>
+        <item name="textAppearanceHeadlineLarge">@style/App.TextAppearance.Material3.HeadlineLarge
+        </item>
+        <item name="textAppearanceHeadlineMedium">
+            @style/App.TextAppearance.Material3.HeadlineMedium
+        </item>
+        <item name="textAppearanceHeadlineSmall">@style/App.TextAppearance.Material3.HeadlineSmall
+        </item>
+        <item name="textAppearanceTitleLarge">@style/App.TextAppearance.Material3.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/App.TextAppearance.Material3.TitleMedium
+        </item>
+        <item name="textAppearanceTitleSmall">@style/App.TextAppearance.Material3.TitleSmall</item>
+        <item name="textAppearanceLabelLarge">@style/App.TextAppearance.Material3.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/App.TextAppearance.Material3.LabelMedium
+        </item>
+        <item name="textAppearanceLabelSmall">@style/App.TextAppearance.Material3.LabelSmall</item>
+        <item name="textAppearanceBodyLarge">@style/App.TextAppearance.Material3.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/App.TextAppearance.Material3.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/App.TextAppearance.Material3.BodySmall</item>
     </style>
 
     <style name="Theme.ApplicationTheme.SplashScreen" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation
+   duration. -->
         <item name="windowSplashScreenBackground">@color/md_theme_primary</item>
         <!-- Use windowSplashScreenAnimatedIcon to add a drawable or an animated
        drawable. One of these is required. -->
         <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_foreground</item>
         <!-- Required for animated icons. -->
         <item name="windowSplashScreenAnimationDuration">1000</item>
+        <!-- Set the theme of the Activity that directly follows your splash
+   screen. This is required. -->
         <item name="postSplashScreenTheme">@style/Theme.ApplicationTheme</item>
     </style>
 

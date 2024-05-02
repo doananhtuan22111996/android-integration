@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="kit"
+            type="vn.root.app.pages.materialKit.MaterialKit" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        android:onClick="@{() -> kit.action.invoke()}"
+        app:cardCornerRadius="@dimen/radius_16">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvHeader"
+                    style="@style/App.TextAppearance.Material3.TitleMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{kit.header}"
+                    tools:text="@string/welcome" />
+
+                <TextView
+                    android:id="@+id/tvSubHeader"
+                    style="@style/App.TextAppearance.Material3.BodyMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:text="@{kit.subHeader}"
+                    tools:text="@string/welcome" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/image_view"
+                android:scaleType="centerCrop"
+                android:src="@drawable/im_material_kit" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

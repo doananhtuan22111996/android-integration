@@ -2,23 +2,17 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_enabled="false">
-        <shape>
-            <corners android:radius="@dimen/radius_5" />
-        </shape>
+
     </item>
 
     <item android:state_enabled="true">
         <ripple android:color="@color/material_on_primary_disabled">
             <item android:id="@android:id/mask">
-                <shape android:shape="rectangle">
-                    <corners android:radius="@dimen/radius_5" />
-                </shape>
+
             </item>
 
             <item android:id="@android:id/background">
-                <shape android:shape="rectangle">
-                    <corners android:radius="@dimen/radius_5" />
-                </shape>
+           
             </item>
         </ripple>
     </item>

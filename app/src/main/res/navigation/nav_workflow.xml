@@ -2,8 +2,20 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_main"
-    app:startDestination="@id/homeFragment">
+    android:id="@+id/nav_workflow"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="vn.root.app.pages.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="vn.root.app.pages.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 
     <fragment
         android:id="@+id/homeFragment"
@@ -20,12 +32,6 @@
     <action
         android:id="@+id/navigateToHomeLocal"
         app:destination="@id/homeLocalFragment"
-        app:launchSingleTop="true"
-        app:popUpTo="@id/nav_root" />
-
-    <action
-        android:id="@+id/navigateToHomeNetwork"
-        app:destination="@id/homeFragment"
         app:launchSingleTop="true"
         app:popUpTo="@id/nav_root" />
 

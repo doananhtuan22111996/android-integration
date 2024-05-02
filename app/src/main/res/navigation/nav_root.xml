@@ -3,32 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_root"
-    app:startDestination="@id/loginFragment">
-
-    <action
-        android:id="@+id/popToLoginFragment"
-        app:destination="@id/loginFragment"
-        app:launchSingleTop="true"
-        app:popUpTo="@id/nav_root"
-        app:popUpToInclusive="true" />
-
-    <action
-        android:id="@+id/pushToMainFragment"
-        app:destination="@id/mainFragment"
-        app:launchSingleTop="true"
-        app:popUpTo="@id/nav_root"
-        app:popUpToInclusive="true" />
+    app:startDestination="@id/boardingFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="vn.root.app.pages.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        android:id="@+id/boardingFragment"
+        android:name="vn.root.app.pages.boarding.BoardingFragment"
+        android:label="fragment_boarding"
+        tools:layout="@layout/fragment_boarding">
+        <action
+            android:id="@+id/action_boardingFragment_to_materialKitFragment"
+            app:destination="@id/nav_material_kit" />
+        <action
+            android:id="@+id/action_boardingFragment_to_workflowFragment"
+            app:destination="@id/nav_workflow" />
+    </fragment>
 
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="vn.root.app.pages.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+    <include app:graph="@navigation/nav_material_kit" />
+
+    <include app:graph="@navigation/nav_workflow" />
 
 </navigation>
