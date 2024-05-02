@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/padding_16">
+
+            <TextView
+                android:id="@+id/tvDisplayLarge"
+                style="@style/App.TextAppearance.Material3.DisplayLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/display_large_roboto_57_64_0_25" />
+
+            <TextView
+                android:id="@+id/tvDisplayMedium"
+                style="@style/App.TextAppearance.Material3.DisplayMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/display_medium_roboto_45_52_0" />
+
+            <TextView
+                android:id="@+id/tvDisplaySmall"
+                style="@style/App.TextAppearance.Material3.DisplaySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/display_small_roboto_36_44_0" />
+
+            <TextView
+                android:id="@+id/tvHeadlineLarge"
+                style="@style/App.TextAppearance.Material3.HeadlineLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/headline_large_roboto_32_40_0" />
+
+            <TextView
+                android:id="@+id/tvHeadlineMedium"
+                style="@style/App.TextAppearance.Material3.HeadlineMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/headline_medium_roboto_28_36_0" />
+
+            <TextView
+                android:id="@+id/tvHeadlineSmall"
+                style="@style/App.TextAppearance.Material3.HeadlineSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/headline_small_roboto_24_32_0" />
+
+            <TextView
+                android:id="@+id/tvTitleLarge"
+                style="@style/App.TextAppearance.Material3.TitleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/title_large_roboto_regular_22_28_0" />
+
+            <TextView
+                android:id="@+id/tvTitleMedium"
+                style="@style/App.TextAppearance.Material3.TitleMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/title_medium_roboto_medium_16_24_0_15" />
+
+            <TextView
+                android:id="@+id/tvTitleSmall"
+                style="@style/App.TextAppearance.Material3.TitleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/title_small_roboto_medium_14_20_0_1" />
+
+            <TextView
+                android:id="@+id/tvLabelLarge"
+                style="@style/App.TextAppearance.Material3.LabelLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_large_roboto_medium_14_20_0_1" />
+
+            <TextView
+                android:id="@+id/tvLabelMedium"
+                style="@style/App.TextAppearance.Material3.LabelMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_medium_roboto_medium_12_16_0_5" />
+
+            <TextView
+                android:id="@+id/tvLabelSmall"
+                style="@style/App.TextAppearance.Material3.LabelSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/label_small_roboto_medium_11_16_0_5" />
+
+
+            <TextView
+                android:id="@+id/tvBodyLarge"
+                style="@style/App.TextAppearance.Material3.BodyLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/body_large_roboto_16_24_0_5" />
+
+            <TextView
+                android:id="@+id/tvBodyMedium"
+                style="@style/App.TextAppearance.Material3.BodyMedium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/body_medium_roboto_14_20_0_25" />
+
+            <TextView
+                android:id="@+id/tvBodySmall"
+                style="@style/App.TextAppearance.Material3.BodySmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/body_small_roboto_12_16_0_4" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

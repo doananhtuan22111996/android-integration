@@ -16,14 +16,12 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvId"
-            style="@style/TextAppearance.FontPath.Gilroy.Body_13_Medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text='@{"Id: " + item.id}' />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvName"
-            style="@style/TextAppearance.FontPath.Gilroy.Body_13_Regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text='@{"Name: " + item.name}' />

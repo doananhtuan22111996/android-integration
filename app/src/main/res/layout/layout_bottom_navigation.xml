@@ -39,8 +39,7 @@
                     android:id="@+id/tvNetwork"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/paging_network"
-                    android:textAppearance="@style/TextAppearance.FontPath.Gilroy.Body_13_SemiBold" />
+                    android:text="@string/paging_network" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -67,8 +66,7 @@
                     android:id="@+id/tvLocal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/paging_local"
-                    android:textAppearance="@style/TextAppearance.FontPath.Gilroy.Body_13_SemiBold" />
+                    android:text="@string/paging_local" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
