@@ -2,15 +2,19 @@
 <resources>
 
     <style name="App.Widget.Material3.CardView.Elevated" parent="Widget.Material3.CardView.Elevated">
-        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearance">@style/App.ShapeAppearance.Material3.Corner.Medium</item>
     </style>
 
     <style name="App.Widget.Material3.CardView.Filled" parent="Widget.Material3.CardView.Filled">
-        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearance">@style/App.ShapeAppearance.Material3.Corner.Medium</item>
     </style>
 
     <style name="App.Widget.Material3.CardView.Outlined" parent="Widget.Material3.CardView.Outlined">
-        <item name="shapeAppearance">@style/ShapeAppearance.Material3.MediumComponent</item>
+        <item name="shapeAppearance">@style/App.ShapeAppearance.Material3.Corner.Medium</item>
+    </style>
+
+    <style name="App.ShapeAppearance.Material3.Corner.Medium" parent="ShapeAppearance.Material3.Corner.Medium">
+        <item name="cornerFamily">rounded</item>
     </style>
 
 </resources>
