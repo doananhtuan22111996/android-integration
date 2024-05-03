@@ -33,5 +33,12 @@
     <string name="body_medium_roboto_14_20_0_25">Body Medium - Roboto 14/20.+0.25</string>
     <string name="body_small_roboto_12_16_0_4">Body Small - Roboto 12/16.+0.4</string>
     <string name="card">Card</string>
+    <string name="cards_are_versatile_containers_holding_anything_from_images_to_headlines_supporting_text_buttons_lists_and_other_components">Cards are versatile containers, holding anything from images to headlines, supporting text, buttons, lists, and other components.</string>
+    <string name="buttons_help_people_take_actions_such_as_sending_an_email_sharing_a_document_or_liking_a_comment">Buttons help people take actions, such as sending an email, sharing a document, or liking a comment.</string>
+    <string name="use_typography_to_present_your_design_and_content_as_clearly_and_efficiently_as_possible">Use typography to present your design and content as clearly and efficiently as possible.</string>
+    <string name="header">Header</string>
+    <string name="subheader">SubHeader</string>
+    <string name="enabled">Enabled</string>
+    <string name="closed">Closed</string>
 
 </resources>

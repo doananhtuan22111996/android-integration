@@ -10,12 +10,12 @@
             type="vn.root.app.pages.materialKit.MaterialKit" />
     </data>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
+        style="?materialCardViewElevatedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_8"
-        android:onClick="@{() -> kit.action.invoke()}"
-        app:cardCornerRadius="@dimen/radius_16">
+        android:onClick="@{() -> kit.action.invoke()}">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,6 +59,6 @@
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </layout>

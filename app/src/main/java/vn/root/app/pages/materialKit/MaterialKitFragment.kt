@@ -24,18 +24,18 @@ class MaterialKitFragment : Fragment() {
 				MaterialKit(
 					id = 1,
 					header = getString(R.string.typography),
-					subHeader = getString(R.string.lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor),
+					subHeader = getString(R.string.use_typography_to_present_your_design_and_content_as_clearly_and_efficiently_as_possible),
 					action = { navController.navigate(R.id.action_materialKitFragment_to_typographyFragment) },
 				), MaterialKit(
 					id = 2,
 					header = getString(R.string.button),
-					subHeader = getString(R.string.lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor),
+					subHeader = getString(R.string.buttons_help_people_take_actions_such_as_sending_an_email_sharing_a_document_or_liking_a_comment),
 					action = { navController.navigate(R.id.action_materialKitFragment_to_typographyFragment) },
 				), MaterialKit(
 					id = 3,
 					header = getString(R.string.card),
-					subHeader = getString(R.string.lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor),
-					action = { navController.navigate(R.id.action_materialKitFragment_to_typographyFragment) },
+					subHeader = getString(R.string.cards_are_versatile_containers_holding_anything_from_images_to_headlines_supporting_text_buttons_lists_and_other_components),
+					action = { navController.navigate(R.id.action_materialKitFragment_to_cardFragment) },
 				)
 			)
 		)
