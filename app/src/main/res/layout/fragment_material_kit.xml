@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/layoutHeader"
-        layout="@layout/layout_header" />
+        layout="@layout/layout_header_small" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcView"

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header_small" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_16">
+
+            <include
+                android:id="@+id/layoutHeader1"
+                layout="@layout/layout_header_small" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/stroke_1"
+                android:layout_marginVertical="@dimen/margin_16"
+                android:background="@color/md_theme_primary" />
+
+            <include
+                android:id="@+id/layoutHeader2"
+                layout="@layout/layout_header_medium" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/stroke_1"
+                android:layout_marginVertical="@dimen/margin_16"
+                android:background="@color/md_theme_primary" />
+
+            <include
+                android:id="@+id/layoutHeader3"
+                layout="@layout/layout_header_large" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
