@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_materialKitFragment_to_cardFragment"
             app:destination="@id/cardFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_topTabBarFragment"
+            app:destination="@id/topTabBarFragment" />
     </fragment>
 
     <fragment
@@ -29,5 +32,11 @@
         android:name="vn.root.app.pages.materialKit.card.CardFragment"
         android:label="fragment_card"
         tools:layout="@layout/fragment_card" />
+
+    <fragment
+        android:id="@+id/topTabBarFragment"
+        android:name="vn.root.app.pages.materialKit.topTabBar.TopTabBarFragment"
+        android:label="fragment_top_tab_bar"
+        tools:layout="@layout/fragment_top_app_bar" />
 
 </navigation>

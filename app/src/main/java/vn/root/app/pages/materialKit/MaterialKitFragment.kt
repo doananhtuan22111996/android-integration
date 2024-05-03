@@ -36,6 +36,11 @@ class MaterialKitFragment : Fragment() {
 					header = getString(R.string.card),
 					subHeader = getString(R.string.cards_are_versatile_containers_holding_anything_from_images_to_headlines_supporting_text_buttons_lists_and_other_components),
 					action = { navController.navigate(R.id.action_materialKitFragment_to_cardFragment) },
+				), MaterialKit(
+					id = 4,
+					header = getString(R.string.top_tab_bars),
+					subHeader = getString(R.string.top_app_bars_display_information_and_actions_at_the_top_of_a_screen_such_as_the_page_title_and_shortcuts_to_actions),
+					action = { navController.navigate(R.id.action_materialKitFragment_to_topTabBarFragment) },
 				)
 			)
 		)

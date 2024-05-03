@@ -40,5 +40,7 @@
     <string name="subheader">SubHeader</string>
     <string name="enabled">Enabled</string>
     <string name="closed">Closed</string>
+    <string name="top_tab_bars">Top Tab Bars</string>
+    <string name="top_app_bars_display_information_and_actions_at_the_top_of_a_screen_such_as_the_page_title_and_shortcuts_to_actions">Top app bars display information and actions at the top of a screen, such as the page title and shortcuts to actions.</string>
 
 </resources>
