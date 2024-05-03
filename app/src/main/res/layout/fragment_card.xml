@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <HorizontalScrollView
+                android:id="@+id/hvsStackedCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/llStackedCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        android:id="@+id/layoutStackedCard1"
+                        layout="@layout/item_stacked_elevated_card" />
+
+                    <include
+                        android:id="@+id/layoutStackedCard2"
+                        layout="@layout/item_stacked_filled_card" />
+
+                    <include
+                        android:id="@+id/layoutStackedCard3"
+                        layout="@layout/item_stacked_outline_card" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/llCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include
+                    android:id="@+id/layoutCard1"
+                    layout="@layout/item_elevated_card" />
+
+                <include
+                    android:id="@+id/layoutCard2"
+                    layout="@layout/item_filled_card" />
+
+                <include
+                    android:id="@+id/layoutCard3"
+                    layout="@layout/item_outline_card" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

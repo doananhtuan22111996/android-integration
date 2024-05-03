@@ -5,20 +5,29 @@
     android:id="@+id/nav_material_kit"
     app:startDestination="@id/materialKitFragment">
 
-    <action
-        android:id="@+id/action_materialKitFragment_to_typographyFragment"
-        app:destination="@id/typographyFragment" />
-
     <fragment
         android:id="@+id/materialKitFragment"
         android:name="vn.root.app.pages.materialKit.MaterialKitFragment"
         android:label="fragment_material_kit"
-        tools:layout="@layout/fragment_material_kit" />
+        tools:layout="@layout/fragment_material_kit">
+        <action
+            android:id="@+id/action_materialKitFragment_to_typographyFragment"
+            app:destination="@id/typographyFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_cardFragment"
+            app:destination="@id/cardFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/typographyFragment"
         android:name="vn.root.app.pages.materialKit.typography.TypographyFragment"
         android:label="fragment_typography"
         tools:layout="@layout/fragment_typography" />
+
+    <fragment
+        android:id="@+id/cardFragment"
+        android:name="vn.root.app.pages.materialKit.card.CardFragment"
+        android:label="fragment_card"
+        tools:layout="@layout/fragment_card" />
 
 </navigation>
