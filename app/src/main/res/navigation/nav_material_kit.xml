@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_materialKitFragment_to_topTabBarFragment"
             app:destination="@id/topTabBarFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_buttonFragment"
+            app:destination="@id/buttonFragment" />
     </fragment>
 
     <fragment
@@ -38,5 +41,11 @@
         android:name="vn.root.app.pages.materialKit.topTabBar.TopTabBarFragment"
         android:label="fragment_top_tab_bar"
         tools:layout="@layout/fragment_top_app_bar" />
+
+    <fragment
+        android:id="@+id/buttonFragment"
+        android:name="vn.root.app.pages.materialKit.button.ButtonFragment"
+        android:label="fragment_button"
+        tools:layout="@layout/fragment_button" />
 
 </navigation>

@@ -30,7 +30,7 @@ class MaterialKitFragment : Fragment() {
 					id = 2,
 					header = getString(R.string.button),
 					subHeader = getString(R.string.buttons_help_people_take_actions_such_as_sending_an_email_sharing_a_document_or_liking_a_comment),
-					action = { navController.navigate(R.id.action_materialKitFragment_to_typographyFragment) },
+					action = { navController.navigate(R.id.action_materialKitFragment_to_buttonFragment) },
 				), MaterialKit(
 					id = 3,
 					header = getString(R.string.card),
