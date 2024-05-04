@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="Theme.ApplicationTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_theme_primary</item>
@@ -78,6 +78,8 @@
         <item name="materialCardViewFilledStyle">@style/App.Widget.Material3.CardView.Filled</item>
         <item name="materialCardViewOutlinedStyle">@style/App.Widget.Material3.CardView.Outlined
         </item>
+
+        <item name="borderlessButtonStyle">@style/App.Widget.Material3.Button.TextButton</item>
     </style>
 
     <style name="Theme.ApplicationTheme.SplashScreen" parent="Theme.SplashScreen">
