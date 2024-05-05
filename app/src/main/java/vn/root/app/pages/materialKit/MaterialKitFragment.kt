@@ -46,6 +46,11 @@ class MaterialKitFragment : Fragment() {
 					header = getString(R.string.bottom_app_bar),
 					subHeader = getString(R.string.bottom_app_bars_display_navigation_and_key_actions_at_the_bottom_of_a_screen),
 					action = { navController.navigate(R.id.action_materialKitFragment_to_bottomAppBarFragment) },
+				), MaterialKit(
+					id = 6,
+					header = getString(R.string.badge),
+					subHeader = getString(R.string.badges_are_used_to_convey_dynamic_information_such_as_a_count_or_status_a_badge_can_include_text_labels_or_numbers),
+					action = { navController.navigate(R.id.action_materialKitFragment_to_badgeFragment) },
 				)
 			)
 		)
