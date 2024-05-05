@@ -7,8 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.badge.BadgeDrawable
-import com.google.android.material.badge.BadgeUtils
 import vn.root.app.R
 import vn.root.app.databinding.FragmentBadgeBinding
 
@@ -32,8 +30,16 @@ class BadgeFragment : Fragment() {
 			setNavigationOnClickListener { navController.popBackStack() }
 			menu.clear()
 		}
+		val badge1 = viewBinding.bottomNavigation.getOrCreateBadge(R.id.menu_add)
+		badge1.isVisible = true
+		// An icon only badge will be displayed unless a number or text is set:
+		badge1.number = 99  // or badge.text = "New"
 		
-		val badgeDrawable = BadgeDrawable.create(requireContext())
-		BadgeUtils.attachBadgeDrawable(badgeDrawable, viewBinding.bottomNavigation);
+		val badge2 = viewBinding.bottomNavigation.getOrCreateBadge(R.id.menu_awesome)
+		badge2.isVisible = true
+		badge2.text = getString(R.string.welcome)
+		
+		val badge3 = viewBinding.bottomNavigation.getOrCreateBadge(R.id.menu_back)
+		badge3.isVisible = true
 	}
 }
