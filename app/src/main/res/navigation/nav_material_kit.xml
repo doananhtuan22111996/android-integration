@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_materialKitFragment_to_bottomAppBarFragment"
             app:destination="@id/bottomAppBarFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_badgeFragment"
+            app:destination="@id/badgeFragment" />
     </fragment>
 
     <fragment
@@ -50,10 +53,17 @@
         android:name="vn.root.app.pages.materialKit.button.ButtonFragment"
         android:label="fragment_button"
         tools:layout="@layout/fragment_button" />
+
     <fragment
         android:id="@+id/bottomAppBarFragment"
         android:name="vn.root.app.pages.materialKit.bottomAppBar.BottomAppBarFragment"
         android:label="fragment_bottom_app_bar"
         tools:layout="@layout/fragment_bottom_app_bar" />
+
+    <fragment
+        android:id="@+id/badgeFragment"
+        android:name="vn.root.app.pages.materialKit.badge.BadgeFragment"
+        android:label="fragment_badge"
+        tools:layout="@layout/fragment_badge" />
 
 </navigation>

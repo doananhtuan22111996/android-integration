@@ -49,5 +49,7 @@
     <string name="bottom_app_bar">Bottom App Bar</string>
     <string name="bottom_app_bars_display_navigation_and_key_actions_at_the_bottom_of_a_screen">Bottom app bars display navigation and key actions at the bottom of a screen.</string>
     <string name="navigation">Navigation</string>
+    <string name="badge">Badge</string>
+    <string name="badges_are_used_to_convey_dynamic_information_such_as_a_count_or_status_a_badge_can_include_text_labels_or_numbers">Badges are used to convey dynamic information, such as a count or status. A badge can include text, labels, or numbers.</string>
 
 </resources>
