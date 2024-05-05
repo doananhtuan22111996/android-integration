@@ -28,4 +28,17 @@
         <item name="android:minWidth">48dp</item>
         <item name="android:minHeight">48dp</item>
     </style>
+
+    <style name="App.Widget.Material3.FloatingActionButton.Secondary" parent="Widget.Material3.FloatingActionButton.Secondary">
+        <item name="materialThemeOverlay">
+            @style/App.ThemeOverlay.Material3.FloatingActionButton.Secondary
+        </item>
+    </style>
+
+    <style name="App.ThemeOverlay.Material3.FloatingActionButton.Secondary" parent="ThemeOverlay.Material3.FloatingActionButton.Secondary">
+        <item name="shapeAppearanceCornerLarge">
+            @style/App.ShapeAppearance.App.LargeComponent.Cut
+        </item>
+    </style>
+
 </resources>
