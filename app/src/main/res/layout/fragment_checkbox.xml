@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header_small" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_me"
+                app:layout_constraintEnd_toStartOf="@id/checkboxDisabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/checkboxDisabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/check_me"
+                app:layout_constraintBottom_toBottomOf="@id/checkbox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/checkbox"
+                app:layout_constraintTop_toTopOf="@id/checkbox" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/check_me"
+                app:errorShown="true"
+                app:layout_constraintEnd_toStartOf="@id/checkboxDisabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkbox" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxErrorDisabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/check_me"
+                app:errorShown="true"
+                app:layout_constraintBottom_toBottomOf="@id/checkboxError"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/checkboxError"
+                app:layout_constraintTop_toTopOf="@id/checkboxError" />
+
+            <CheckBox
+                android:id="@+id/checkboxParent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parent"
+                app:checkedState="indeterminate"
+                app:layout_constraintEnd_toStartOf="@id/checkboxParentDisabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkboxError" />
+
+            <CheckBox
+                android:id="@+id/checkboxParentDisabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/parent"
+                app:checkedState="indeterminate"
+                app:layout_constraintBottom_toBottomOf="@id/checkboxParent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/checkboxParent"
+                app:layout_constraintTop_toBottomOf="@id/checkboxError" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxParentError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parent"
+                app:checkedState="indeterminate"
+                app:errorShown="true"
+                app:layout_constraintEnd_toStartOf="@id/checkboxParentErorrDisabled"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkboxParent" />
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/checkboxParentErorrDisabled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:text="@string/parent"
+                app:checkedState="indeterminate"
+                app:errorShown="true"
+                app:layout_constraintBottom_toBottomOf="@id/checkboxParentError"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/checkboxParentError"
+                app:layout_constraintTop_toTopOf="@id/checkboxParentError" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
