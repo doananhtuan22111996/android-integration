@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_materialKitFragment_to_badgeFragment"
             app:destination="@id/badgeFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_checkboxFragment"
+            app:destination="@id/checkboxFragment" />
     </fragment>
 
     <fragment
@@ -65,5 +68,11 @@
         android:name="vn.root.app.pages.materialKit.badge.BadgeFragment"
         android:label="fragment_badge"
         tools:layout="@layout/fragment_badge" />
+
+    <fragment
+        android:id="@+id/checkboxFragment"
+        android:name="vn.root.app.pages.materialKit.checkbox.CheckboxFragment"
+        android:label="fragment_checkbox"
+        tools:layout="@layout/fragment_checkbox" />
 
 </navigation>
