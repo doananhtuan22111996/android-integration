@@ -15,6 +15,7 @@
  */
 package vn.root.app.pages.materialKit.bottomAppBar
 
+import android.annotation.SuppressLint
 import com.google.android.material.bottomappbar.BottomAppBarTopEdgeTreatment
 import com.google.android.material.shape.ShapePath
 
@@ -28,7 +29,7 @@ class BottomAppBarCutCornersTopEdge internal constructor(
 ) : BottomAppBarTopEdgeTreatment(
 	fabMargin, roundedCornerRadius, cradleVerticalOffset
 ) {
-	@SuppressWarnings("RestrictTo")
+	@SuppressLint("RestrictedApi")
 	override fun getEdgePath(
 		length: Float, center: Float, interpolation: Float, shapePath: ShapePath
 	) {
