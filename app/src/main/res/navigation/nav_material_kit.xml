@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_materialKitFragment_to_checkboxFragment"
             app:destination="@id/checkboxFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_chipFragment"
+            app:destination="@id/chipFragment" />
     </fragment>
 
     <fragment
@@ -74,5 +77,11 @@
         android:name="vn.root.app.pages.materialKit.checkbox.CheckboxFragment"
         android:label="fragment_checkbox"
         tools:layout="@layout/fragment_checkbox" />
+
+    <fragment
+        android:id="@+id/chipFragment"
+        android:name="vn.root.app.pages.materialKit.chip.ChipFragment"
+        android:label="fragment_chip"
+        tools:layout="@layout/fragment_chip" />
 
 </navigation>

@@ -56,6 +56,12 @@ class MaterialKitFragment : Fragment() {
 					header = getString(R.string.checkbox),
 					subHeader = getString(R.string.checkboxes_allow_users_to_select_one_or_more_items_from_a_set_and_can_be_used_to_turn_an_option_on_or_off_they_re_a_kind_of_selection_control_that_helps_users_make_a_choice_from_a_set_of_options),
 					action = { navController.navigate(R.id.action_materialKitFragment_to_checkboxFragment) },
+				),
+				MaterialKit(
+					id = 8,
+					header = getString(R.string.chip),
+					subHeader = getString(R.string.chips_help_people_enter_information_make_selections_filter_content_or_trigger_actions),
+					action = { navController.navigate(R.id.action_materialKitFragment_to_chipFragment) },
 				)
 			)
 		)
