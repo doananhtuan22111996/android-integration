@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_materialKitFragment_to_chipFragment"
             app:destination="@id/chipFragment" />
+        <action
+            android:id="@+id/action_materialKitFragment_to_carouselFragment"
+            app:destination="@id/carouselFragment" />
     </fragment>
 
     <fragment
@@ -83,5 +86,11 @@
         android:name="vn.root.app.pages.materialKit.chip.ChipFragment"
         android:label="fragment_chip"
         tools:layout="@layout/fragment_chip" />
+
+    <fragment
+        android:id="@+id/carouselFragment"
+        android:name="vn.root.app.pages.materialKit.carousel.CarouselFragment"
+        android:label="fragment_carousel"
+        tools:layout="@layout/fragment_carousel" />
 
 </navigation>
