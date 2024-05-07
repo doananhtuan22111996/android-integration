@@ -35,9 +35,14 @@
         </item>
     </style>
 
+    <style name="App.ShapeAppearance.Material3.FloatingActionButton.Secondary.Cut" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">28dp</item>
+    </style>
+
     <style name="App.ThemeOverlay.Material3.FloatingActionButton.Secondary" parent="ThemeOverlay.Material3.FloatingActionButton.Secondary">
         <item name="shapeAppearanceCornerLarge">
-            @style/App.ShapeAppearance.App.LargeComponent.Cut
+            @style/App.ShapeAppearance.Material3.FloatingActionButton.Secondary.Cut
         </item>
     </style>
 
