@@ -16,10 +16,16 @@
         <action
             android:id="@+id/action_boardingFragment_to_workflowFragment"
             app:destination="@id/nav_workflow" />
+
+        <action
+            android:id="@+id/action_boardingFragment_to_animationFragment"
+            app:destination="@id/nav_animation" />
     </fragment>
 
     <include app:graph="@navigation/nav_material_kit" />
 
     <include app:graph="@navigation/nav_workflow" />
+
+    <include app:graph="@navigation/nav_animation" />
 
 </navigation>

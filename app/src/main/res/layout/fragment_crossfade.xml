@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/layoutHeader"
+        layout="@layout/layout_header_small" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <Button
+            android:id="@+id/btnVisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:text="@string/visible"
+            app:layout_constraintEnd_toStartOf="@id/btnInvisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnInvisible"
+            style="@style/App.Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/invisible"
+            app:layout_constraintBottom_toBottomOf="@id/btnVisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnVisible"
+            app:layout_constraintTop_toTopOf="@id/btnVisible" />
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/App.TextAppearance.Material3.BodyLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_16"
+            android:text="@string/while_your_app_is_being_used_new_information_appears_on_the_screen_and_old_information_is_removed_changing_what_shows_on_the_screen_immediately_can_be_jarring_and_users_can_miss_new_content_that_appears_suddenly_animations_slow_down_the_changes_and_draw_the_user_s_eye_with_motion_so_that_the_updates_are_more_obvious"
+            app:layout_constraintTop_toBottomOf="@id/btnVisible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
