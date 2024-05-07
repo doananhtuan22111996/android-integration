@@ -43,12 +43,16 @@ class ChipFragment : Fragment() {
 			setNavigationOnClickListener { navController.popBackStack() }
 			menu.clear()
 		}
-		// TODO change approach -> Email Input Text with chips
+		// TODO change approach combine Edit Text and Chip -> behavior Email input
 		viewBinding.edtChip.doOnTextChanged { text, start, before, count ->
 			if (chipLength > (text?.length ?: 0)) {
 				chipLength = text?.length ?: 0
 			}
 			println("Text Changed: ${text.toString()} - $start - $before - $count")
+		}
+		viewBinding.edtChip.setOnKeyListener { _, _, _ ->
+			viewBinding.edtChip.setSelection(viewBinding.edtChip.text?.length ?: 0)
+			false
 		}
 		viewBinding.edtChip.setOnEditorActionListener { textView, i, _ ->
 			println("Editor Action: ${textView.text}")
