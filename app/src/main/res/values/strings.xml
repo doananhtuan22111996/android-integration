@@ -66,5 +66,9 @@
     <string name="invisible">Invisible</string>
     <string name="while_your_app_is_being_used_new_information_appears_on_the_screen_and_old_information_is_removed_changing_what_shows_on_the_screen_immediately_can_be_jarring_and_users_can_miss_new_content_that_appears_suddenly_animations_slow_down_the_changes_and_draw_the_user_s_eye_with_motion_so_that_the_updates_are_more_obvious">While your app is being used, new information appears on the screen and old information is removed. Changing what shows on the screen immediately can be jarring, and users can miss new content that appears suddenly. Animations slow down the changes and draw the user\'s eye with motion so that the updates are more obvious.</string>
     <string name="crossfade">Crossfade</string>
+    <string name="drawable">Drawable</string>
+    <string name="face">Face</string>
+    <string name="happy">Happy</string>
+    <string name="sad">Sad</string>
 
 </resources>
