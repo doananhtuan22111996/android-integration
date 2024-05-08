@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FaceView">
+        <attr name="stroke_color" format="color" />
+        <attr name="stroke_width" format="dimension" />
+        <attr name="face_color" format="color" />
+        <attr name="eye_color" format="color" />
+        <attr name="mouth_color" format="color" />
+    </declare-styleable>
+</resources>
