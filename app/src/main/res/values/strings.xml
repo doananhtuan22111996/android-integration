@@ -59,5 +59,9 @@
     <string name="chips_help_people_enter_information_make_selections_filter_content_or_trigger_actions">Chips help people enter information, make selections, filter content, or trigger actions.</string>
     <string name="carousel">Carousel</string>
     <string name="carousels_contains_a_collection_of_items_that_can_be_scrolled_on_and_off_the_screen">Carousels contains a collection of items that can be scrolled on and off the screen.</string>
+    <string name="drawable">Drawable</string>
+    <string name="face">Face</string>
+    <string name="happy">Happy</string>
+    <string name="sad">Sad</string>
 
 </resources>

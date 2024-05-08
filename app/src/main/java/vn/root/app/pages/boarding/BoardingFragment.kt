@@ -51,5 +51,13 @@ class BoardingFragment : Fragment() {
 				navController.navigate(R.id.action_boardingFragment_to_workflowFragment)
 			}
 		}
+		viewBinding.layoutContent3.let {
+			it.tvHeader.text = getString(R.string.drawable)
+			it.tvSubHeader.text =
+				getString(R.string.lorem_ipsum_dolor_sit_amet_consectetur_adipiscing_elit_sed_do_eiusmod_tempor)
+			it.root.setOnClickListener {
+				navController.navigate(R.id.action_boardingFragment_to_drawFragment)
+			}
+		}
 	}
 }
