@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_animation"
+    app:startDestination="@id/animationFragment">
+
+    <fragment
+        android:id="@+id/animationFragment"
+        android:name="vn.root.app.pages.animation.AnimationFragment"
+        android:label="fragment_animation"
+        tools:layout="@layout/fragment_material_kit">
+        <action
+            android:id="@+id/action_animationFragment_to_hyperspaceJumpFragment"
+            app:destination="@id/hyperspaceJumpFragment" />
+
+        <action
+            android:id="@+id/action_animationFragment_to_crossfadeFragment"
+            app:destination="@id/crossfadeFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/hyperspaceJumpFragment"
+        android:name="vn.root.app.pages.animation.hyperspaceJump.HyperspaceJumpFragment"
+        android:label="fragment_hyperspace_jump"
+        tools:layout="@layout/fragment_hyperspace_jump" />
+
+    <fragment
+        android:id="@+id/crossfadeFragment"
+        android:name="vn.root.app.pages.animation.crossfade.CrossfadeFragment"
+        android:label="fragment_crossfade"
+        tools:layout="@layout/fragment_crossfade" />
+</navigation>
