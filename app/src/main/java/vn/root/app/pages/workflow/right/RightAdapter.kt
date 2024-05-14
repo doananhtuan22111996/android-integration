@@ -1,4 +1,4 @@
-package vn.root.app.pages.home
+package vn.root.app.pages.workflow.right
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import vn.root.app.databinding.ItemPagingBinding
 import vn.root.domain.model.ItemModel
 
-class HomeAdapter : PagingDataAdapter<ItemModel, HomeAdapter.ItemViewHolder>(differCallback) {
+class RightAdapter : PagingDataAdapter<ItemModel, RightAdapter.ItemViewHolder>(
+    differCallback
+) {
 
     companion object {
         val differCallback = object : ItemCallback<ItemModel>() {
