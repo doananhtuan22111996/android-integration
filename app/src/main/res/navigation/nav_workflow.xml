@@ -7,32 +7,42 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="vn.root.app.pages.login.LoginFragment"
+        android:name="vn.root.app.pages.workflow.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
-
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="vn.root.app.pages.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="vn.root.app.pages.home.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:name="vn.root.app.pages.workflow.home.HomeFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_leftFragment"
+            app:destination="@id/leftFragment"
+            app:popUpToSaveState="true"
+            app:restoreState="true" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_rightFragment"
+            app:destination="@id/rightFragment"
+            app:popUpToSaveState="true"
+            app:restoreState="true" />
+    </fragment>
 
     <fragment
-        android:id="@+id/homeLocalFragment"
-        android:name="vn.root.app.pages.homeLocal.HomeLocalFragment"
-        android:label="fragment_home_local"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/leftFragment"
+        android:name="vn.root.app.pages.workflow.left.LeftFragment"
+        android:label="fragment_left"
+        tools:layout="@layout/fragment_left_right" />
 
-    <action
-        android:id="@+id/navigateToHomeLocal"
-        app:destination="@id/homeLocalFragment"
-        app:launchSingleTop="true"
-        app:popUpTo="@id/nav_root" />
+    <fragment
+        android:id="@+id/rightFragment"
+        android:name="vn.root.app.pages.workflow.right.RightFragment"
+        android:label="fragment_right"
+        tools:layout="@layout/fragment_left_right" />
 
 </navigation>

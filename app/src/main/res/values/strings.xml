@@ -70,5 +70,8 @@
     <string name="face">Face</string>
     <string name="happy">Happy</string>
     <string name="sad">Sad</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="home">Home</string>
 
 </resources>

@@ -1,4 +1,4 @@
-package vn.root.app.pages.homeLocal
+package vn.root.app.pages.workflow.left
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,9 +8,7 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import vn.root.app.databinding.ItemPagingBinding
 import vn.root.domain.model.ItemModel
 
-class HomeLocalAdapter : PagingDataAdapter<ItemModel, HomeLocalAdapter.ItemViewHolder>(
-    differCallback
-) {
+class LeftAdapter : PagingDataAdapter<ItemModel, LeftAdapter.ItemViewHolder>(differCallback) {
 
     companion object {
         val differCallback = object : ItemCallback<ItemModel>() {
