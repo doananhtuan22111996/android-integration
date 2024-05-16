@@ -2,20 +2,24 @@ package com.example
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlin.system.measureTimeMillis
 
-fun main() = runBlocking {
-    val totalTime = measureTimeMillis {
-        val delay1 = async { delayFunction1() }
-        val delay2 = async { delayFunction2() }
-        val result1 = delay1.await()
-        val result2 = delay2.await()
-        println("Total time taken: ${result1 + result2}ms")
-    }
-    println("Done")
-}
+//fun main() = runBlocking {
+//    val totalTime = measureTimeMillis {
+//        val delay1 = async { delayFunction1() }
+//        val delay2 = async { delayFunction2() }
+//        val result1 = delay1.await()
+//        val result2 = delay2.await()
+//        println("Total time taken: ${result1 + result2}ms")
+//    }
+//    println("Done")
+//}
 
 //fun main() = runBlocking {
 //    val job = launch {
@@ -30,13 +34,26 @@ fun main() = runBlocking {
 //}
 
 suspend fun delayFunction1(): Long {
-    val delayTime = 1000L
-    delay(delayTime)
-    return delayTime
+	val delayTime = 1000L
+	delay(delayTime)
+	return delayTime
 }
 
 suspend fun delayFunction2(): Long {
-    val delayTime = 500L
-    delay(delayTime)
-    return delayTime
+	val delayTime = 500L
+	delay(delayTime)
+	return delayTime
+}
+
+fun main() = runBlocking {
+	val a1 = MutableSharedFlow<Int>()
+	val a = flow {
+		emit(2)
+	}
+	a.collect {
+		println("Collect 1: $it")
+	}
+	a.collect {
+		println("Collect 2: $it")
+	}
 }

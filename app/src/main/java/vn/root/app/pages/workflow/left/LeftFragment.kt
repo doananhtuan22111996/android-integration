@@ -13,6 +13,7 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
+import vn.root.app.R
 import vn.root.app.base.BaseFragment
 import vn.root.app.base.PagingLoadStateAdapter
 import vn.root.app.databinding.FragmentLeftRightBinding
@@ -47,18 +48,14 @@ class LeftFragment : BaseFragment<RootViewModel, LeftViewModel, FragmentLeftRigh
 	override fun bindViewModel() {
 		super.bindViewModel()
 		viewLifecycleOwner.lifecycleScope.launch {
-			repeatOnLifecycle(Lifecycle.State.STARTED) {
-				viewModel.paging.collectLatest {
-					adapter.submitData(it)
-				}
+			viewModel.paging.collectLatest {
+				adapter.submitData(it)
 			}
 		}
 		viewLifecycleOwner.lifecycleScope.launch {
-			repeatOnLifecycle(Lifecycle.State.STARTED) {
-				adapter.loadStateFlow.collect { loadStates ->
-					Timber.d("loadStateFlow $loadStates")
-					viewBinding.swRefresh.isRefreshing = loadStates.refresh is LoadState.Loading
-				}
+			adapter.loadStateFlow.collect { loadStates ->
+				Timber.d("loadStateFlow $loadStates")
+				viewBinding.swRefresh.isRefreshing = loadStates.refresh is LoadState.Loading
 			}
 		}
 	}
