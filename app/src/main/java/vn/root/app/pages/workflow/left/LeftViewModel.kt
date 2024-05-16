@@ -20,8 +20,4 @@ class LeftViewModel(private val pagingUseCase: PagingNetworkUseCase) : BaseViewM
 	val paging = _pagingState.flatMapLatest {
 		pagingUseCase.getPagingNetwork()
 	}.cachedIn(viewModelScope)
-	
-//	init {
-//		_pagingState.value = Unit
-//	}
 }

@@ -22,22 +22,24 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_leftFragment"
-            app:destination="@id/leftFragment"
-            app:popUpToSaveState="true"
-            app:restoreState="true" />
+            app:destination="@id/leftFragment" />
 
         <action
             android:id="@+id/action_homeFragment_to_rightFragment"
-            app:destination="@id/rightFragment"
-            app:popUpToSaveState="true"
-            app:restoreState="true" />
+            app:destination="@id/rightFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/leftFragment"
         android:name="vn.root.app.pages.workflow.left.LeftFragment"
         android:label="fragment_left"
-        tools:layout="@layout/fragment_left_right" />
+        tools:layout="@layout/fragment_left_right">
+
+        <action
+            android:id="@+id/action_leftFragment_to_rightFragment"
+            app:destination="@id/rightFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/rightFragment"

@@ -6,13 +6,13 @@ import vn.root.domain.model.ItemModel
 import vn.root.domain.repository.PagingRepository
 
 interface PagingNetworkUseCase {
-
-    suspend fun getPagingNetwork(): Flow<PagingData<ItemModel>>
+	
+	suspend fun getPagingNetwork(): Flow<PagingData<ItemModel>>
 }
 
 class PagingNetworkUseCaseImpl(private val repository: PagingRepository) : PagingNetworkUseCase {
-
-    override suspend fun getPagingNetwork(): Flow<PagingData<ItemModel>> {
-        return repository.getPagingNetwork()
-    }
+	
+	override suspend fun getPagingNetwork(): Flow<PagingData<ItemModel>> {
+		return repository.getPagingNetwork()
+	}
 }
