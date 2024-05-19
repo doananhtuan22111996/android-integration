@@ -134,19 +134,14 @@ dependencies {
 	implementation(libs.androidx.paging.runtime)
 	implementation(libs.androidx.navigation.fragment.ktx)
 	implementation(libs.androidx.navigation.ui.ktx)
-	androidTestImplementation(libs.androidx.junit)
-	androidTestImplementation(libs.androidx.espresso.core)
-	
 	implementation(libs.google.material)
-	testImplementation(libs.junit)
-	
 	implementation(platform(libs.google.firebase.bom))
 	implementation(libs.google.firebase.analytics)
 	implementation(libs.google.gson)
-	
 	implementation(libs.load.images)
-	
 	implementation(libs.di.koin)
-	
 	implementation(libs.logger.timber)
+	testImplementation(libs.junit)
+	androidTestImplementation(libs.androidx.junit)
+	androidTestImplementation(libs.androidx.espresso.core)
 }
