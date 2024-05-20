@@ -8,4 +8,6 @@
     <string name="exercise_one">Exercise One</string>
     <string name="search_field">Search Field</string>
     <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
 </resources>

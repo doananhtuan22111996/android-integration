@@ -78,6 +78,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-material3-icons = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+androidx-window-size = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

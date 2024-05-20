@@ -29,7 +29,8 @@ fun Main(onItemClick: (index: Int) -> Unit = {}) {
 	val items = listOf("Exercise One", "Exercise Two", "Exercise Three")
 	Container(appBarTitle = "Main", navigationIcon = {
 		Icon(
-			imageVector = Icons.Filled.Menu, contentDescription = stringResource(id = R.string.icon)
+			imageVector = Icons.Filled.Menu,
+			contentDescription = stringResource(id = R.string.icon)
 		)
 	}) { innerPadding ->
 		LazyColumn(
