@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Root Compose</string>
+    <string name="click_me">Click me</string>
+    <string name="click_me_expanded">Click me expanded</string>
+    <string name="icon">Icon</string>
+    <string name="image">Image</string>
+    <string name="exercise_two">Exercise Two</string>
+    <string name="exercise_one">Exercise One</string>
+    <string name="search_field">Search Field</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="account">Account</string>
+</resources>

@@ -21,7 +21,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "Root"
 include(":app")
+include ':app_compose'
 include(":domain")
 include(":data")
 include(":example")
-

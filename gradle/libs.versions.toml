@@ -1,39 +1,44 @@
 [versions]
-compileSdk= "34"
+compileSdk = "34"
 minSdk = "26"
 targetSdk = "34"
 versionCode = "1"
-versionName = "3.0.0"
+versionName = "4.0.0"
 agp = "8.4.0"
-kotlin = "1.9.23"
-coreKtx = "1.12.0"
+kotlin = "1.9.24"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
 appcompat = "1.6.1"
 splashscreen = "1.0.1"
-material = "1.11.0"
+material = "1.12.0"
 jetbrainsKotlinJvm = "1.9.0"
 googleService = "4.4.1"
-firebase = "32.8.1"
-firebaseCrashlytics = "2.9.9"
+firebase = "33.0.0"
+firebaseCrashlytics = "3.0.1"
 coil = "2.6.0"
 koin = "3.5.6"
 timber = "5.0.1"
 room = "2.6.1"
-paging = "3.2.1"
+paging = "3.3.0"
 kotlinCoroutines = "1.8.0"
 okhttpLogger = "5.0.0-alpha.12"
 securityCrypto = "1.1.0-alpha06"
 retrofit = "2.10.0"
 swiperefreshlayout = "1.1.0"
-navigationFragmentKtx = "2.7.7"
-navigationUiKtx = "2.7.7"
+navigation = "2.7.7"
 gson = "2.10.1"
-ksp="1.9.23-1.0.20"
+ksp = "1.9.23-1.0.20"
+# Jetpack compose
+lifecycleRuntimeKtx = "2.8.0"
+activityCompose = "1.9.0"
+composeBom = "2024.05.00"
+uiTextGoogleFonts = "1.6.7"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -46,9 +51,8 @@ androidx-core-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-co
 androidx-android-coroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinCoroutines" }
 androidx-security = { group = "androidx.security", name = "security-crypto-ktx", version.ref = "securityCrypto" }
 androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
-androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
-androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
-junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase" }
 google-firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
@@ -59,6 +63,22 @@ logger-timber = { group = "com.jakewharton.timber", name = "timber", version.ref
 logger-okhttp = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogger" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+
+# Jetpack compose
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-material3-icons = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+androidx-window-size = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
