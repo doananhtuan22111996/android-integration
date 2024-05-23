@@ -28,14 +28,17 @@ securityCrypto = "1.1.0-alpha06"
 retrofit = "2.10.0"
 swiperefreshlayout = "1.1.0"
 navigation = "2.7.7"
+navigationHilt = "1.0.0"
 gson = "2.10.1"
-ksp = "1.9.23-1.0.20"
+ksp = "1.9.24-1.0.20"
 # Jetpack compose
 lifecycleRuntimeKtx = "2.8.0"
 activityCompose = "1.9.0"
 composeBom = "2024.05.00"
 uiTextGoogleFonts = "1.6.7"
 viewModelCompose = "2.8.0"
+hilt = "2.51.1"
+javax = "1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -79,16 +82,20 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 androidx-material3-icons = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "uiTextGoogleFonts" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+androidx-navigation-hilt-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "navigationHilt" }
 androidx-window-size = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 androidx-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModelCompose" }
+androidx-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+androidx-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+javax = { group = "javax.inject", name = "javax.inject", version.ref = "javax" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
 androidRoom = { id = "androidx.room", version.ref = "room" }
+androidHilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 googleService = { id = "com.google.gms.google-services", version.ref = "googleService" }
 firebaseCrashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlytics" }
-

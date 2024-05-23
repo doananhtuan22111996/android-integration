@@ -10,13 +10,13 @@ import vn.root.data.model.ObjectResponse
 import vn.root.data.model.TokenRaw
 
 interface ApiService {
-
-    @POST("/login")
-    suspend fun login(): Response<ObjectResponse<TokenRaw>>
-
-    @POST("/logout")
-    suspend fun logout(): Response<ObjectResponse<Nothing>>
-
-    @GET("/paging-page")
-    suspend fun getPaging(@Query("page") page: Int = 1): Response<ListResponse<ItemRaw>>
+	
+	@POST("/login")
+	suspend fun login(): Response<ObjectResponse<TokenRaw>>
+	
+	@POST("/logout")
+	suspend fun logout(): Response<ObjectResponse<Nothing>>
+	
+	@GET("/paging-page")
+	suspend fun getPaging(@Query("page") page: Int = 1): Response<ListResponse<ItemRaw>>
 }

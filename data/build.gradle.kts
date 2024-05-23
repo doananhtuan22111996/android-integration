@@ -11,9 +11,9 @@ plugins {
 
 android {
 	namespace = "vn.root.data"
+	compileSdk = libs.versions.compileSdk.get().toInt()
 	
 	defaultConfig {
-		compileSdk = libs.versions.compileSdk.get().toInt()
 		minSdk = libs.versions.minSdk.get().toInt()
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 		consumerProguardFiles("consumer-rules.pro")
@@ -80,6 +80,8 @@ dependencies {
 	implementation(libs.androidx.room.runtime)
 	ksp(libs.androidx.room.compiler)
 	implementation(libs.androidx.security)
+	implementation(libs.androidx.hilt)
+	ksp(libs.androidx.hilt.compiler)
 	implementation(libs.di.koin)
 	implementation(libs.retrofit)
 	implementation(libs.retrofit.gson)

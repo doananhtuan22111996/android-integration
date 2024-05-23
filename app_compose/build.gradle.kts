@@ -1,6 +1,34 @@
+import com.android.build.api.dsl.ApplicationProductFlavor
+import java.io.FileInputStream
+import java.util.Properties
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
 plugins {
 	alias(libs.plugins.androidApplication)
 	alias(libs.plugins.jetbrainsKotlinAndroid)
+	alias(libs.plugins.androidHilt)
+	alias(libs.plugins.ksp)
+}
+
+val getCurrentFlavor = {
+	val tskReqStr: String = gradle.startParameter.taskRequests.toString()
+	println("Gradle task: -----> $tskReqStr")
+	val pattern = if (tskReqStr.contains("assemble")) {
+		Pattern.compile("assemble(\\w+)(Release|Debug)")
+	} else if (tskReqStr.contains("bundle")) {
+		Pattern.compile("bundle(\\w+)(Release|Debug)")
+	} else {
+		Pattern.compile("generate(\\w+)(Release|Debug)")
+	}
+	val matcher: Matcher = pattern.matcher(tskReqStr)
+	if (matcher.find()) {
+		println("MATCHED -------> ${matcher.group(1).lowercase()}")
+		matcher.group(1).lowercase()
+	} else {
+		println("NO MATCH FOUND ------> Return default flavor")
+		"dev"
+	}
 }
 
 android {
@@ -20,6 +48,19 @@ android {
 		}
 	}
 	
+	signingConfigs {
+		create(getCurrentFlavor()) {
+			// Load keystore
+			val appProperties = Properties().apply {
+				load(FileInputStream(rootProject.file("env.${this@create.name}.properties")))
+			}
+			storeFile = file(appProperties.getProperty("keystore.path"))
+			storePassword = appProperties.getProperty("keystore.pass")
+			keyAlias = appProperties.getProperty("keystore.alias")
+			keyPassword = appProperties.getProperty("keystore.pass")
+		}
+	}
+	
 	buildTypes {
 		debug {
 			isDebuggable = true
@@ -35,16 +76,44 @@ android {
 			)
 		}
 	}
+	flavorDimensions += "environment"
+	productFlavors {
+		fun loadConfig(flavor: ApplicationProductFlavor) {
+			println("App ------ productFlavors: -----> ${flavor.name}")
+			val appProperties = Properties().apply {
+				load(FileInputStream(rootProject.file("env.${flavor.name}.properties")))
+			}
+			println("application.id: -----> " + appProperties.getProperty("application.id"))
+			println("application.name: -----> " + appProperties.getProperty("application.name"))
+//			flavor.applicationId = appProperties.getProperty("application.id")
+//			flavor.manifestPlaceholders["applicationName"] =
+//				appProperties.getProperty("application.name")
+		}
+		
+		create("dev") {
+			dimension = "environment"
+			loadConfig(this)
+		}
+		
+		create("prod") {
+			dimension = "environment"
+			loadConfig(this)
+		}
+	}
+	
 	compileOptions {
 		sourceCompatibility = JavaVersion.VERSION_1_8
 		targetCompatibility = JavaVersion.VERSION_1_8
 	}
+	
 	kotlinOptions {
 		jvmTarget = "1.8"
 	}
+	
 	buildFeatures {
 		compose = true
 	}
+	
 	composeOptions {
 		kotlinCompilerExtensionVersion = "1.5.14"
 	}
@@ -57,6 +126,8 @@ android {
 }
 
 dependencies {
+	implementation(project(":domain"))
+	implementation(project(":data"))
 	
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -72,6 +143,10 @@ dependencies {
 	implementation(libs.androidx.navigation.compose)
 	implementation(libs.androidx.window.size)
 	implementation(libs.androidx.viewmodel.compose)
+	implementation(libs.androidx.hilt)
+	implementation(libs.androidx.navigation.hilt.compose)
+	ksp(libs.androidx.hilt.compiler)
+	implementation(libs.logger.timber)
 	
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)

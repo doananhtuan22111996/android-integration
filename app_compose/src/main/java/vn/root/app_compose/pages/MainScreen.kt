@@ -26,11 +26,10 @@ import vn.root.app_compose.ui.components.Container
 @Preview(showBackground = true)
 @Composable
 fun Main(onItemClick: (index: Int) -> Unit = {}) {
-	val items = listOf("Exercise One", "Exercise Two", "Exercise Three")
+	val items = listOf("Exercise One", "Exercise Two", "Exercise Three", "Workflow")
 	Container(appBarTitle = "Main", navigationIcon = {
 		Icon(
-			imageVector = Icons.Filled.Menu,
-			contentDescription = stringResource(id = R.string.icon)
+			imageVector = Icons.Filled.Menu, contentDescription = stringResource(id = R.string.icon)
 		)
 	}) { innerPadding ->
 		LazyColumn(

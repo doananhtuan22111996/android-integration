@@ -7,24 +7,25 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import okhttp3.Route
+import okhttp3.internal.http.HTTP_OK
+import okhttp3.internal.http.HTTP_UNAUTHORIZED
 import okio.use
 import timber.log.Timber
 import vn.root.data.Config
 import vn.root.data.local.PreferenceWrapper
 import vn.root.data.model.ObjectResponse
 import vn.root.data.model.TokenRaw
-import java.net.HttpURLConnection
 import javax.inject.Inject
 
-class TokenAuthenticator(
-	@Inject private val preferenceWrapper: PreferenceWrapper
+class HttpAuthenticatorInterceptor(
+	private val preferenceWrapper: PreferenceWrapper
 ) : Authenticator {
 	
 	override fun authenticate(route: Route?, response: Response): Request? {
 		Timber.d("Request URL: ${response.request.url}")
 		val requestUrl = response.request.url.toString()
 		val ignored = requestUrl.contains("login") || requestUrl.contains("refreshToken")
-		if (response.code == HttpURLConnection.HTTP_UNAUTHORIZED && !ignored) {
+		if (response.code == HTTP_UNAUTHORIZED && !ignored) {
 			try {
 				val refreshToken =
 					preferenceWrapper.getString(Config.SharePreference.KEY_AUTH_REFRESH_TOKEN, "")
@@ -50,7 +51,7 @@ class TokenAuthenticator(
 		val request = Request.Builder().url("${Config.mainDomain}/refreshToken")
 			.post(refreshToken.toRequestBody()).build()
 		OkHttpClient().newBuilder().build().newCall(request).execute().use { response ->
-			if (response.isSuccessful && response.code == HttpURLConnection.HTTP_OK) {
+			if (response.isSuccessful && response.code == HTTP_OK) {
 				val objResponse =
 					Gson().fromJson(response.body.string(), ObjectResponse::class.java)
 				val tokenRaw = Gson().fromJson(

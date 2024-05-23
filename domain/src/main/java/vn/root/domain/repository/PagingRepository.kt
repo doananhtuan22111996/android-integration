@@ -6,7 +6,7 @@ import vn.root.domain.model.ItemModel
 
 interface PagingRepository {
 
-    suspend fun getPagingNetwork(): Flow<PagingData<ItemModel>>
+     fun getPagingNetwork(): Flow<PagingData<ItemModel>>
 
-    suspend fun getPagingLocal(): Flow<PagingData<ItemModel>>
+     fun getPagingLocal(): Flow<PagingData<ItemModel>>
 }

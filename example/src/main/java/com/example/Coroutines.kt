@@ -1,13 +1,20 @@
 package com.example
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.updateAndGet
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.withContext
 import kotlin.system.measureTimeMillis
 
 //fun main() = runBlocking {
@@ -46,14 +53,22 @@ suspend fun delayFunction2(): Long {
 }
 
 fun main() = runBlocking {
-	val a1 = MutableSharedFlow<Int>()
-	val a = flow {
-		emit(2)
+	val stateFlow = MutableStateFlow(0)
+	val flow = stateFlow.asStateFlow()
+	launch {
+		val a = flow {
+			emit(1)
+			delay(500)
+			emit(2)
+			delay(500)
+			emit(3)
+		}.flowOn(Dispatchers.IO)
+		withContext(Dispatchers.Main) {
+			a.collect {
+				println("Collect 2: $it")
+				stateFlow.value = it
+			}
+		}
 	}
-	a.collect {
-		println("Collect 1: $it")
-	}
-	a.collect {
-		println("Collect 2: $it")
-	}
+	println("Collect done")
 }
