@@ -18,8 +18,7 @@ sealed class ResultModel<out R> {
 }
 
 sealed class TypeException(open val httpCode: Int?) {
-	data class Network(override val httpCode: Int? = HTTP_OK) :
-		TypeException(httpCode)
+	data class Network(override val httpCode: Int? = HTTP_OK) : TypeException(httpCode)
 	
 	data object Local : TypeException(httpCode = null)
 }

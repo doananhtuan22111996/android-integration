@@ -21,7 +21,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -31,20 +30,21 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import vn.root.app_compose.R
 import vn.root.app_compose.ui.components.Container
 import vn.root.domain.model.ResultModel
 
 @Composable
 fun LoginScreen(viewModel: LoginViewModel, onBackPress: () -> Unit = {}) {
-	val state by viewModel.loginState.collectAsState()
+	val state by viewModel.loginState.collectAsState(ResultModel.Done)
 	var alertSuccessDialog by rememberSaveable {
 		mutableStateOf(false)
 	}
-	println("STATE: $state")
+	var alertFailureDialog by rememberSaveable {
+		mutableStateOf(Pair<Boolean, String?>(false, null))
+	}
 	
 	Container(appBarTitle = "Login", navigationIcon = {
 		IconButton(onClick = { onBackPress() }) {
@@ -83,15 +83,11 @@ fun LoginScreen(viewModel: LoginViewModel, onBackPress: () -> Unit = {}) {
 					)
 				)
 				
-				is ResultModel.Success -> {
-					alertSuccessDialog = true
-//					LoginSuccessDialog(onDismissRequest = { })
-				}
+				is ResultModel.Success -> alertSuccessDialog = true
 				
-				is ResultModel.AppException -> {
-					LoginFailureDialog(message = (state as ResultModel.AppException).message
-						?: "Some things wrong", onDismissRequest = { })
-				}
+				is ResultModel.AppException -> alertFailureDialog = Pair(
+					true, (state as ResultModel.AppException).message
+				)
 				
 				else -> {
 				}
@@ -100,6 +96,13 @@ fun LoginScreen(viewModel: LoginViewModel, onBackPress: () -> Unit = {}) {
 				LoginSuccessDialog(onDismissRequest = {
 					alertSuccessDialog = false
 				})
+			}
+			if (alertFailureDialog.first) {
+				LoginFailureDialog(
+					message = alertFailureDialog.second ?: "Some things wrong",
+					onDismissRequest = {
+						alertFailureDialog = Pair(false, null)
+					})
 			}
 		}
 	}
@@ -116,6 +119,13 @@ private fun LoginSuccessDialog(onDismissRequest: () -> Unit) {
 		},
 		title = {
 			Text(text = "Login Success")
+		},
+		text = {
+			Text(
+				text = "You have successfully logged in",
+				textAlign = TextAlign.Center,
+				modifier = Modifier.fillMaxWidth()
+			)
 		},
 		onDismissRequest = {
 			onDismissRequest()

@@ -24,7 +24,7 @@ abstract class NetworkBoundService<RequestType, ResultType>(private val dispatch
 	fun build() = flow {
 		emit(ResultModel.Loading)
 		emit(fetchFromNetwork())
-//		delay(300)
+		delay(100) // Small delay to ensure all of the value emitted by the flow is consumed
 		emit(ResultModel.Done)
 	}.flowOn(dispatcher)
 	

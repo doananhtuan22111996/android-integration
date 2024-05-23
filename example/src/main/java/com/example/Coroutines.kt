@@ -52,23 +52,38 @@ suspend fun delayFunction2(): Long {
 	return delayTime
 }
 
+//fun main() = runBlocking {
+//	val stateFlow = MutableStateFlow(0)
+//	val flow = stateFlow.asStateFlow()
+//	repeat(10){
+//		delay(300)
+//		stateFlow.value = it
+//	}
+//	flow.collect {
+//		println(it)
+//	}
+//
+//	println("Collect done")
+//}
+
 fun main() = runBlocking {
 	val stateFlow = MutableStateFlow(0)
 	val flow = stateFlow.asStateFlow()
-	launch {
-		val a = flow {
-			emit(1)
-			delay(500)
-			emit(2)
-			delay(500)
-			emit(3)
-		}.flowOn(Dispatchers.IO)
-		withContext(Dispatchers.Main) {
-			a.collect {
-				println("Collect 2: $it")
-				stateFlow.value = it
-			}
+	
+	// Launch a coroutine to collect the stateFlow values
+	val job = launch {
+		flow.collect {
+			println(it)
 		}
 	}
+	// TODO: WARNING If you remove delay(300), you will face a different issue because the flow will emit updates so quickly that it might not have the chance to process them properly within the collect block, especially if it is running on the same thread. In your example, without the delay, the flow updates might happen almost instantaneously, and you might not observe the intended behavior.
+	// Update stateFlow values in the main coroutine
+	repeat(10) {
+		delay(300)
+		stateFlow.value = it
+	}
+	
+	// Cancel the collection coroutine after updates are done
+	job.cancel()
 	println("Collect done")
 }

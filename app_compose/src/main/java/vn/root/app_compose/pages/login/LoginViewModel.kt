@@ -4,9 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import vn.root.domain.model.ResultModel
 import vn.root.domain.model.TokenModel
 import vn.root.domain.usecase.LoginComposeUseCase
@@ -17,12 +16,13 @@ class LoginViewModel @Inject constructor(private val loginUseCase: LoginComposeU
 	ViewModel() {
 	
 	private val _loginState = MutableStateFlow<ResultModel<TokenModel>>(ResultModel.Done)
-	val loginState: StateFlow<ResultModel<TokenModel>> = _loginState
+	val loginState = _loginState.asStateFlow()
 	
 	fun onLogin() {
-		loginUseCase.execute().onEach {
-			println("${Thread.currentThread().name} $it")
-			_loginState.value = it
-		}.launchIn(viewModelScope)
+		viewModelScope.launch {
+			loginUseCase.execute().collect {
+				_loginState.value = it
+			}
+		}
 	}
 }
