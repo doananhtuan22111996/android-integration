@@ -81,14 +81,13 @@ To get started with this project, follow these steps:
 
 ## Implementation
 
-|                                                                        | Implementation       | Status      |
-|------------------------------------------------------------------------|----------------------|-------------|
-| MDC-Android                                                            | Migrate Koin to Hilt | In progress |
-| Jetpack Compose                                                        | Packaging            | In progress |
-| [Flutter](https://github.com/doananhtuan22111996/flutter_architecture) |                      | Available   |
-| Unit testing                                                           | All                  | Not planned |
-| Android testing                                                        | All                  | Not planned |
-|
+|                                                                        | Implementation | Status      |
+|------------------------------------------------------------------------|----------------|-------------|
+| MDC-Android                                                            |                | Available   |
+| Jetpack Compose                                                        |                | Available   |
+| [Flutter](https://github.com/doananhtuan22111996/flutter_architecture) |                | Available   |
+| Unit testing                                                           | All            | Not planned |
+| Android testing                                                        | All            | Not planned |
 
 ## Transition to Kotlin DSL for Gradle (build.gradle.kts)
 

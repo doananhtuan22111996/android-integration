@@ -8,11 +8,11 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import vn.root.domain.model.ResultModel
 import vn.root.domain.model.TokenModel
-import vn.root.domain.usecase.LoginComposeUseCase
+import vn.root.domain.usecase.LoginUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val loginUseCase: LoginComposeUseCase) :
+class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase) :
 	ViewModel() {
 	
 	private val _loginState = MutableStateFlow<ResultModel<TokenModel>>(ResultModel.Done)
