@@ -1,7 +1,17 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="prod/4.0.0/1"></a>
+## [prod/4.0.0/1] - 2024-05-25
+
+<a name="dev/4.0.0/1"></a>
+## [dev/4.0.0/1] - 2024-05-25
+
+<a name="release/v4.0.0"></a>
+## [release/v4.0.0] - 2024-05-25
 ### Feat
+- MDC-Android - migrate koin to hilt ([#26](https://github.com/doananhtuan22111996/android_architecture/issues/26))
 - jetpack compose - workflow - login and paging feature ([#25](https://github.com/doananhtuan22111996/android_architecture/issues/25))
 - Codelab - jecpack compose - Exercise 3 completed - state ([#24](https://github.com/doananhtuan22111996/android_architecture/issues/24))
 - Codelab - jecpack compose ([#23](https://github.com/doananhtuan22111996/android_architecture/issues/23))
@@ -90,7 +100,10 @@
 - Merge pull request [#1](https://github.com/doananhtuan22111996/android_architecture/issues/1) from doananhtuan22111996/paging3-local
 
 
-[Unreleased]: https://github.com/doananhtuan22111996/android_architecture/compare/release/v3.0.1...HEAD
+[Unreleased]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/4.0.0/1...HEAD
+[prod/4.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/dev/4.0.0/1...prod/4.0.0/1
+[dev/4.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/release/v4.0.0...dev/4.0.0/1
+[release/v4.0.0]: https://github.com/doananhtuan22111996/android_architecture/compare/release/v3.0.1...release/v4.0.0
 [release/v3.0.1]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/3.0.0/1...release/v3.0.1
 [prod/3.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/dev/3.0.0/1...prod/3.0.0/1
 [dev/3.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/2.0.0/3...dev/3.0.0/1
