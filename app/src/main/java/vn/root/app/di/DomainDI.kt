@@ -10,6 +10,7 @@ import vn.root.domain.usecase.PagingLocalUseCaseImpl
 import vn.root.domain.usecase.PagingNetworkUseCase
 import vn.root.domain.usecase.PagingNetworkUseCaseImpl
 
+@Deprecated("Migrating to Hilt")
 internal object DomainModules {
     val useCaseModules = module(createdAtStart = true) {
         factory<LoginUseCase> { LoginUseCaseImpl(get()) }

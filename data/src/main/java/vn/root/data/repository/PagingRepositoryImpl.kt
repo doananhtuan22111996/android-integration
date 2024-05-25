@@ -6,6 +6,7 @@ import androidx.paging.PagingData
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import timber.log.Timber
+import vn.root.data.di.qualifier.AnoRetrofitApiService
 import vn.root.data.local.dao.ItemDao
 import vn.root.data.local.PagingByLocalDataSource
 import vn.root.data.network.PagingByNetworkDataSource
@@ -14,13 +15,14 @@ import vn.root.data.model.ListResponse
 import vn.root.data.service.ApiService
 import vn.root.domain.model.ItemModel
 import vn.root.domain.repository.PagingRepository
+import javax.inject.Inject
 
-class PagingRepositoryImpl(
-	private val apiService: ApiService,
+class PagingRepositoryImpl @Inject constructor(
+	@AnoRetrofitApiService private val apiService: ApiService,
 	private val itemDao: ItemDao,
 ) : PagingRepository {
 	
-	override suspend fun getPagingNetwork(): Flow<PagingData<ItemModel>> = Pager(
+	override  fun getPagingNetwork(): Flow<PagingData<ItemModel>> = Pager(
 		config = PagingConfig(15),
 	) {
 		object : PagingByNetworkDataSource<ItemRaw, ItemModel>() {
@@ -38,7 +40,7 @@ class PagingRepositoryImpl(
 		}
 	}.flow
 	
-	override suspend fun getPagingLocal(): Flow<PagingData<ItemModel>> = Pager(
+	override  fun getPagingLocal(): Flow<PagingData<ItemModel>> = Pager(
 		config = PagingConfig(15),
 	) {
 		object : PagingByLocalDataSource<ItemRaw, ItemModel>() {

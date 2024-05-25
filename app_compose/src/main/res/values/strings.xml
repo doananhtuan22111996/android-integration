@@ -10,4 +10,7 @@
     <string name="search">Search</string>
     <string name="home">Home</string>
     <string name="account">Account</string>
+    <string name="accessibility">Accessibility</string>
+    <string name="retry">Retry</string>
+    <string name="unknown_error">Unknown error</string>
 </resources>

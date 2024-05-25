@@ -10,6 +10,7 @@ import vn.root.app.pages.workflow.right.RightViewModel
 import vn.root.app.pages.workflow.home.HomeViewModel
 import vn.root.app.pages.workflow.left.LeftViewModel
 
+@Deprecated("Migrating to Hilt")
 internal object AppModules {
 	val applicationModules = module(createdAtStart = true) {
 		single { NetworkChange(androidContext()) }

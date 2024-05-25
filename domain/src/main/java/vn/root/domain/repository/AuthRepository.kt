@@ -6,8 +6,8 @@ import vn.root.domain.model.TokenModel
 
 interface AuthRepository {
 
-    suspend fun login(): Flow<ResultModel<TokenModel>>
+     fun login(): Flow<ResultModel<TokenModel>>
 
-    suspend fun logout(): Flow<ResultModel<Nothing>>
+     fun logout(): Flow<ResultModel<Nothing>>
 
 }

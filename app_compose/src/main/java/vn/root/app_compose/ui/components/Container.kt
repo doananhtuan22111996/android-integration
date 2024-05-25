@@ -3,6 +3,7 @@ package vn.root.app_compose.ui.components
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FabPosition
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberTopAppBarState
@@ -17,6 +18,9 @@ fun Container(
 	navigationIcon: @Composable () -> Unit = {},
 	actions: @Composable RowScope.() -> Unit = {},
 	bottomBar: @Composable () -> Unit = {},
+	snackbarHost: @Composable () -> Unit = {},
+	floatingActionButton: @Composable () -> Unit = {},
+	floatingActionButtonPosition: FabPosition = FabPosition.End,
 	content: @Composable (PaddingValues) -> Unit,
 ) {
 	val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
@@ -30,6 +34,9 @@ fun Container(
 			)
 		},
 		bottomBar = bottomBar,
+		snackbarHost = snackbarHost,
+		floatingActionButton = floatingActionButton,
+		floatingActionButtonPosition = floatingActionButtonPosition,
 		content = content,
 	)
 }

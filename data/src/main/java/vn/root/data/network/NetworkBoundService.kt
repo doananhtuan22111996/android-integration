@@ -3,16 +3,15 @@ package vn.root.data.network
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import retrofit2.Response
 import timber.log.Timber
-import vn.root.data.Config.ErrorCode.CODE_200
-import vn.root.data.Config.ErrorCode.CODE_201
-import vn.root.data.Config.ErrorCode.CODE_204
-import vn.root.data.Config.ErrorCode.CODE_999
 import vn.root.data.model.ObjectResponse
 import vn.root.domain.model.ResultModel
+import vn.root.domain.model.TypeException
+import java.net.HttpURLConnection.HTTP_BAD_GATEWAY
 
 abstract class NetworkBoundService<RequestType, ResultType>(private val dispatcher: CoroutineDispatcher = Dispatchers.IO) {
 	
@@ -24,44 +23,33 @@ abstract class NetworkBoundService<RequestType, ResultType>(private val dispatch
 	 * */
 	fun build() = flow {
 		emit(ResultModel.Loading)
-		emit(
-			fetchFromNetwork() ?: ResultModel.AppException(
-				code = CODE_999, message = "Network Somethings wrong!"
-			)
-		)
+		emit(fetchFromNetwork())
+		delay(200) // Small delay to ensure all of the value emitted by the flow is consumed
 		emit(ResultModel.Done)
 	}.flowOn(dispatcher)
 	
 	/**
 	 * This Func handle response from Network [fetchFromNetwork].
 	 */
-	private suspend fun fetchFromNetwork(): ResultModel<ResultType>? {
+	private suspend fun fetchFromNetwork(): ResultModel<ResultType> {
 		Timber.i(tag, "Fetch data from network")
-		val result: ResultModel<ResultType>?
 		val apiResponse = onApi()
-		if (apiResponse.isSuccessful) {
+		val result = if (apiResponse.isSuccessful) {
 			val body = apiResponse.body()
-			result = when (apiResponse.code()) {
-				CODE_200, CODE_201, CODE_204 -> {
-					processResponse(body)
-				}
-				
-				else -> {
-					ResultModel.AppException(
-						code = apiResponse.code(), message = apiResponse.message()
-					)
-				}
-			}
+			processResponse(body)
 		} else {
-			result = try {
-				Gson().fromJson(
-					apiResponse.errorBody()?.toString(), ResultModel.AppException::class.java
-				) ?: ResultModel.AppException(
-					code = CODE_999, message = "Network Somethings wrong!"
+			try {
+				val obj = Gson().fromJson(
+					apiResponse.errorBody()?.string(), ObjectResponse::class.java
+				)
+				ResultModel.AppException(
+					type = TypeException.Network(httpCode = apiResponse.code()),
+					message = obj.metadata?.message
 				)
 			} catch (e: Exception) {
 				ResultModel.AppException(
-					code = CODE_999, message = "Network Somethings wrong! -- ${e.message}"
+					type = TypeException.Network(httpCode = HTTP_BAD_GATEWAY),
+					message = "Network Somethings wrong! -- ${e.message}"
 				)
 			}
 		}
@@ -71,5 +59,4 @@ abstract class NetworkBoundService<RequestType, ResultType>(private val dispatch
 	abstract suspend fun onApi(): Response<ObjectResponse<RequestType>>
 	
 	abstract suspend fun processResponse(request: ObjectResponse<RequestType>?): ResultModel.Success<ResultType>
-	
 }
