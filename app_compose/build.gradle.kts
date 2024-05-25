@@ -85,6 +85,7 @@ android {
 			}
 			println("application.id: -----> " + appProperties.getProperty("application.id"))
 			println("application.name: -----> " + appProperties.getProperty("application.name"))
+// TODO conflict with MDC-Android application_id. Don't care about that, just use default
 //			flavor.applicationId = appProperties.getProperty("application.id")
 //			flavor.manifestPlaceholders["applicationName"] =
 //				appProperties.getProperty("application.name")

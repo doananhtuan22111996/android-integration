@@ -7,19 +7,12 @@ import java.util.regex.Pattern
 plugins {
 	alias(libs.plugins.androidApplication)
 	alias(libs.plugins.jetbrainsKotlinAndroid)
+	alias(libs.plugins.androidHilt)
 	id("org.jetbrains.kotlin.kapt")
+	alias(libs.plugins.ksp)
 	alias(libs.plugins.googleService)
 	alias(libs.plugins.firebaseCrashlytics)
 }
-
-// Load keystore
-val keystorePropertiesFileDev = rootProject.file("keystore.dev.properties")
-val keystorePropertiesDev = Properties()
-keystorePropertiesDev.load(FileInputStream(keystorePropertiesFileDev))
-
-val keystorePropertiesFileProd = rootProject.file("keystore.prod.properties")
-val keystorePropertiesProd = Properties()
-keystorePropertiesProd.load(FileInputStream(keystorePropertiesFileProd))
 
 val getCurrentFlavor = {
 	val tskReqStr: String = gradle.startParameter.taskRequests.toString()
@@ -55,12 +48,13 @@ android {
 	
 	signingConfigs {
 		create(getCurrentFlavor()) {
-			val keystoreProperties =
-				if (this.name == "prod") keystorePropertiesProd else keystorePropertiesDev
-			storeFile = file(keystoreProperties.getProperty("KEY_FILE"))
-			storePassword = keystoreProperties.getProperty("KEY_PASS")
-			keyAlias = keystoreProperties.getProperty("KEY_ALIAS")
-			keyPassword = keystoreProperties.getProperty("KEY_PASS")
+			val appProperties = Properties().apply {
+				load(FileInputStream(rootProject.file("env.${this@create.name}.properties")))
+			}
+			storeFile = file(appProperties.getProperty("keystore.path"))
+			storePassword = appProperties.getProperty("keystore.pass")
+			keyAlias = appProperties.getProperty("keystore.alias")
+			keyPassword = appProperties.getProperty("keystore.pass")
 		}
 	}
 	
@@ -134,13 +128,17 @@ dependencies {
 	implementation(libs.androidx.paging.runtime)
 	implementation(libs.androidx.navigation.fragment.ktx)
 	implementation(libs.androidx.navigation.ui.ktx)
+	implementation(libs.androidx.lifecycle.viewmodel)
+	implementation(libs.androidx.hilt)
+	ksp(libs.androidx.hilt.compiler)
+	
 	implementation(libs.google.material)
 	implementation(platform(libs.google.firebase.bom))
 	implementation(libs.google.firebase.analytics)
 	implementation(libs.google.gson)
 	implementation(libs.load.images)
-	implementation(libs.di.koin)
 	implementation(libs.logger.timber)
+	
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)

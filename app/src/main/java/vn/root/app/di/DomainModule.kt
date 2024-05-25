@@ -1,4 +1,4 @@
-package vn.root.app_compose.di
+package vn.root.app.di
 
 import dagger.Module
 import dagger.Provides

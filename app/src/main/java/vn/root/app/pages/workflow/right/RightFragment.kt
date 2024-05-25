@@ -4,25 +4,27 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.activityViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
 import vn.root.app.base.BaseFragment
 import vn.root.app.base.PagingLoadStateAdapter
 import vn.root.app.databinding.FragmentLeftRightBinding
 import vn.root.app.pages.root.RootViewModel
 
+@AndroidEntryPoint
 class RightFragment : BaseFragment<RootViewModel, RightViewModel, FragmentLeftRightBinding>() {
 	
 	private lateinit var adapter: RightAdapter
 	
-	override val sharedViewModel: RootViewModel by activityViewModel()
+	override val sharedViewModel: RootViewModel by activityViewModels()
 	
-	override val viewModel: RightViewModel by viewModel()
+	override val viewModel: RightViewModel by viewModels()
 	
 	override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLeftRightBinding =
 		FragmentLeftRightBinding::inflate

@@ -4,23 +4,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.activityViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import vn.root.app.R
 import vn.root.app.base.BaseFragment
 import vn.root.app.databinding.FragmentLoginBinding
 import vn.root.app.pages.root.RootViewModel
 import vn.root.domain.model.ResultModel
 
+@AndroidEntryPoint
 class LoginFragment : BaseFragment<RootViewModel, LoginViewModel, FragmentLoginBinding>() {
 	
-	override val sharedViewModel: RootViewModel by activityViewModel()
+	override val sharedViewModel: RootViewModel by activityViewModels()
 	
-	override val viewModel: LoginViewModel by viewModel()
+	override val viewModel: LoginViewModel by viewModels()
 	
 	override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding =
 		FragmentLoginBinding::inflate

@@ -4,24 +4,27 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.ui.setupWithNavController
-import org.koin.androidx.viewmodel.ext.android.activityViewModel
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 import vn.root.app.R
 import vn.root.app.base.BaseFragment
 import vn.root.app.databinding.FragmentHomeBinding
 import vn.root.app.pages.root.RootViewModel
 import vn.root.app.pages.workflow.left.LeftFragment
 import vn.root.app.pages.workflow.right.RightFragment
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<RootViewModel, HomeViewModel, FragmentHomeBinding>() {
 	
 	private val leftFragment = LeftFragment()
 	private val rightFragment = RightFragment()
 	
-	override val sharedViewModel: RootViewModel by activityViewModel()
+	override val sharedViewModel: RootViewModel by activityViewModels()
 	
-	override val viewModel: HomeViewModel by viewModel()
+	override val viewModel: HomeViewModel by viewModels()
 	
 	override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding =
 		FragmentHomeBinding::inflate

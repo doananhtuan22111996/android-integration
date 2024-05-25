@@ -1,15 +1,17 @@
 package vn.root.app.pages.root
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import dagger.hilt.android.AndroidEntryPoint
 import vn.root.app.R
 import vn.root.app.base.BaseActivity
 
+@AndroidEntryPoint
 class RootActivity : BaseActivity<RootViewModel>() {
 	
-	override val viewModel: RootViewModel by viewModel()
+	override val viewModel: RootViewModel by viewModels()
 	
 	override fun onCreate(savedInstanceState: Bundle?) {
 		installSplashScreen()
