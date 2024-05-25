@@ -143,10 +143,10 @@ dependencies {
 	implementation(libs.androidx.navigation.compose)
 	implementation(libs.androidx.window.size)
 	implementation(libs.androidx.viewmodel.compose)
+	implementation(libs.androidx.paging.compose)
 	implementation(libs.androidx.hilt)
 	implementation(libs.androidx.navigation.hilt.compose)
 	ksp(libs.androidx.hilt.compiler)
-	implementation(libs.logger.timber)
 	
 	testImplementation(libs.junit)
 	androidTestImplementation(libs.androidx.junit)
@@ -155,4 +155,6 @@ dependencies {
 	androidTestImplementation(libs.androidx.ui.test.junit4)
 	debugImplementation(libs.androidx.ui.tooling)
 	debugImplementation(libs.androidx.ui.test.manifest)
+	
+	implementation(libs.logger.timber)
 }

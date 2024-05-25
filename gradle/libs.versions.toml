@@ -4,7 +4,7 @@ minSdk = "26"
 targetSdk = "34"
 versionCode = "1"
 versionName = "4.0.0"
-agp = "8.4.0"
+agp = "8.4.1"
 kotlin = "1.9.24"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -28,7 +28,7 @@ securityCrypto = "1.1.0-alpha06"
 retrofit = "2.10.0"
 swiperefreshlayout = "1.1.0"
 navigation = "2.7.7"
-navigationHilt = "1.0.0"
+navigationHilt = "1.2.0"
 gson = "2.10.1"
 ksp = "1.9.24-1.0.20"
 # Jetpack compose
@@ -87,6 +87,7 @@ androidx-window-size = { group = "androidx.compose.material3", name = "material3
 androidx-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModelCompose" }
 androidx-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 androidx-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
 javax = { group = "javax.inject", name = "javax.inject", version.ref = "javax" }
 
 [plugins]

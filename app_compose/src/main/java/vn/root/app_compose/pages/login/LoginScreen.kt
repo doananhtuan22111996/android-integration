@@ -31,13 +31,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import vn.root.app_compose.R
 import vn.root.app_compose.ui.components.Container
 import vn.root.domain.model.ResultModel
 
+@Preview(showBackground = true)
 @Composable
-fun LoginScreen(viewModel: LoginViewModel, onBackPress: () -> Unit = {}) {
+fun LoginScreenPreview() {
+	LoginScreen()
+}
+
+@Composable
+fun LoginScreen(onBackPress: () -> Unit = {}, onLoginSuccess: () -> Unit = {}) {
+	val viewModel: LoginViewModel = hiltViewModel()
 	val state by viewModel.loginState.collectAsState(ResultModel.Done)
 	var alertSuccessDialog by rememberSaveable {
 		mutableStateOf(false)
@@ -95,11 +104,13 @@ fun LoginScreen(viewModel: LoginViewModel, onBackPress: () -> Unit = {}) {
 			if (alertSuccessDialog) {
 				LoginSuccessDialog(onDismissRequest = {
 					alertSuccessDialog = false
+				}, onConfirmRequest = {
+					alertSuccessDialog = false
+					onLoginSuccess()
 				})
 			}
 			if (alertFailureDialog.first) {
-				LoginFailureDialog(
-					message = alertFailureDialog.second ?: "Some things wrong",
+				LoginFailureDialog(message = alertFailureDialog.second ?: "Some things wrong",
 					onDismissRequest = {
 						alertFailureDialog = Pair(false, null)
 					})
@@ -109,7 +120,7 @@ fun LoginScreen(viewModel: LoginViewModel, onBackPress: () -> Unit = {}) {
 }
 
 @Composable
-private fun LoginSuccessDialog(onDismissRequest: () -> Unit) {
+private fun LoginSuccessDialog(onDismissRequest: () -> Unit, onConfirmRequest: () -> Unit = {}) {
 	AlertDialog(
 		icon = {
 			Icon(
@@ -127,11 +138,9 @@ private fun LoginSuccessDialog(onDismissRequest: () -> Unit) {
 				modifier = Modifier.fillMaxWidth()
 			)
 		},
-		onDismissRequest = {
-			onDismissRequest()
-		},
+		onDismissRequest = onDismissRequest,
 		confirmButton = {
-			TextButton(onClick = { onDismissRequest() }) {
+			TextButton(onClick = onConfirmRequest) {
 				Text("Confirm")
 			}
 		},
@@ -155,9 +164,9 @@ private fun LoginFailureDialog(message: String, onDismissRequest: () -> Unit) {
 				text = message
 			)
 		},
-		onDismissRequest = { onDismissRequest() },
+		onDismissRequest = onDismissRequest,
 		confirmButton = {
-			TextButton(onClick = { onDismissRequest() }) {
+			TextButton(onClick = onDismissRequest) {
 				Text("Confirm")
 			}
 		},

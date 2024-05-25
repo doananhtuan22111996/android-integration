@@ -11,6 +11,7 @@ import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.NavigationRailItem
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import vn.root.app_compose.R
@@ -24,7 +25,7 @@ data class NavElement(
 
 @Composable
 fun AppBottomNavigationBar(items: List<NavElement>) {
-	NavigationBar {
+	NavigationBar(containerColor = Color.Transparent) {
 		for (element in items) NavigationBarItem(
 			selected = element.selected, onClick = element.onClick,
 			icon = element.icon,

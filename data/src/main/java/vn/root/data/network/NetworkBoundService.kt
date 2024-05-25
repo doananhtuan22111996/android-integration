@@ -24,7 +24,7 @@ abstract class NetworkBoundService<RequestType, ResultType>(private val dispatch
 	fun build() = flow {
 		emit(ResultModel.Loading)
 		emit(fetchFromNetwork())
-		delay(100) // Small delay to ensure all of the value emitted by the flow is consumed
+		delay(200) // Small delay to ensure all of the value emitted by the flow is consumed
 		emit(ResultModel.Done)
 	}.flowOn(dispatcher)
 	
@@ -39,11 +39,12 @@ abstract class NetworkBoundService<RequestType, ResultType>(private val dispatch
 			processResponse(body)
 		} else {
 			try {
-				Gson().fromJson(
-					apiResponse.errorBody()?.toString(), ResultModel.AppException::class.java
-				) ?: ResultModel.AppException(
+				val obj = Gson().fromJson(
+					apiResponse.errorBody()?.string(), ObjectResponse::class.java
+				)
+				ResultModel.AppException(
 					type = TypeException.Network(httpCode = apiResponse.code()),
-					message = "Network Somethings wrong!"
+					message = obj.metadata?.message
 				)
 			} catch (e: Exception) {
 				ResultModel.AppException(

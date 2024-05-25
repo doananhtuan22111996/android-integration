@@ -1,7 +1,6 @@
 package vn.root.data.di.network
 
 import android.content.Context
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +27,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object NetworkModule {
+internal class NetworkModule {
 	
 	@Provides
 	@Singleton

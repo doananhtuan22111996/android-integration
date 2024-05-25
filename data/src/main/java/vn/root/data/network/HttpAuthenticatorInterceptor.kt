@@ -7,15 +7,13 @@ import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
 import okhttp3.Route
-import okhttp3.internal.http.HTTP_OK
-import okhttp3.internal.http.HTTP_UNAUTHORIZED
 import okio.use
 import timber.log.Timber
 import vn.root.data.Config
 import vn.root.data.local.PreferenceWrapper
 import vn.root.data.model.ObjectResponse
 import vn.root.data.model.TokenRaw
-import javax.inject.Inject
+import java.net.HttpURLConnection.HTTP_UNAUTHORIZED
 
 class HttpAuthenticatorInterceptor(
 	private val preferenceWrapper: PreferenceWrapper
@@ -34,9 +32,8 @@ class HttpAuthenticatorInterceptor(
 					preferenceWrapper.getString(Config.SharePreference.KEY_AUTH_TOKEN, "")
 				val builder = response.request.newBuilder()
 				if (newToken.isNotEmpty()) {
-					// TODO change Author method depend by context
-//        builder.addHeader("Authorization", "Bearer $newToken")
-//					builder.addHeader("Authorization", basicAuth(newToken))
+					// TODO change Author method depend by context. builder.addHeader("Authorization", "Bearer $newToken")
+					builder.addHeader("Authorization", newToken)
 				}
 				return builder.build()
 			} catch (e: Exception) {
@@ -47,23 +44,22 @@ class HttpAuthenticatorInterceptor(
 		return null
 	}
 	
-	private fun refreshToken(refreshToken: String) {
+	private fun refreshToken(refreshToken: String, onCallBack: () -> Unit = {}) {
 		val request = Request.Builder().url("${Config.mainDomain}/refreshToken")
 			.post(refreshToken.toRequestBody()).build()
 		OkHttpClient().newBuilder().build().newCall(request).execute().use { response ->
-			if (response.isSuccessful && response.code == HTTP_OK) {
+			if (response.isSuccessful) {
 				val objResponse =
 					Gson().fromJson(response.body.string(), ObjectResponse::class.java)
-				val tokenRaw = Gson().fromJson(
-					Gson().toJson(objResponse.data), TokenRaw::class.java
-				) ?: null
-				Timber.e("Refresh Token Success: ${tokenRaw?.refreshToken}")
+				val tokenRaw = objResponse.data as? TokenRaw
+				Timber.d("Refresh Token Success: ${tokenRaw?.refreshToken}")
 				preferenceWrapper.saveString(
 					Config.SharePreference.KEY_AUTH_TOKEN, tokenRaw?.token ?: ""
 				)
 				preferenceWrapper.saveString(
 					Config.SharePreference.KEY_AUTH_REFRESH_TOKEN, tokenRaw?.refreshToken ?: ""
 				)
+				onCallBack()
 			} else {
 				Timber.e("Refresh Token Failure: ${response.message}")
 			}

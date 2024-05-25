@@ -4,9 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -55,7 +53,7 @@ class LeftFragment : BaseFragment<RootViewModel, LeftViewModel, FragmentLeftRigh
 		viewLifecycleOwner.lifecycleScope.launch {
 			adapter.loadStateFlow.collect { loadStates ->
 				Timber.d("loadStateFlow $loadStates")
-				viewBinding.swRefresh.isRefreshing = loadStates.refresh is LoadState.Loading
+					viewBinding.swRefresh.isRefreshing = loadStates.refresh is LoadState.Loading
 			}
 		}
 	}

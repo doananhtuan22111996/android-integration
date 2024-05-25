@@ -4,7 +4,6 @@ import java.util.Properties
 
 plugins {
 	alias(libs.plugins.androidLibrary)
-	alias(libs.plugins.androidRoom)
 	alias(libs.plugins.jetbrainsKotlinAndroid)
 	alias(libs.plugins.ksp)
 }
@@ -64,10 +63,6 @@ android {
 	
 	buildFeatures {
 		buildConfig = true
-	}
-	
-	room {
-		schemaDirectory("$projectDir/schemas")
 	}
 }
 

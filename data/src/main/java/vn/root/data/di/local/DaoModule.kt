@@ -1,18 +1,18 @@
 package vn.root.data.di.local
 
-import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import vn.root.data.local.AppDatabase
 import vn.root.data.local.dao.ItemDao
-import vn.root.data.local.dao.ItemDao_Impl
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class DaoModule {
+internal class DaoModule {
 	
-	@Binds
+	@Provides
 	@Singleton
-	abstract fun bindItemDao(itemDaoImpl: ItemDao_Impl): ItemDao
+	fun provideItemDao(appDatabase: AppDatabase): ItemDao = appDatabase.itemDao()
 }

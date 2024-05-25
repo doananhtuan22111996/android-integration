@@ -11,6 +11,7 @@ import vn.root.app_compose.pages.ExerciseThree
 import vn.root.app_compose.pages.ExerciseTwo
 import vn.root.app_compose.pages.Main
 import vn.root.app_compose.pages.OnBoarding
+import vn.root.app_compose.pages.home.HomeScreen
 import vn.root.app_compose.pages.login.LoginScreen
 import vn.root.app_compose.pages.login.LoginViewModel
 
@@ -20,6 +21,7 @@ const val EXERCISE_ONE_ROUTE = "exercise_one"
 const val EXERCISE_TWO_ROUTE = "exercise_two"
 const val EXERCISE_THREE_ROUTE = "exercise_three"
 const val LOGIN_ROUTE = "login"
+const val HOME_ROUTE = "home"
 
 @Composable
 fun RouteNavHost(windowSizeClass: WindowSizeClass, navController: NavHostController) {
@@ -58,10 +60,14 @@ fun RouteNavHost(windowSizeClass: WindowSizeClass, navController: NavHostControl
 			})
 		}
 		composable(LOGIN_ROUTE) {
-			val viewModel: LoginViewModel = hiltViewModel()
-			LoginScreen(viewModel = viewModel, onBackPress = {
+			LoginScreen(onBackPress = {
 				navController.navigateUp()
+			}, onLoginSuccess = {
+				navController.navigate(HOME_ROUTE)
 			})
+		}
+		composable(HOME_ROUTE) {
+			HomeScreen(onBackPress = { navController.navigateUp() })
 		}
 	}
 }
