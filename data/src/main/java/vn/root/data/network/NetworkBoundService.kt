@@ -3,6 +3,7 @@ package vn.root.data.network
 import com.google.gson.Gson
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onCompletion
@@ -24,6 +25,7 @@ abstract class NetworkBoundService<RequestType, ResultType>(private val dispatch
      * */
     fun build() = flow {
         emit(fetchFromNetwork())
+        delay(200) // Small delay to ensure all of the value emitted by the flow is consumed
     }.flowOn(dispatcher).onStart {
         emit(ResultModel.Loading)
     }.onCompletion {
