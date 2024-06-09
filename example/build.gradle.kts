@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    implementation(libs.androidx.android.coroutines)
+    implementation(libs.androidx.coroutines)
 }

@@ -147,9 +147,13 @@ dependencies {
 	implementation(libs.androidx.paging.compose)
 	implementation(libs.androidx.hilt)
 	implementation(libs.androidx.navigation.hilt.compose)
+	implementation(libs.androidx.coroutines)
 	ksp(libs.androidx.hilt.compiler)
 	
 	testImplementation(libs.junit)
+	testImplementation(libs.androidx.coroutines.test)
+	testImplementation(libs.mockito)
+	testImplementation(libs.mockito.kotlin)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
 	androidTestImplementation(platform(libs.androidx.compose.bom))

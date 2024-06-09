@@ -82,4 +82,8 @@ dependencies {
 	implementation(libs.retrofit.gson)
 	implementation(libs.logger.timber)
 	implementation(libs.logger.okhttp)
+
+	testImplementation(libs.androidx.coroutines.test)
+	testImplementation(libs.mockito)
+	testImplementation(libs.mockito.kotlin)
 }
