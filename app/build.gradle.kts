@@ -8,8 +8,7 @@ plugins {
 	alias(libs.plugins.androidApplication)
 	alias(libs.plugins.jetbrainsKotlinAndroid)
 	alias(libs.plugins.androidHilt)
-	id("org.jetbrains.kotlin.kapt")
-	alias(libs.plugins.ksp)
+	id("kotlin-kapt")
 	alias(libs.plugins.googleService)
 	alias(libs.plugins.firebaseCrashlytics)
 }
@@ -130,18 +129,29 @@ dependencies {
 	implementation(libs.androidx.navigation.ui.ktx)
 	implementation(libs.androidx.lifecycle.viewmodel)
 	implementation(libs.androidx.coroutines)
-	testImplementation(libs.androidx.coroutines.test)
 	implementation(libs.androidx.hilt)
-	ksp(libs.androidx.hilt.compiler)
-	
+	kapt(libs.androidx.hilt.compiler)
+
 	implementation(libs.google.material)
 	implementation(platform(libs.google.firebase.bom))
 	implementation(libs.google.firebase.analytics)
 	implementation(libs.google.gson)
 	implementation(libs.load.images)
 	implementation(libs.logger.timber)
-	
+
+	testImplementation(libs.androidx.coroutines.test)
+	testImplementation(libs.androidx.hilt.testing)
+	kaptTest(libs.androidx.hilt.testing)
 	testImplementation(libs.junit)
+	testImplementation(libs.mockito)
+	testImplementation(libs.mockito.kotlin)
+	androidTestImplementation(libs.androidx.hilt.testing)
+	kaptAndroidTest(libs.androidx.hilt.testing)
 	androidTestImplementation(libs.androidx.junit)
 	androidTestImplementation(libs.androidx.espresso.core)
+}
+
+// Allow references to generated code
+kapt {
+	correctErrorTypes = true
 }

@@ -68,9 +68,6 @@ android {
 
 dependencies {
 	implementation(project(":domain"))
-	testImplementation(libs.junit)
-	androidTestImplementation(libs.androidx.junit)
-	androidTestImplementation(libs.androidx.espresso.core)
 	implementation(libs.androidx.paging.common)
 	implementation(libs.androidx.room.runtime)
 	ksp(libs.androidx.room.compiler)
@@ -84,6 +81,9 @@ dependencies {
 	implementation(libs.logger.okhttp)
 
 	testImplementation(libs.androidx.coroutines.test)
+	testImplementation(libs.junit)
 	testImplementation(libs.mockito)
 	testImplementation(libs.mockito.kotlin)
+	androidTestImplementation(libs.androidx.junit)
+	androidTestImplementation(libs.androidx.espresso.core)
 }
