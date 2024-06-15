@@ -22,7 +22,7 @@ class PagingRepositoryImpl @Inject constructor(
 	private val itemDao: ItemDao,
 ) : PagingRepository {
 	
-	override  fun getPagingNetwork(): Flow<PagingData<ItemModel>> = Pager(
+	override fun getPagingNetwork(): Flow<PagingData<ItemModel>> = Pager(
 		config = PagingConfig(15),
 	) {
 		object : PagingByNetworkDataSource<ItemRaw, ItemModel>() {
@@ -40,7 +40,7 @@ class PagingRepositoryImpl @Inject constructor(
 		}
 	}.flow
 	
-	override  fun getPagingLocal(): Flow<PagingData<ItemModel>> = Pager(
+	override fun getPagingLocal(): Flow<PagingData<ItemModel>> = Pager(
 		config = PagingConfig(15),
 	) {
 		object : PagingByLocalDataSource<ItemRaw, ItemModel>() {

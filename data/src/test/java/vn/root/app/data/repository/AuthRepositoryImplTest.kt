@@ -1,6 +1,6 @@
 package vn.root.app.data.repository
 
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.test.runTest
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.ResponseBody.Companion.toResponseBody
 import org.junit.Assert
@@ -40,7 +40,7 @@ class AuthRepositoryImplTest {
     }
 
     @Test
-    fun testLogin_Return_ResultModel_Success() = runBlocking {
+    fun login_return_resultModel_success() = runTest {
         val mTokenRaw = TokenRaw(token = "This is token", refreshToken = "This is refreshToken")
         Mockito.`when`(service.login()).thenReturn(
             Response.success(ObjectResponse(data = mTokenRaw))
@@ -63,7 +63,7 @@ class AuthRepositoryImplTest {
     }
 
     @Test
-    fun testLogin_Return_ResultModel_Exception() = runBlocking {
+    fun login_return_resultModel_exception() = runTest {
         val mError =
             "{\n" + "  \"metadata\": {\n" + "    \"status\": false,\n" + "    \"message\": \"testLogin_Return_ResultModel_Exception\"\n" + "  }\n" + "}"
         val mAppException = ResultModel.AppException(
@@ -86,7 +86,7 @@ class AuthRepositoryImplTest {
     }
 
     @Test
-    fun testLogin_Return_ResultModel_Exception_SomethingsWrong() = runBlocking {
+    fun login_return_resultModel_exception_network_somethings_wrong() = runTest {
         val mError = ""
         val mAppException = ResultModel.AppException(
             type = TypeException.Network(httpCode = 502), message = "Network Somethings wrong!"
