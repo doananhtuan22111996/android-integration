@@ -129,6 +129,8 @@ dependencies {
 	implementation(libs.androidx.navigation.fragment.ktx)
 	implementation(libs.androidx.navigation.ui.ktx)
 	implementation(libs.androidx.lifecycle.viewmodel)
+	implementation(libs.androidx.coroutines)
+	testImplementation(libs.androidx.coroutines.test)
 	implementation(libs.androidx.hilt)
 	ksp(libs.androidx.hilt.compiler)
 	
