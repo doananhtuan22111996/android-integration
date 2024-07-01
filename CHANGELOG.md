@@ -1,6 +1,13 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+### Code Refactoring
+- Network Bound Service - flow with onStart, onCompletion ([#28](https://github.com/doananhtuan22111996/android_architecture/issues/28))
+
+### Features
+- migrate version libs ([#32](https://github.com/doananhtuan22111996/android_architecture/issues/32))
+- Release v4.0.0 ([#27](https://github.com/doananhtuan22111996/android_architecture/issues/27))
+
 
 <a name="prod/4.0.0/1"></a>
 ## [prod/4.0.0/1] - 2024-05-25
@@ -10,7 +17,12 @@
 
 <a name="release/v4.0.0"></a>
 ## [release/v4.0.0] - 2024-05-25
-### Feat
+### Code Refactoring
+- Paging Flow ([#22](https://github.com/doananhtuan22111996/android_architecture/issues/22))
+- Theme - Material Kit - Color and Card ([#11](https://github.com/doananhtuan22111996/android_architecture/issues/11))
+- Adaptive Icon ([#6](https://github.com/doananhtuan22111996/android_architecture/issues/6))
+
+### Features
 - MDC-Android - migrate koin to hilt ([#26](https://github.com/doananhtuan22111996/android_architecture/issues/26))
 - jetpack compose - workflow - login and paging feature ([#25](https://github.com/doananhtuan22111996/android_architecture/issues/25))
 - Codelab - jecpack compose - Exercise 3 completed - state ([#24](https://github.com/doananhtuan22111996/android_architecture/issues/24))
@@ -30,15 +42,10 @@
 - Theme - Material Design colors ([#8](https://github.com/doananhtuan22111996/android_architecture/issues/8))
 - Best Practice Splash Screen ([#7](https://github.com/doananhtuan22111996/android_architecture/issues/7))
 
-### Refactor
-- Paging Flow ([#22](https://github.com/doananhtuan22111996/android_architecture/issues/22))
-- Theme - Material Kit - Color and Card ([#11](https://github.com/doananhtuan22111996/android_architecture/issues/11))
-- Adaptive Icon ([#6](https://github.com/doananhtuan22111996/android_architecture/issues/6))
-
 
 <a name="release/v3.0.1"></a>
 ## [release/v3.0.1] - 2024-04-18
-### Feat
+### Features
 - Update content CHANGELOG.md and README.md ([#5](https://github.com/doananhtuan22111996/android_architecture/issues/5))
 - Migrate Groovy to Kotlin gradle ([#4](https://github.com/doananhtuan22111996/android_architecture/issues/4))
 
@@ -48,7 +55,7 @@
 
 <a name="dev/3.0.0/1"></a>
 ## [dev/3.0.0/1] - 2024-04-17
-### Feat
+### Features
 - Migrate Groovy to Kotlin gradle
 
 
@@ -57,7 +64,17 @@
 
 <a name="dev/2.0.0/3"></a>
 ## dev/2.0.0/3 - 2024-04-16
-### Feat
+### Bug Fixes
+- README set TODO, what's next
+
+### Code Refactoring
+- Devops - Build CI/CD on Mac M1
+- change sonar login
+- remove keystore file in source, update CI/CD with new decodeKeystore job
+- update keystore for android skeleton
+- remove Travel Domain - change to Alia Domain
+
+### Features
 - Create new template CHANGELOG
 - Migration - New version dependencies, remove all relative to GeekUp, rename application id, create new firebase
 - remove relative to GEEK Up
@@ -75,25 +92,6 @@
 - Setup CI .gitlab-ci.yml file with SonarQube
 - Setup CI .gitlab-ci.yml file with SonarQube
 - auto refresh token - Token Authenticator
-
-### Fix
-- README set TODO, what's next
-
-### Merge_squad
-- update .gitlab-ci.yml
-
-### Merge_squash
-- release v1.0.5
-
-### Pref
-- setup + config template CHANGELOG
-
-### Refactor
-- Devops - Build CI/CD on Mac M1
-- change sonar login
-- remove keystore file in source, update CI/CD with new decodeKeystore job
-- update keystore for android skeleton
-- remove Travel Domain - change to Alia Domain
 
 ### Pull Requests
 - Merge pull request [#2](https://github.com/doananhtuan22111996/android_architecture/issues/2) from doananhtuan22111996/example

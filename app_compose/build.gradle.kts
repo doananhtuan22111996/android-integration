@@ -66,11 +66,13 @@ android {
 			isDebuggable = true
 			isShrinkResources = false
 			isMinifyEnabled = false
+			enableUnitTestCoverage = true
 		}
 		release {
 			isDebuggable = false
 			isShrinkResources = true
 			isMinifyEnabled = true
+			enableUnitTestCoverage = true
 			proguardFiles(
 				getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 			)

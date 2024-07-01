@@ -1,0 +1,149 @@
+public class vn/root/domain/model/BaseModel {
+	public fun <init> ()V
+}
+
+public final class vn/root/domain/model/ItemModel : vn/root/domain/model/BaseModel {
+	public fun <init> (ILjava/lang/String;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (ILjava/lang/String;)Lvn/root/domain/model/ItemModel;
+	public static synthetic fun copy$default (Lvn/root/domain/model/ItemModel;ILjava/lang/String;ILjava/lang/Object;)Lvn/root/domain/model/ItemModel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getId ()I
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class vn/root/domain/model/ResultModel {
+}
+
+public final class vn/root/domain/model/ResultModel$AppException : vn/root/domain/model/ResultModel {
+	public fun <init> (Lvn/root/domain/model/TypeException;Ljava/lang/String;)V
+	public synthetic fun <init> (Lvn/root/domain/model/TypeException;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lvn/root/domain/model/TypeException;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Lvn/root/domain/model/TypeException;Ljava/lang/String;)Lvn/root/domain/model/ResultModel$AppException;
+	public static synthetic fun copy$default (Lvn/root/domain/model/ResultModel$AppException;Lvn/root/domain/model/TypeException;Ljava/lang/String;ILjava/lang/Object;)Lvn/root/domain/model/ResultModel$AppException;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getMessage ()Ljava/lang/String;
+	public final fun getType ()Lvn/root/domain/model/TypeException;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class vn/root/domain/model/ResultModel$Done : vn/root/domain/model/ResultModel {
+	public static final field INSTANCE Lvn/root/domain/model/ResultModel$Done;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class vn/root/domain/model/ResultModel$Loading : vn/root/domain/model/ResultModel {
+	public static final field INSTANCE Lvn/root/domain/model/ResultModel$Loading;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class vn/root/domain/model/ResultModel$Success : vn/root/domain/model/ResultModel {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/Object;Ljava/lang/Integer;Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/Object;Ljava/lang/Integer;Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Object;
+	public final fun component2 ()Ljava/lang/Integer;
+	public final fun component3 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/Object;Ljava/lang/Integer;Ljava/lang/Integer;)Lvn/root/domain/model/ResultModel$Success;
+	public static synthetic fun copy$default (Lvn/root/domain/model/ResultModel$Success;Ljava/lang/Object;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Object;)Lvn/root/domain/model/ResultModel$Success;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getData ()Ljava/lang/Object;
+	public final fun getLimit ()Ljava/lang/Integer;
+	public final fun getNextPage ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class vn/root/domain/model/TokenModel : vn/root/domain/model/BaseModel {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lvn/root/domain/model/TokenModel;
+	public static synthetic fun copy$default (Lvn/root/domain/model/TokenModel;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lvn/root/domain/model/TokenModel;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getRefreshToken ()Ljava/lang/String;
+	public final fun getToken ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class vn/root/domain/model/TypeException {
+	public synthetic fun <init> (Ljava/lang/Integer;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun getHttpCode ()Ljava/lang/Integer;
+}
+
+public final class vn/root/domain/model/TypeException$Local : vn/root/domain/model/TypeException {
+	public static final field INSTANCE Lvn/root/domain/model/TypeException$Local;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class vn/root/domain/model/TypeException$Network : vn/root/domain/model/TypeException {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/Integer;)V
+	public synthetic fun <init> (Ljava/lang/Integer;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/Integer;
+	public final fun copy (Ljava/lang/Integer;)Lvn/root/domain/model/TypeException$Network;
+	public static synthetic fun copy$default (Lvn/root/domain/model/TypeException$Network;Ljava/lang/Integer;ILjava/lang/Object;)Lvn/root/domain/model/TypeException$Network;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getHttpCode ()Ljava/lang/Integer;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class vn/root/domain/repository/AuthRepository {
+	public abstract fun login ()Lkotlinx/coroutines/flow/Flow;
+	public abstract fun logout ()Lkotlinx/coroutines/flow/Flow;
+}
+
+public abstract interface class vn/root/domain/repository/PagingRepository {
+	public abstract fun getPagingLocal ()Lkotlinx/coroutines/flow/Flow;
+	public abstract fun getPagingNetwork ()Lkotlinx/coroutines/flow/Flow;
+}
+
+public abstract class vn/root/domain/usecase/BaseUseCase {
+	public fun <init> ()V
+	public abstract fun execute ([Ljava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
+}
+
+public final class vn/root/domain/usecase/LoginUseCase : vn/root/domain/usecase/BaseUseCase {
+	public fun <init> (Lvn/root/domain/repository/AuthRepository;)V
+	public fun execute ([Ljava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
+}
+
+public final class vn/root/domain/usecase/LogoutComposeUseCase : vn/root/domain/usecase/BaseUseCase {
+	public fun <init> (Lvn/root/domain/repository/AuthRepository;)V
+	public fun execute ([Ljava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
+}
+
+public abstract interface class vn/root/domain/usecase/LogoutUseCase {
+	public abstract fun logout (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class vn/root/domain/usecase/LogoutUseCaseImpl : vn/root/domain/usecase/LogoutUseCase {
+	public fun <init> (Lvn/root/domain/repository/AuthRepository;)V
+	public fun logout (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+}
+
+public final class vn/root/domain/usecase/PagingLocalUseCase : vn/root/domain/usecase/BaseUseCase {
+	public fun <init> (Lvn/root/domain/repository/PagingRepository;)V
+	public fun execute ([Ljava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
+}
+
+public final class vn/root/domain/usecase/PagingNetworkUseCase : vn/root/domain/usecase/BaseUseCase {
+	public fun <init> (Lvn/root/domain/repository/PagingRepository;)V
+	public fun execute ([Ljava/lang/Object;)Lkotlinx/coroutines/flow/Flow;
+}
+
