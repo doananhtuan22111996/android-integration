@@ -10,7 +10,6 @@ import com.google.gson.Gson
 import timber.log.Timber
 import vn.root.data.BuildConfig
 
-@Suppress("unused", "MemberVisibilityCanBePrivate")
 class PreferenceWrapper(private val context: Context) {
 	
 	private var sharedPreferences: SharedPreferences? = null

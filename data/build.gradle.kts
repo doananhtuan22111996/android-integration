@@ -6,6 +6,7 @@ plugins {
 	alias(libs.plugins.androidLibrary)
 	alias(libs.plugins.jetbrainsKotlinAndroid)
 	alias(libs.plugins.ksp)
+	alias(libs.plugins.binaryCompatibilityValidator)
 }
 
 android {
@@ -22,6 +23,7 @@ android {
 		release {
 			isJniDebuggable = false
 			isMinifyEnabled = true
+			enableUnitTestCoverage = true
 			proguardFiles(
 				getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 			)

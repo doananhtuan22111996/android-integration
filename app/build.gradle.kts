@@ -62,12 +62,14 @@ android {
 			isDebuggable = true
 			isShrinkResources = false
 			isMinifyEnabled = false
+			enableUnitTestCoverage = true
 			signingConfig = signingConfigs.getByName(getCurrentFlavor())
 		}
 		release {
 			isDebuggable = false
 			isShrinkResources = true
 			isMinifyEnabled = true
+			enableUnitTestCoverage = true
 			proguardFiles(
 				getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
 			)
