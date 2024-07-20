@@ -6,7 +6,7 @@ import vn.root.domain.model.ItemModel
 
 interface PagingRepository {
 
-     fun getPagingNetwork(): Flow<PagingData<ItemModel>>
+     fun getPagingNetwork(lang: String): Flow<PagingData<ItemModel>>
 
      fun getPagingLocal(): Flow<PagingData<ItemModel>>
 }

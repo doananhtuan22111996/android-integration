@@ -73,5 +73,8 @@
     <string name="left">Left</string>
     <string name="right">Right</string>
     <string name="home">Home</string>
+    <string name="per_app_language">Per-App Language</string>
+    <string name="english">English</string>
+    <string name="vietnamese">Vietnamese</string>
 
 </resources>

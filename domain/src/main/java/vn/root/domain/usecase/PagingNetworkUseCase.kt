@@ -7,8 +7,8 @@ import vn.root.domain.repository.PagingRepository
 import javax.inject.Inject
 
 class PagingNetworkUseCase @Inject constructor(private val repository: PagingRepository) :
-	BaseUseCase<Any, PagingData<ItemModel>>() {
-	override fun execute(vararg params: Any?): Flow<PagingData<ItemModel>> {
-		return repository.getPagingNetwork()
+	BaseUseCase<String, PagingData<ItemModel>>() {
+	override fun execute(vararg params: String?): Flow<PagingData<ItemModel>> {
+		return repository.getPagingNetwork(params[0] ?: "en")
 	}
 }
