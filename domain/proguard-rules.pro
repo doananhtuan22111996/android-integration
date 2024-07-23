@@ -20,3 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keep class vn.root.domain.** { *; }
+
+# This is generated automatically by the Android Gradle plugin.
+-dontwarn java.lang.invoke.StringConcatFactory
