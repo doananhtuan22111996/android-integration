@@ -62,4 +62,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           document: app-prod-release.zip
-          message: 🚀 New Release Published on PROD!.
+          message: 🚀 New Release Published on PROD! >>> ${{github.head_ref}}.
