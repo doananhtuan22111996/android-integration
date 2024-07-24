@@ -22,12 +22,12 @@ class PagingRepositoryImpl @Inject constructor(
 	private val itemDao: ItemDao,
 ) : PagingRepository {
 	
-	override fun getPagingNetwork(): Flow<PagingData<ItemModel>> = Pager(
+	override fun getPagingNetwork(lang: String): Flow<PagingData<ItemModel>> = Pager(
 		config = PagingConfig(15),
 	) {
 		object : PagingByNetworkDataSource<ItemRaw, ItemModel>() {
 			override suspend fun onApi(page: Int?): Response<ListResponse<ItemRaw>> =
-				apiService.getPaging(page = page ?: 1)
+				apiService.getPaging(page = page ?: 1, lang = lang)
 			
 			override suspend fun processResponse(request: ListResponse<ItemRaw>?): ListResponse<ItemModel> {
 				// Save Data to Room

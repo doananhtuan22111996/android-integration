@@ -18,5 +18,8 @@ interface ApiService {
 	suspend fun logout(): Response<ObjectResponse<Nothing>>
 	
 	@GET("/paging-page")
-	suspend fun getPaging(@Query("page") page: Int = 1): Response<ListResponse<ItemRaw>>
+	suspend fun getPaging(
+		@Query("page") page: Int = 1,
+		@Query("lang") lang: String = "en"
+	): Response<ListResponse<ItemRaw>>
 }

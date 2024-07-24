@@ -14,7 +14,6 @@ import vn.root.app.databinding.FragmentHomeBinding
 import vn.root.app.pages.root.RootViewModel
 import vn.root.app.pages.workflow.left.LeftFragment
 import vn.root.app.pages.workflow.right.RightFragment
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<RootViewModel, HomeViewModel, FragmentHomeBinding>() {
