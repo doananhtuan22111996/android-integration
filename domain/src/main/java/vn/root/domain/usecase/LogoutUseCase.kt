@@ -1,8 +1,8 @@
 package vn.root.domain.usecase
 
 import kotlinx.coroutines.flow.Flow
+import vn.core.domain.ResultModel
 import vn.core.usecase.BaseUseCase
-import vn.root.domain.model.ResultModel
 import vn.root.domain.repository.AuthRepository
 import javax.inject.Inject
 

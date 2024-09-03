@@ -6,7 +6,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.flatMapLatest
-import vn.root.app.base.BaseViewModel
+import vn.core.ui.base.BaseViewModel
 import vn.root.domain.usecase.PagingLocalUseCase
 import javax.inject.Inject
 

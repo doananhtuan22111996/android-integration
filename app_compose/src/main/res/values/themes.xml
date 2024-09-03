@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.ApplicationTheme" parent="android:Theme.Material.Light.NoActionBar" />
-
-    <style name="Theme.ApplicationTheme.SplashScreen" parent="Theme.SplashScreen">
+    <style name="AppTheme.SplashScreen" parent="Theme.SplashScreen">
         <!-- Set the splash screen background, animated icon, and animation
    duration. -->
         <item name="windowSplashScreenBackground">@color/md_theme_primary</item>
@@ -14,6 +12,6 @@
         <item name="windowSplashScreenAnimationDuration">1000</item>
         <!-- Set the theme of the Activity that directly follows your splash
    screen. This is required. -->
-        <item name="postSplashScreenTheme">@style/Theme.ApplicationTheme</item>
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 </resources>

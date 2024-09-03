@@ -1,7 +1,8 @@
-package vn.root.data.local.dao
+package vn.root.data.local
 
 import androidx.room.Dao
 import androidx.room.Query
+import vn.core.data.local.BaseDao
 import vn.root.data.model.ItemRaw
 
 @Dao

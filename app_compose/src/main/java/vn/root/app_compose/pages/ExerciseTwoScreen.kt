@@ -40,200 +40,200 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import vn.core.composex.uikit.AppBottomNavigationBar
+import vn.core.composex.uikit.AppNavigationRailBar
+import vn.core.composex.uikit.Container
+import vn.core.composex.uikit.NavElement
+import vn.core.composex.uikit.textField.SearchField
 import vn.root.app_compose.R
-import vn.root.app_compose.ui.components.AppBottomNavigationBar
-import vn.root.app_compose.ui.components.AppNavigationRailBar
-import vn.root.app_compose.ui.components.Container
-import vn.root.app_compose.ui.components.NavElement
-import vn.root.app_compose.ui.components.textField.SearchField
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Preview(showBackground = true)
 @Composable
 fun ExerciseTwoPreview() {
-	ExerciseTwo(windowSizeClass = WindowSizeClass.calculateFromSize(size = DpSize(0.dp, 0.dp)))
+    ExerciseTwo(windowSizeClass = WindowSizeClass.calculateFromSize(size = DpSize(0.dp, 0.dp)))
 }
 
 @Composable
 fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) {
-	println("windowSizeClass: $windowSizeClass")
-	Container(
-		appBarTitle = stringResource(R.string.exercise_two),
-		navigationIcon = {
-			IconButton(onClick = onBackPress) {
-				Icon(
-					imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-					contentDescription = stringResource(
-						id = R.string.icon
-					)
-				)
-			}
-		},
-		bottomBar = {
-			if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact) {
-				AppBottomNavigationBar(
-					items = listOf(
-						NavElement(
-							icon = {
-								Icon(
-									Icons.Filled.Home,
-									contentDescription = stringResource(R.string.icon)
-								)
-							},
-							label = {
-								Text(stringResource(R.string.home))
-							},
-							onClick = {},
-						),
-						NavElement(
-							icon = {
-								Icon(
-									Icons.Filled.AccountCircle,
-									contentDescription = stringResource(R.string.icon)
-								)
-							},
-							label = {
-								Text(stringResource(R.string.account))
-							},
-							onClick = {},
-						),
-					),
-				)
-			}
-		},
-	) { innerPadding ->
-		Surface(
-			modifier = Modifier
+    println("windowSizeClass: $windowSizeClass")
+    Container(
+        appBarTitle = stringResource(R.string.exercise_two),
+        navigationIcon = {
+            IconButton(onClick = onBackPress) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = stringResource(
+                        id = R.string.icon
+                    )
+                )
+            }
+        },
+        bottomBar = {
+            if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact) {
+                AppBottomNavigationBar(
+                    items = listOf(
+                        NavElement(
+                            icon = {
+                                Icon(
+                                    Icons.Filled.Home,
+                                    contentDescription = stringResource(R.string.icon)
+                                )
+                            },
+                            label = {
+                                Text(stringResource(R.string.home))
+                            },
+                            onClick = {},
+                        ),
+                        NavElement(
+                            icon = {
+                                Icon(
+                                    Icons.Filled.AccountCircle,
+                                    contentDescription = stringResource(R.string.icon)
+                                )
+                            },
+                            label = {
+                                Text(stringResource(R.string.account))
+                            },
+                            onClick = {},
+                        ),
+                    ),
+                )
+            }
+        },
+    ) { innerPadding ->
+        Surface(
+            modifier = Modifier
 				.fillMaxSize()
 				.padding(innerPadding)
-		) {
-			if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact) {
-				ExerciseTwoContainer()
-			}
-			if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Medium) {
-				Row {
-					AppNavigationRailBar(
-						items = listOf(
-							NavElement(
-								icon = {
-									Icon(
-										Icons.Filled.Home,
-										contentDescription = stringResource(R.string.icon)
-									)
-								},
-								label = {
-									Text(stringResource(R.string.home))
-								},
-								onClick = {},
-							),
-							NavElement(
-								icon = {
-									Icon(
-										Icons.Filled.AccountCircle,
-										contentDescription = stringResource(R.string.icon)
-									)
-								},
-								label = {
-									Text(stringResource(R.string.account))
-								},
-								onClick = {},
-							),
-						),
-					)
-					ExerciseTwoContainer()
-				}
-			}
-		}
-	}
+        ) {
+            if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact) {
+                ExerciseTwoContainer()
+            }
+            if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Medium) {
+                Row {
+                    AppNavigationRailBar(
+                        items = listOf(
+                            NavElement(
+                                icon = {
+                                    Icon(
+                                        Icons.Filled.Home,
+                                        contentDescription = stringResource(R.string.icon)
+                                    )
+                                },
+                                label = {
+                                    Text(stringResource(R.string.home))
+                                },
+                                onClick = {},
+                            ),
+                            NavElement(
+                                icon = {
+                                    Icon(
+                                        Icons.Filled.AccountCircle,
+                                        contentDescription = stringResource(R.string.icon)
+                                    )
+                                },
+                                label = {
+                                    Text(stringResource(R.string.account))
+                                },
+                                onClick = {},
+                            ),
+                        ),
+                    )
+                    ExerciseTwoContainer()
+                }
+            }
+        }
+    }
 }
 
 @Composable
 private fun ExerciseTwoContainer() {
-	var search by rememberSaveable { mutableStateOf("") }
-	Column(
-		modifier = Modifier
+    var search by rememberSaveable { mutableStateOf("") }
+    Column(
+        modifier = Modifier
 			.verticalScroll(rememberScrollState())
 			.padding(16.dp)
-	) {
-		SearchField(value = search, onValueChange = { text ->
-			search = text
-		})
-		Text(
-			text = "Align your body - Alignment", modifier = Modifier.padding(vertical = 8.dp)
-		)
-		AlignYourBodyRow()
-		Text(
-			text = "Favorite collections - Favorite", modifier = Modifier.padding(vertical = 8.dp)
-		)
-		FavoriteCollectionGrid()
-	}
+    ) {
+        SearchField(value = search, onValueChange = { text ->
+            search = text
+        })
+        Text(
+            text = "Align your body - Alignment", modifier = Modifier.padding(vertical = 8.dp)
+        )
+        AlignYourBodyRow()
+        Text(
+            text = "Favorite collections - Favorite", modifier = Modifier.padding(vertical = 8.dp)
+        )
+        FavoriteCollectionGrid()
+    }
 }
 
 @Composable
 private fun AlignYourBodyRow(
-	items: List<String> = listOf(
-		"Body 1", "Body 2", "Body 3", "Body 4", "Body 5", "Body 6"
-	)
+    items: List<String> = listOf(
+        "Body 1", "Body 2", "Body 3", "Body 4", "Body 5", "Body 6"
+    )
 ) {
-	LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-		items(items) {
-			AlignYourBodyRowElement(name = it)
-		}
-	}
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+        items(items) {
+            AlignYourBodyRowElement(name = it)
+        }
+    }
 }
 
 @Composable
 private fun AlignYourBodyRowElement(name: String) {
-	Card {
-		Column(horizontalAlignment = Alignment.CenterHorizontally) {
-			Image(
-				painter = painterResource(id = R.drawable.im_3d_avatar),
-				contentDescription = stringResource(
-					id = R.string.image
-				),
-				modifier = Modifier.padding(8.dp)
-			)
-			Text(text = name)
-			Spacer(modifier = Modifier.height(4.dp))
-		}
-	}
+    Card {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(id = R.drawable.im_3d_avatar),
+                contentDescription = stringResource(
+                    id = R.string.image
+                ),
+                modifier = Modifier.padding(8.dp)
+            )
+            Text(text = name)
+            Spacer(modifier = Modifier.height(4.dp))
+        }
+    }
 }
 
 @Composable
 private fun FavoriteCollectionGrid(
-	items: List<String> = listOf(
-		"Collection 1",
-		"Collection 2",
-		"Collection 3",
-		"Collection 4",
-		"Collection 5",
-		"Collection 6"
-	)
+    items: List<String> = listOf(
+        "Collection 1",
+        "Collection 2",
+        "Collection 3",
+        "Collection 4",
+        "Collection 5",
+        "Collection 6"
+    )
 ) {
-	LazyHorizontalGrid(
-		rows = GridCells.Fixed(2),
-		horizontalArrangement = Arrangement.spacedBy(8.dp),
-		verticalArrangement = Arrangement.spacedBy(8.dp),
-		modifier = Modifier.height(120.dp)
-	) {
-		items(items) {
-			FavoriteCollectionGridElement(name = it)
-		}
-	}
+    LazyHorizontalGrid(
+        rows = GridCells.Fixed(2),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp),
+        modifier = Modifier.height(120.dp)
+    ) {
+        items(items) {
+            FavoriteCollectionGridElement(name = it)
+        }
+    }
 }
 
 @Composable
 private fun FavoriteCollectionGridElement(name: String) {
-	Card(modifier = Modifier.wrapContentHeight()) {
-		Row(verticalAlignment = Alignment.CenterVertically) {
-			Image(
-				painter = painterResource(id = R.drawable.im_3d_avatar),
-				contentDescription = stringResource(
-					id = R.string.image
-				),
-				modifier = Modifier.padding(8.dp)
-			)
-			Text(text = name, modifier = Modifier.padding(8.dp))
-		}
-	}
+    Card(modifier = Modifier.wrapContentHeight()) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Image(
+                painter = painterResource(id = R.drawable.im_3d_avatar),
+                contentDescription = stringResource(
+                    id = R.string.image
+                ),
+                modifier = Modifier.padding(8.dp)
+            )
+            Text(text = name, modifier = Modifier.padding(8.dp))
+        }
+    }
 }

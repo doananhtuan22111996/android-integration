@@ -11,44 +11,44 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
+import vn.core.domain.ResultModel
+import vn.core.ui.base.BaseFragment
 import vn.root.app.R
-import vn.root.app.base.BaseFragment
 import vn.root.app.databinding.FragmentLoginBinding
 import vn.root.app.pages.root.RootViewModel
-import vn.root.domain.model.ResultModel
 
 @AndroidEntryPoint
 class LoginFragment : BaseFragment<RootViewModel, LoginViewModel, FragmentLoginBinding>() {
-	
-	override val sharedViewModel: RootViewModel by activityViewModels()
-	
-	override val viewModel: LoginViewModel by viewModels()
-	
-	override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding =
-		FragmentLoginBinding::inflate
-	
-	override fun onInit(view: View, savedInstanceState: Bundle?) {
-		viewBinding.btnLogin.setOnClickListener {
-			viewModel.onLogin()
-		}
-	}
-	
-	override fun bindViewModel() {
-		super.bindViewModel()
-		viewLifecycleOwner.lifecycleScope.launch {
-			repeatOnLifecycle(Lifecycle.State.STARTED) {
-				viewModel.login.collect {
-					when (it) {
-						is ResultModel.Success -> navController.navigate(R.id.action_loginFragment_to_homeFragment)
-						
-						is ResultModel.AppException -> viewModel.setAppException(it)
-						
-						is ResultModel.Done -> viewModel.setLoadingOverlay(false)
-						
-						else -> viewModel.setLoadingOverlay(true)
-					}
-				}
-			}
-		}
-	}
+
+    override val sharedViewModel: RootViewModel by activityViewModels()
+
+    override val viewModel: LoginViewModel by viewModels()
+
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding =
+        FragmentLoginBinding::inflate
+
+    override fun onInit(view: View, savedInstanceState: Bundle?) {
+        viewBinding.btnLogin.setOnClickListener {
+            viewModel.onLogin()
+        }
+    }
+
+    override fun bindViewModel() {
+        super.bindViewModel()
+        viewLifecycleOwner.lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.login.collect {
+                    when (it) {
+                        is ResultModel.Success -> navController.navigate(R.id.action_loginFragment_to_homeFragment)
+
+                        is ResultModel.AppException -> viewModel.setAppException(it)
+
+                        is ResultModel.Done -> viewModel.setLoadingOverlay(false)
+
+                        else -> viewModel.setLoadingOverlay(true)
+                    }
+                }
+            }
+        }
+    }
 }

@@ -2,7 +2,8 @@ package vn.root.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import vn.root.domain.model.BaseModel
+import vn.core.data.model.BaseRaw
+import vn.core.domain.BaseModel
 import vn.root.domain.model.ItemModel
 
 @Entity

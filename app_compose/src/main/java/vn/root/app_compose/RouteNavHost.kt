@@ -2,7 +2,6 @@ package vn.root.app_compose
 
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -13,7 +12,6 @@ import vn.root.app_compose.pages.Main
 import vn.root.app_compose.pages.OnBoarding
 import vn.root.app_compose.pages.home.HomeScreen
 import vn.root.app_compose.pages.login.LoginScreen
-import vn.root.app_compose.pages.login.LoginViewModel
 
 const val ON_BOARDING_ROUTE = "on_boarding"
 const val MAIN_ROUTE = "main"

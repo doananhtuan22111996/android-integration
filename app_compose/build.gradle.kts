@@ -131,7 +131,11 @@ android {
 dependencies {
 	implementation(project(":domain"))
 	implementation(project(":data"))
-	
+
+	implementation(libs.core.libx.domain)
+	implementation(libs.core.libx.ui.composex)
+	implementation(libs.core.libx.ui.mdc)
+
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.lifecycle.runtime.ktx)
 	implementation(libs.androidx.activity.compose)

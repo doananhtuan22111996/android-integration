@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.paging.compose.collectAsLazyPagingItems
-import vn.root.app_compose.ui.components.paging.Paging
+import vn.core.composex.uikit.paging.Paging
 import vn.root.domain.model.ItemModel
 
 @Composable

@@ -13,7 +13,7 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import vn.root.domain.model.ResultModel
+import vn.core.domain.ResultModel
 import vn.root.domain.usecase.LoginUseCase
 
 class LoginViewModelTest {
