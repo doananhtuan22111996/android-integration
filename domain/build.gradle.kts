@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.core.libx.domain)
     implementation(libs.androidx.core.coroutines)
     implementation(libs.androidx.paging.common)
     compileOnly(libs.javax)

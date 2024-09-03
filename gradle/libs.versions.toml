@@ -42,6 +42,11 @@ javax = "1"
 mockitoVersion = "5.12.0"
 mockitoKotlinVersion = "5.3.1"
 binaryCompatibilityValidator = "0.13.0"
+libxDomain = "1.0.0"
+libxData = "1.0.0"
+libxUiBase = "1.0.0"
+libxUiComposex = "1.0.0"
+libxUiMdc = "1.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -98,6 +103,13 @@ androidx-window-size = { group = "androidx.compose.material3", name = "material3
 androidx-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewModelCompose" }
 androidx-paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
 javax = { group = "javax.inject", name = "javax.inject", version.ref = "javax" }
+
+# Core libx
+core-libx-domain = { group = "vn.core.libx", name = "domain", version.ref = "libxDomain" }
+core-libx-data = { group = "vn.core.libx", name = "data", version.ref = "libxData" }
+core-libx-ui-base = { group = "vn.core.libx-ui", name = "base", version.ref = "libxUiBase" }
+core-libx-ui-composex = { group = "vn.core.libx-ui", name = "composex", version.ref = "libxUiComposex" }
+core-libx-ui-mdc = { group = "vn.core.libx-ui", name = "mdc", version.ref = "libxUiMdc" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
