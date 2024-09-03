@@ -9,6 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENV_DEV_PROPERTIES: ${{ secrets.ENV_DEV_PROPERTIES }}
+      ROOT_KEYSTORE_DEV: ${{ secrets.ROOT_KEYSTORE_DEV }}
+      ENV_PROD_PROPERTIES: ${{ secrets.ENV_PROD_PROPERTIES }}
+      ROOT_KEYSTORE_PROD: ${{ secrets.ROOT_KEYSTORE_PROD }}
+      USERNAME: ${{ secrets.USERNAME }}
+      TOKEN: ${{ secrets.TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
@@ -19,11 +26,6 @@ jobs:
           cache: gradle
 
       - name: Set up env
-        env:
-          ENV_DEV_PROPERTIES: ${{ secrets.ENV_DEV_PROPERTIES }}
-          ROOT_KEYSTORE_DEV: ${{ secrets.ROOT_KEYSTORE_DEV }}
-          ENV_PROD_PROPERTIES: ${{ secrets.ENV_PROD_PROPERTIES }}
-          ROOT_KEYSTORE_PROD: ${{ secrets.ROOT_KEYSTORE_PROD }}
         run: |
           echo -n ${ENV_DEV_PROPERTIES} | base64 -d > env.dev.properties
           echo -n ${ROOT_KEYSTORE_DEV} | base64 -d > root-keystore-dev.jks
