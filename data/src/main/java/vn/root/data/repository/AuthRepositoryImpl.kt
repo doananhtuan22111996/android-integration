@@ -2,12 +2,12 @@ package vn.root.data.repository
 
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
+import vn.core.data.di.AnoRetrofitApiService
 import vn.core.data.local.PreferenceWrapper
 import vn.core.data.model.ObjectResponse
 import vn.core.data.network.NetworkBoundService
 import vn.core.domain.ResultModel
 import vn.root.data.Config
-import vn.root.data.di.qualifier.AnoRetrofitApiService
 import vn.root.data.model.TokenRaw
 import vn.root.data.service.ApiService
 import vn.root.domain.model.TokenModel

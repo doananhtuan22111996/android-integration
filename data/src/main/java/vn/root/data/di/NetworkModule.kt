@@ -1,4 +1,4 @@
-package vn.root.data.di.network
+package vn.root.data.di
 
 import dagger.Module
 import dagger.Provides
@@ -9,13 +9,13 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.gson.GsonConverterFactory
+import vn.core.data.di.AnoHttpAuthenticatorInterceptor
 import vn.core.data.di.AnoHttpLoggingInterceptor
+import vn.core.data.di.AnoRetrofitApiService
 import vn.core.data.di.ProviderModule.provideRetrofit
 import vn.core.data.local.PreferenceWrapper
 import vn.root.data.BuildConfig
 import vn.root.data.Config
-import vn.root.data.di.qualifier.AnoHttpAuthenticatorInterceptor
-import vn.root.data.di.qualifier.AnoRetrofitApiService
 import vn.root.data.network.HttpAuthenticatorInterceptor
 import vn.root.data.service.ApiService
 import java.util.concurrent.TimeUnit
