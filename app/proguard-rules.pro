@@ -80,3 +80,8 @@
     @com.google.gson.annotations.SerializedName <methods>;
     @com.google.gson.annotations.Expose <methods>;
 }
+
+# Please add these rules to your existing keep rules in order to suppress warnings.
+# This is generated automatically by the Android Gradle plugin.
+-dontwarn hilt_aggregated_deps._vn_root_data_di_LocalModule
+-dontwarn hilt_aggregated_deps._vn_root_data_di_NetworkModule
