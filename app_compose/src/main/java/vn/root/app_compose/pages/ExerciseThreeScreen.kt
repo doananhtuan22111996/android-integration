@@ -24,8 +24,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import vn.core.composex.uikit.Container
 import vn.root.app_compose.R
-import vn.root.app_compose.ui.components.Container
 
 data class Task(val id: Int, val name: String)
 

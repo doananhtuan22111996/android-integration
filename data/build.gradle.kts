@@ -70,6 +70,10 @@ android {
 
 dependencies {
 	implementation(project(":domain"))
+	
+	implementation(libs.core.libx.domain)
+	implementation(libs.core.libx.data)
+
 	implementation(libs.androidx.paging.common)
 	implementation(libs.androidx.room.runtime)
 	ksp(libs.androidx.room.compiler)

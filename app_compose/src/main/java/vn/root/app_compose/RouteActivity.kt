@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import vn.root.app_compose.ui.theme.ApplicationTheme
+import vn.core.composex.themex.ApplicationTheme
 
 @AndroidEntryPoint
 class RouteActivity : ComponentActivity() {

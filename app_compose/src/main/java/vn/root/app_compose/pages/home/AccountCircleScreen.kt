@@ -14,41 +14,41 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.compose.collectAsLazyPagingItems
-import vn.root.app_compose.ui.components.paging.Paging
+import vn.core.composex.uikit.paging.Paging
 import vn.root.domain.model.ItemModel
 
 @Preview(showBackground = true)
 @Composable
 fun AccountCirclePreview() {
-	AccountCircleScreen(viewModel = viewModel())
+    AccountCircleScreen(viewModel = viewModel())
 }
 
 @Composable
 fun AccountCircleScreen(viewModel: HomeViewModel) {
-	val paging = viewModel.localPaging.collectAsLazyPagingItems()
-	
-	Paging(
-		lazyPagingItems = paging, lazyListState = viewModel.localScrollState,
-		items = { index ->
-			AccountItem(paging[index])
-		},
-	)
+    val paging = viewModel.localPaging.collectAsLazyPagingItems()
+
+    Paging(
+        lazyPagingItems = paging, lazyListState = viewModel.localScrollState,
+        items = { index ->
+            AccountItem(paging[index])
+        },
+    )
 }
 
 @Composable
 private fun AccountItem(model: ItemModel?) {
-	if (model == null) return
-	Card(
-		modifier = Modifier.fillMaxWidth()
-	) {
-		Column(
-			modifier = Modifier
+    if (model == null) return
+    Card(
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier
 				.fillMaxWidth()
 				.padding(16.dp)
-		) {
-			Text(text = model.id.toString(), style = MaterialTheme.typography.titleMedium)
-			Spacer(modifier = Modifier.height(8.dp))
-			Text(text = model.name)
-		}
-	}
+        ) {
+            Text(text = model.id.toString(), style = MaterialTheme.typography.titleMedium)
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(text = model.name)
+        }
+    }
 }
