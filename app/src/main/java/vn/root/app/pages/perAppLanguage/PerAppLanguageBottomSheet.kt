@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import vn.root.app.databinding.LayoutBottomSheetPerAppLanguageBinding
+import vn.main.app.databinding.LayoutBottomSheetPerAppLanguageBinding
 import vn.root.domain.model.LanguageCodeEnum
 
 class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: LanguageCodeEnum) -> Unit) :

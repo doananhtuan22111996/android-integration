@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import vn.root.app.R
-import vn.root.app.databinding.FragmentMaterialKitBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentMaterialKitBinding
 import vn.root.app.pages.materialKit.MaterialKit
 import vn.root.app.pages.materialKit.MaterialKitAdapter
 

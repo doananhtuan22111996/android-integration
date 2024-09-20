@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.shape.MaterialShapeDrawable
-import vn.root.app.R
-import vn.root.app.databinding.FragmentBottomAppBarBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentBottomAppBarBinding
 
 class BottomAppBarFragment : Fragment() {
 	

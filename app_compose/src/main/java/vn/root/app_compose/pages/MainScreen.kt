@@ -21,7 +21,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import vn.core.composex.uikit.Container
-import vn.root.app_compose.R
+import vn.main.appCompose.R
 
 @Preview(showBackground = true)
 @Composable

@@ -14,7 +14,7 @@ import vn.core.data.di.AnoHttpLoggingInterceptor
 import vn.core.data.di.AnoRetrofitApiService
 import vn.core.data.di.ProviderModule.provideRetrofit
 import vn.core.data.local.PreferenceWrapper
-import vn.root.data.BuildConfig
+import vn.main.data.BuildConfig
 import vn.root.data.Config
 import vn.root.data.network.HttpAuthenticatorInterceptor
 import vn.root.data.service.ApiService

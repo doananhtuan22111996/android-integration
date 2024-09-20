@@ -29,6 +29,11 @@ dependencyResolutionManagement {
             }
         }
     }
+    versionCatalogs {
+        create("mobilex") {
+            from("vn.core.libx:versions:1.0.0")
+        }
+    }
 }
 
 fun getLocalProperty(propertyName: String): String {
@@ -44,7 +49,7 @@ fun getLocalProperty(propertyName: String): String {
     }
 }
 
-rootProject.name = "Root"
+rootProject.name = "android-integration"
 include(":app")
 include(":app_compose")
 include(":domain")

@@ -20,7 +20,7 @@ provide insights into structuring your Android applications efficiently.
   persist data across configuration changes.~~
 - **StateFlow/SharedFlow**: Integrates StateFlow and SharedFlow from Kotlin Coroutines for managing
   state and events in a reactive and lifecycle-aware manner.
-- **ViewModel**: Utilizes ViewModel to store and manage UI-related data in a lifecycle conscious
+- **ViewModel**: Utilizes ViewModel to store and manage UI-related data in a lifecycle-conscious
   way, allowing data to survive configuration changes.
 - **Dependency Injection**: Incorporates Dagger Hilt for dependency injection to keep the code
   modular, maintainable, and testable.
@@ -35,6 +35,35 @@ provide insights into structuring your Android applications efficiently.
 - **Android Testing**: Includes comprehensive testing strategies using Espresso for UI testing and
   Robolectric for unit testing, ensuring robust and reliable application behavior.
 - **Unit Testing**: Provides unit tests for ViewModel classes using JUnit and Mockito frameworks.
+
+## Modularization in Android
+
+Modularization is a design pattern in Android development that involves dividing an application into
+smaller, self-contained modules. This approach improves maintainability, scalability, and testing by
+promoting separation of concerns and reusability. Each module can be developed, tested, and built
+independently, making it easier to manage and understand the application as it grows.
+
+### Benefits of Modularization
+
+- **Separation of Concerns**: Each module focuses on a specific feature or functionality, reducing
+  complexity and making it easier to manage.
+- **Improved Build Times**: Changes in one module do not require a complete rebuild of the entire
+  application, leading to faster build times.
+- **Enhanced Reusability**: Modules can be reused across different projects or within different
+  parts of the same project.
+- **Better Testing**: Modules can be tested independently, which improves the quality and
+  reliability of the application.
+
+### Example of Modularization
+
+![Modularization Pattern in Android](https://developer.android.com/topic/modularization)
+
+*Image Source: [Example Modularization Pattern](https://developer.android.com/topic/modularization)*
+
+For more information on modularization in Android, you can refer to the following resources:
+
+- [Modularization in Android by Google](https://developer.android.com/topic/modularization)
+- [Effective Android Modularization by Medium](https://medium.com/@nachare.reena8/android-app-modularization-and-adavantages-21d6755dd404)
 
 ## Clean Architecture Layers
 
@@ -61,17 +90,38 @@ The project is structured using Clean Architecture principles, consisting of the
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+1. **Request Access and Create Personal Access Token:**
+    - Request access to the following repositories:
+        - [android-corex](https://github.com/doananhtuan22111996/android-corex)
+        - [android-components](https://github.com/doananhtuan22111996/android-components)
+        - [android-versions](https://github.com/doananhtuan22111996/android-versions)
+    - Create a personal access token on GitHub with the required permissions.
 
-1. Clone this
-   repository: `git clone https://github.com/doananhtuan22111996/android_architecture.git`
-2. Open the project in Android Studio.
-3. Sync source to create `env.dev.properties` and `prod.dev.properties` then input info to this
-4. Create 2 keystore with format names are `root-keystore-dev.jks` and `root-keystore.prod.jks`.
-    - You can change the name if you want. But `remember` change new name/path in gradlew
-5. Create your firebase project and config for 2 env: `dev` and `prod` only for `MDC-Android`
-    - The jetpack compose ignore this step. Move to step 6
-6. Build and run the project on an emulator or a physical device.
+2. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/doananhtuan22111996/android_architecture.git
+   ```
+
+3. **Open the Project:**
+   Open the project in Android Studio.
+
+4. **Configure Local Properties:**
+   Add your GitHub username and personal access token to the `local.properties` file:
+   ```properties
+   USERNAME=your_github_username
+   TOKEN=your_personal_access_token
+   ```
+
+5. **Create Keystore Files:**
+   Create two keystore files: `root-keystore-dev.jks` and `root-keystore-prod.jks` (or any names you
+   prefer). Ensure you update the names/paths in `gradlew` accordingly.
+
+6. **Set Up Firebase Projects:**
+   Set up Firebase projects for development and production environments for MDC-Android. This step
+   is not required for Jetpack Compose.
+
+7. **Build and Run the Project:**
+   Build and run the project on an emulator or physical device.
 
 ## Requirements
 
@@ -81,13 +131,13 @@ To get started with this project, follow these steps:
 
 ## Implementation
 
-|                                                                        | Implementation | Status     |
+| Feature                                                                | Implementation | Status     |
 |------------------------------------------------------------------------|----------------|------------|
 | MDC-Android                                                            |                | Available  |
 | Jetpack Compose                                                        |                | Available  |
 | [Flutter](https://github.com/doananhtuan22111996/flutter_architecture) |                | Available  |
-| Unit testing                                                           | All            | Processing |
-| Android testing                                                        | All            | Planned    |
+| Unit Testing                                                           | All            | Processing |
+| Android Testing                                                        | All            | Planned    |
 
 ## Transition to Kotlin DSL for Gradle (build.gradle.kts)
 
@@ -103,3 +153,7 @@ free to open an issue or submit a pull request.
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+```
+
+Feel free to adjust any specifics as needed!

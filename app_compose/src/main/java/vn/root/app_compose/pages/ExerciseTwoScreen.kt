@@ -45,7 +45,7 @@ import vn.core.composex.uikit.AppNavigationRailBar
 import vn.core.composex.uikit.Container
 import vn.core.composex.uikit.NavElement
 import vn.core.composex.uikit.textField.SearchField
-import vn.root.app_compose.R
+import vn.main.appCompose.R
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Preview(showBackground = true)

@@ -9,8 +9,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import vn.core.ui.base.BaseFragment
-import vn.root.app.R
-import vn.root.app.databinding.FragmentHomeBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentHomeBinding
 import vn.root.app.pages.root.RootViewModel
 import vn.root.app.pages.workflow.left.LeftFragment
 import vn.root.app.pages.workflow.right.RightFragment

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
-import vn.root.app.R
-import vn.root.app.databinding.ItemCarouselBinding
+import vn.main.app.R
+import vn.main.app.databinding.ItemCarouselBinding
 
 class CarouselAdapter : RecyclerView.Adapter<CarouselAdapter.CarouselViewHolder>() {
 	

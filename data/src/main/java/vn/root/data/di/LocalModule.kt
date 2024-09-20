@@ -8,7 +8,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import vn.core.data.local.CoreDatabase
 import vn.core.data.local.PreferenceWrapper
-import vn.root.data.BuildConfig
+import vn.main.data.BuildConfig
 import vn.root.data.local.AppDatabase
 import vn.root.data.local.ItemDao
 import javax.inject.Singleton
