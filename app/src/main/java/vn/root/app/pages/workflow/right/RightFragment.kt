@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import vn.core.ui.base.BaseFragment
 import vn.core.ui.base.PagingLoadStateAdapter
-import vn.root.app.databinding.FragmentLeftRightBinding
+import vn.main.app.databinding.FragmentLeftRightBinding
 import vn.root.app.pages.root.RootViewModel
 
 @AndroidEntryPoint

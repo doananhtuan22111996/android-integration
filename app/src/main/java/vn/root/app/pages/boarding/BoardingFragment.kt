@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import timber.log.Timber
-import vn.root.app.R
-import vn.root.app.databinding.FragmentBoardingBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentBoardingBinding
 import vn.root.app.pages.perAppLanguage.PerAppLanguageBottomSheet
 
 class BoardingFragment : Fragment() {

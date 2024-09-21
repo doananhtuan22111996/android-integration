@@ -6,7 +6,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
 import dagger.hilt.android.AndroidEntryPoint
 import vn.core.ui.base.BaseActivity
-import vn.root.app.R
+import vn.main.app.R
 
 @AndroidEntryPoint
 class RootActivity : BaseActivity<RootViewModel>() {

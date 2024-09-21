@@ -29,7 +29,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import vn.core.composex.uikit.AppBottomNavigationBar
 import vn.core.composex.uikit.Container
 import vn.core.composex.uikit.NavElement
-import vn.root.app_compose.R
+import vn.main.appCompose.R
 
 @Preview(showBackground = true)
 @Composable

@@ -8,7 +8,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import vn.root.app.R
+import vn.main.app.R
 import vn.root.app.pages.draws.face.Face
 import kotlin.math.min
 

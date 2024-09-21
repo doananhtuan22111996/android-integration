@@ -8,8 +8,8 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import vn.root.app.R
-import vn.root.app.databinding.FragmentCrossfadeBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentCrossfadeBinding
 
 class CrossfadeFragment : Fragment() {
 	

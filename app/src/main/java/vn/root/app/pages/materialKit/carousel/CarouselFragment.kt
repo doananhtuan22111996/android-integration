@@ -13,8 +13,8 @@ import com.google.android.material.carousel.CarouselSnapHelper
 import com.google.android.material.carousel.HeroCarouselStrategy
 import com.google.android.material.carousel.MultiBrowseCarouselStrategy
 import com.google.android.material.carousel.UncontainedCarouselStrategy
-import vn.root.app.R
-import vn.root.app.databinding.FragmentCarouselBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentCarouselBinding
 
 class CarouselFragment : Fragment() {
 	

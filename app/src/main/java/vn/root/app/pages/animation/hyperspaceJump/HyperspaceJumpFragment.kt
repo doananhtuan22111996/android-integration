@@ -9,8 +9,8 @@ import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import vn.root.app.R
-import vn.root.app.databinding.FragmentHyperspaceJumpBinding
+import vn.main.app.R
+import vn.main.app.databinding.FragmentHyperspaceJumpBinding
 
 class HyperspaceJumpFragment : Fragment() {
 	

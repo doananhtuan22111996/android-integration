@@ -1,13 +1,15 @@
+import vn.core.buildsrc.Configs
+
 plugins {
-    id("java-library")
-    alias(libs.plugins.jetbrainsKotlinJvm)
+    `java-library`
+    id("org.jetbrains.kotlin.jvm")
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = Configs.javaVersion
+    targetCompatibility = Configs.javaVersion
 }
 
 dependencies {
-    implementation(libs.androidx.coroutines)
+    implementation(mobilex.androidxCoroutines)
 }

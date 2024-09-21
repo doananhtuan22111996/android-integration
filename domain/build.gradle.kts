@@ -1,14 +1,16 @@
+import vn.core.buildsrc.Configs
+
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(mobilex.plugins.kotlinAndroid)
+    alias(mobilex.plugins.androidLibrary)
 }
 
 android {
-    namespace = "vn.root.domain"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    namespace = Configs.Domain.namespace
+    compileSdk = Configs.compileSdk
 
     defaultConfig {
-        minSdk = libs.versions.minSdk.get().toInt()
+        minSdk = Configs.minSdk
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -25,23 +27,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = Configs.javaVersion
+        targetCompatibility = Configs.javaVersion
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = Configs.jvmTarget
     }
 }
 
 dependencies {
-    implementation(libs.core.libx.domain)
-    implementation(libs.androidx.core.coroutines)
-    implementation(libs.androidx.paging.common)
-    compileOnly(libs.javax)
+    implementation(mobilex.coreLibxDomain)
+    implementation(mobilex.androidxCoreCoroutines)
+    implementation(mobilex.androidxPagingCommon)
+    compileOnly(mobilex.javax)
 
-    testImplementation(libs.junit)
-    testImplementation(libs.mockito)
-    testImplementation(libs.mockito.kotlin)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(mobilex.bundles.testComponents)
+    androidTestImplementation(mobilex.bundles.androidTestComponents)
 }

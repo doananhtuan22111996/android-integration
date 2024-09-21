@@ -1,5 +1,7 @@
 package vn.root.data
 
+import vn.main.data.BuildConfig
+
 internal object Config {
     val isDebug: Boolean
         get() = BuildConfig.DEBUG
