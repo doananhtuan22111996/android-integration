@@ -43,8 +43,8 @@ private fun AccountItem(model: ItemModel?) {
     ) {
         Column(
             modifier = Modifier
-				.fillMaxWidth()
-				.padding(16.dp)
+                .fillMaxWidth()
+                .padding(16.dp)
         ) {
             Text(text = model.id.toString(), style = MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))

@@ -108,8 +108,8 @@ The project is structured using Clean Architecture principles, consisting of the
 4. **Configure Local Properties:**
    Add your GitHub username and personal access token to the `local.properties` file:
    ```properties
-   USERNAME=your_github_username
-   TOKEN=your_personal_access_token
+   GH_USERNAME=your_github_username
+   GH_TOKEN=your_personal_access_token
    ```
 
 5. **Create Keystore Files:**

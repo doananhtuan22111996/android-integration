@@ -3,11 +3,7 @@ package vn.core.buildsrc
 import org.gradle.api.JavaVersion
 
 object Configs {
-    const val minSdk = 24
-    const val targetSdk = 34
-    const val compileSdk = 34
-    const val jvmTarget = "17"
-    val javaVersion = JavaVersion.VERSION_17
+     val jvmTarget = JavaVersion.VERSION_11.toString()
     const val mavenDomain = "https://maven.pkg.github.com"
 
     object Flavor {

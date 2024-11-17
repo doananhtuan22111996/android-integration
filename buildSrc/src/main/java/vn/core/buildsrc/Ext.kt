@@ -24,8 +24,8 @@ fun Project.getLocalProperty(propertyName: String): String {
 
 fun Project.repository() = uri("${Configs.mavenDomain}/${username()}/REPOSITORY")
 
-fun Project.username() = System.getenv("USERNAME") ?: getLocalProperty("USERNAME")
-fun Project.password() = System.getenv("TOKEN") ?: getLocalProperty("TOKEN")
+fun Project.username() = System.getenv("GH_USERNAME") ?: getLocalProperty("GH_USERNAME")
+fun Project.password() = System.getenv("GH_TOKEN") ?: getLocalProperty("GH_TOKEN")
 
 fun Project.getCurrentFlavor(): String {
     val tskReqStr: String = gradle.startParameter.taskRequests.toString()

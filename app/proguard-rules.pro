@@ -21,7 +21,9 @@
 #-renamesourcefileattribute SourceFile
 -keep class vn.root.app.** { *; }
 
+# Please add these rules to your existing keep rules in order to suppress warnings.
 # This is generated automatically by the Android Gradle plugin.
+-dontwarn javax.lang.model.element.Modifier
 -dontwarn com.google.api.client.http.GenericUrl
 -dontwarn com.google.api.client.http.HttpHeaders
 -dontwarn com.google.api.client.http.HttpRequest
