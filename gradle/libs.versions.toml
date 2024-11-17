@@ -1,0 +1,16 @@
+[versions]
+corePlugins = "1.0.1"
+coreApp = "1.0.0"
+coreCompose = "1.0.0"
+coreMdc = "1.0.0"
+core = "1.0.0"
+
+[libraries]
+corePlugins = { group = "vn.core.libs", name = "plugins", version.ref = "corePlugins" }
+coreApp = { group = "vn.core.libs", name = "app", version.ref = "coreApp" }
+coreCompose = { group = "vn.core.libs", name = "compose", version.ref = "coreCompose" }
+coreMdc = { group = "vn.core.libs", name = "mdc", version.ref = "coreMdc" }
+coreDomain = { group = "vn.core.libs", name = "domain", version.ref = "core" }
+coreData = { group = "vn.core.libs", name = "data", version.ref = "core" }
+
+[plugins]
