@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil.ItemCallback
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import vn.main.app.databinding.ItemPagingBinding
+import com.feature.app.databinding.ItemPagingBinding
 import vn.root.domain.model.ItemModel
 
 class RightAdapter :

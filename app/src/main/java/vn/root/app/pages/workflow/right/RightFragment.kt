@@ -8,13 +8,13 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
+import com.feature.app.databinding.FragmentLeftRightBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import timber.log.Timber
 import vn.core.ui.base.BaseFragment
 import vn.core.ui.base.PagingLoadStateAdapter
-import vn.main.app.databinding.FragmentLeftRightBinding
 import vn.root.app.pages.root.RootViewModel
 
 @AndroidEntryPoint

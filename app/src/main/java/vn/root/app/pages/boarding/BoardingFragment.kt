@@ -9,9 +9,9 @@ import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.feature.app.R
+import com.feature.app.databinding.FragmentBoardingBinding
 import timber.log.Timber
-import vn.main.app.R
-import vn.main.app.databinding.FragmentBoardingBinding
 import vn.root.app.pages.perAppLanguage.PerAppLanguageBottomSheet
 
 class BoardingFragment : Fragment() {

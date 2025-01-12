@@ -8,13 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.feature.app.R
+import com.feature.app.databinding.FragmentCarouselBinding
 import com.google.android.material.carousel.CarouselLayoutManager
 import com.google.android.material.carousel.CarouselSnapHelper
 import com.google.android.material.carousel.HeroCarouselStrategy
 import com.google.android.material.carousel.MultiBrowseCarouselStrategy
 import com.google.android.material.carousel.UncontainedCarouselStrategy
-import vn.main.app.R
-import vn.main.app.databinding.FragmentCarouselBinding
 
 class CarouselFragment : Fragment() {
 

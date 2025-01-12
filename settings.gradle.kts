@@ -51,6 +51,6 @@ fun getLocalProperty(propertyName: String): String {
 
 rootProject.name = "android-integration"
 include(":app")
-include(":app_compose")
+include(":compose")
 include(":domain")
 include(":data")

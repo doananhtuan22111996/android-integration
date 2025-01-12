@@ -40,12 +40,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import vn.core.composex.uikit.AppBottomNavigationBar
-import vn.core.composex.uikit.AppNavigationRailBar
+import com.feature.compose.R
 import vn.core.composex.uikit.Container
-import vn.core.composex.uikit.NavElement
-import vn.core.composex.uikit.textField.SearchField
-import vn.main.appCompose.R
+import vn.core.composex.uikit.appBar.AppBottomNavigationBar
+import vn.core.composex.uikit.appBar.AppNavigationRailBar
+import vn.core.composex.uikit.appBar.NavElement
+import vn.core.composex.uikit.textField.AppSearchField
 
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Preview(showBackground = true)
@@ -155,7 +155,7 @@ private fun ExerciseTwoContainer() {
             .verticalScroll(rememberScrollState())
             .padding(16.dp),
     ) {
-        SearchField(value = search, onValueChange = { text ->
+        AppSearchField(value = search, onValueChange = { text ->
             search = text
         })
         Text(

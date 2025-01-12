@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
+import com.feature.app.databinding.LayoutBottomSheetPerAppLanguageBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import vn.main.app.databinding.LayoutBottomSheetPerAppLanguageBinding
 import vn.root.domain.model.LanguageCodeEnum
 
 class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: LanguageCodeEnum) -> Unit) : BottomSheetDialogFragment() {

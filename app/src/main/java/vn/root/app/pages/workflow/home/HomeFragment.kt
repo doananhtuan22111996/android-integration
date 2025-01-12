@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.ui.setupWithNavController
+import com.feature.app.R
+import com.feature.app.databinding.FragmentHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 import vn.core.ui.base.BaseFragment
-import vn.main.app.R
-import vn.main.app.databinding.FragmentHomeBinding
 import vn.root.app.pages.root.RootViewModel
 import vn.root.app.pages.workflow.left.LeftFragment
 import vn.root.app.pages.workflow.right.RightFragment

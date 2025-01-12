@@ -26,10 +26,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import vn.core.composex.uikit.AppBottomNavigationBar
+import com.feature.compose.R
 import vn.core.composex.uikit.Container
-import vn.core.composex.uikit.NavElement
-import vn.main.appCompose.R
+import vn.core.composex.uikit.appBar.AppBottomNavigationBar
+import vn.core.composex.uikit.appBar.NavElement
 
 @Preview(showBackground = true)
 @Composable

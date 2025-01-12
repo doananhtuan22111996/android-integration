@@ -11,9 +11,9 @@ import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.feature.app.R
+import com.feature.app.databinding.FragmentChipBinding
 import com.google.android.material.chip.ChipDrawable
-import vn.main.app.R
-import vn.main.app.databinding.FragmentChipBinding
 
 class ChipFragment : Fragment() {
 

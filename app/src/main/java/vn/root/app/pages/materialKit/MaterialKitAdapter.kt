@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import vn.main.app.databinding.ItemMaterialKitBinding
+import com.feature.app.databinding.ItemMaterialKitBinding
 
 class MaterialKitAdapter(private val kits: List<MaterialKit>) : RecyclerView.Adapter<MaterialKitAdapter.KitViewHolder>() {
     inner class KitViewHolder(private val viewBinding: ItemMaterialKitBinding) : ViewHolder(viewBinding.root) {

@@ -34,9 +34,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.feature.compose.R
 import vn.core.composex.uikit.Container
 import vn.core.domain.ResultModel
-import vn.main.appCompose.R
 
 @Preview(showBackground = true)
 @Composable

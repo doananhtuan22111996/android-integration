@@ -87,3 +87,6 @@
 # This is generated automatically by the Android Gradle plugin.
 -dontwarn hilt_aggregated_deps._vn_root_data_di_LocalModule
 -dontwarn hilt_aggregated_deps._vn_root_data_di_NetworkModule
+
+# Coil
+-dontwarn coil3.PlatformContext
