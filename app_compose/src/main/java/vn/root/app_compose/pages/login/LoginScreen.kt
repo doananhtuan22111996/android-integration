@@ -60,42 +60,46 @@ fun LoginScreen(onBackPress: () -> Unit = {}, onLoginSuccess: () -> Unit = {}) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = stringResource(
-                    id = R.string.icon
-                )
+                    id = R.string.icon,
+                ),
             )
         }
     }) { innerPadding ->
         Box(
             modifier = Modifier
-				.fillMaxSize()
-				.padding(innerPadding)
-				.verticalScroll(rememberScrollState())
+                .fillMaxSize()
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState()),
         ) {
             Column(
-                modifier = Modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.SpaceBetween,
             ) {
                 Image(
                     painter = painterResource(id = R.drawable.intro),
                     contentDescription = stringResource(id = R.string.image),
                 )
-                Button(modifier = Modifier
-					.fillMaxWidth()
-					.padding(16.dp),
-                    onClick = { viewModel.onLogin() }) {
+                Button(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    onClick = { viewModel.onLogin() },
+                ) {
                     Text(text = "Login")
                 }
             }
             when (state) {
                 is ResultModel.Loading -> CircularProgressIndicator(
                     modifier = Modifier.align(
-                        Alignment.Center
-                    )
+                        Alignment.Center,
+                    ),
                 )
 
                 is ResultModel.Success -> alertSuccessDialog = true
 
                 is ResultModel.AppException -> alertFailureDialog = Pair(
-                    true, (state as ResultModel.AppException).message
+                    true,
+                    (state as ResultModel.AppException).message,
                 )
 
                 else -> {
@@ -110,10 +114,12 @@ fun LoginScreen(onBackPress: () -> Unit = {}, onLoginSuccess: () -> Unit = {}) {
                 })
             }
             if (alertFailureDialog.first) {
-                LoginFailureDialog(message = alertFailureDialog.second ?: "Some things wrong",
+                LoginFailureDialog(
+                    message = alertFailureDialog.second ?: "Some things wrong",
                     onDismissRequest = {
                         alertFailureDialog = Pair(false, null)
-                    })
+                    },
+                )
             }
         }
     }
@@ -125,7 +131,7 @@ private fun LoginSuccessDialog(onDismissRequest: () -> Unit, onConfirmRequest: (
         icon = {
             Icon(
                 imageVector = Icons.Filled.CheckCircle,
-                contentDescription = stringResource(id = R.string.icon)
+                contentDescription = stringResource(id = R.string.icon),
             )
         },
         title = {
@@ -135,7 +141,7 @@ private fun LoginSuccessDialog(onDismissRequest: () -> Unit, onConfirmRequest: (
             Text(
                 text = "You have successfully logged in",
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             )
         },
         onDismissRequest = onDismissRequest,
@@ -153,7 +159,7 @@ private fun LoginFailureDialog(message: String, onDismissRequest: () -> Unit) {
         icon = {
             Icon(
                 imageVector = Icons.Filled.Error,
-                contentDescription = stringResource(id = R.string.icon)
+                contentDescription = stringResource(id = R.string.icon),
             )
         },
         title = {
@@ -161,7 +167,7 @@ private fun LoginFailureDialog(message: String, onDismissRequest: () -> Unit) {
         },
         text = {
             Text(
-                text = message
+                text = message,
             )
         },
         onDismissRequest = onDismissRequest,

@@ -12,8 +12,7 @@ import vn.root.domain.usecase.LoginUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase) :
-    ViewModel() {
+class LoginViewModel @Inject constructor(private val loginUseCase: LoginUseCase) : ViewModel() {
 
     private val _loginState = MutableStateFlow<ResultModel<TokenModel>>(ResultModel.Done)
     val loginState = _loginState.asStateFlow()

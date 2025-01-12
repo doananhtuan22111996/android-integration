@@ -30,83 +30,85 @@ import vn.main.appCompose.R
 data class Task(val id: Int, val name: String)
 
 class ExerciseThreeViewModel : ViewModel() {
-	private val _tasks = listOf(
-		Task(1, "Task 1"),
-		Task(2, "Task 2"),
-		Task(3, "Task 3"),
-		Task(4, "Task 4"),
-		Task(5, "Task 5"),
-		Task(6, "Task 6"),
-		Task(7, "Task 7"),
-		Task(8, "Task 8"),
-		Task(9, "Task 9"),
-		Task(10, "Task 10"),
-	).toMutableStateList()
-	val tasks: List<Task>
-		get() = _tasks
-	
-	fun remoteTask(task: Task) {
-		_tasks.remove(task)
-	}
+    private val _tasks = listOf(
+        Task(1, "Task 1"),
+        Task(2, "Task 2"),
+        Task(3, "Task 3"),
+        Task(4, "Task 4"),
+        Task(5, "Task 5"),
+        Task(6, "Task 6"),
+        Task(7, "Task 7"),
+        Task(8, "Task 8"),
+        Task(9, "Task 9"),
+        Task(10, "Task 10"),
+    ).toMutableStateList()
+    val tasks: List<Task>
+        get() = _tasks
+
+    fun remoteTask(task: Task) {
+        _tasks.remove(task)
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 private fun ExerciseThreePreview() {
-	ExerciseThree(onBackPress = {})
+    ExerciseThree(onBackPress = {})
 }
 
 @Composable
 fun ExerciseThree(onBackPress: () -> Unit, viewModel: ExerciseThreeViewModel = viewModel()) {
-	Container(appBarTitle = "Exercise 3", navigationIcon = {
-		IconButton(onClick = onBackPress) {
-			Icon(
-				imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-				contentDescription = stringResource(
-					id = R.string.icon
-				)
-			)
-		}
-	}) {
-		Box(modifier = Modifier.padding(it)) {
-			TaskList(tasks = viewModel.tasks, onClick = { task ->
-				viewModel.remoteTask(task)
-			})
-		}
-	}
+    Container(appBarTitle = "Exercise 3", navigationIcon = {
+        IconButton(onClick = onBackPress) {
+            Icon(
+                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                contentDescription = stringResource(
+                    id = R.string.icon,
+                ),
+            )
+        }
+    }) {
+        Box(modifier = Modifier.padding(it)) {
+            TaskList(tasks = viewModel.tasks, onClick = { task ->
+                viewModel.remoteTask(task)
+            })
+        }
+    }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 private fun TaskList(tasks: List<Task>, onClick: (Task) -> Unit) {
-	LazyColumn(modifier = Modifier.fillMaxSize()) {
-		items(items = tasks, key = { it.id }) {
-			Box(
-				modifier = Modifier.animateItemPlacement()
-			) {
-				TaskItem(task = it, onClick = {
-					onClick(it)
-				})
-			}
-		}
-	}
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
+        items(items = tasks, key = { it.id }) {
+            Box(
+                modifier = Modifier.animateItemPlacement(),
+            ) {
+                TaskItem(task = it, onClick = {
+                    onClick(it)
+                })
+            }
+        }
+    }
 }
 
 @Composable
 private fun TaskItem(task: Task, onClick: () -> Unit = {}) {
-	Card(modifier = Modifier
-		.fillMaxWidth()
-		.padding(8.dp)
-		.clickable {
-			onClick()
-		}) {
-		Column(modifier = Modifier.padding(8.dp)) {
-			Text(text = "${task.id}")
-			Text(
-				text = task.name,
-				style = MaterialTheme.typography.bodyLarge,
-				modifier = Modifier.padding(4.dp)
-			)
-		}
-	}
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+            .clickable {
+                onClick()
+            },
+    ) {
+        Column(modifier = Modifier.padding(8.dp)) {
+            Text(text = "${task.id}")
+            Text(
+                text = task.name,
+                style = MaterialTheme.typography.bodyLarge,
+                modifier = Modifier.padding(4.dp),
+            )
+        }
+    }
 }

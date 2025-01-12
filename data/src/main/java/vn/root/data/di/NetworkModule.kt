@@ -29,21 +29,18 @@ internal class NetworkModule {
     @Singleton
     @AnoRetrofitApiService
     fun provideApiServices(
-        okHttpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory
-    ): ApiService {
-        return provideRetrofit<ApiService>(
-            baseUrl = BuildConfig.MAIN_DOMAIN,
-            okHttpClient = okHttpClient,
-            gsonConverterFactory = gsonConverterFactory
-        )
-    }
+        okHttpClient: OkHttpClient,
+        gsonConverterFactory: GsonConverterFactory,
+    ): ApiService = provideRetrofit<ApiService>(
+        baseUrl = BuildConfig.MAIN_DOMAIN,
+        okHttpClient = okHttpClient,
+        gsonConverterFactory = gsonConverterFactory,
+    )
 
     @Provides
     @Singleton
     @AnoHttpAuthenticatorInterceptor
-    fun bindHttpAuthenticatorInterceptor(preferenceWrapper: PreferenceWrapper): HttpAuthenticatorInterceptor {
-        return HttpAuthenticatorInterceptor(preferenceWrapper)
-    }
+    fun bindHttpAuthenticatorInterceptor(preferenceWrapper: PreferenceWrapper): HttpAuthenticatorInterceptor = HttpAuthenticatorInterceptor(preferenceWrapper)
 
     @Provides
     @Singleton

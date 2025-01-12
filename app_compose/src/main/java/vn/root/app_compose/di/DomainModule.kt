@@ -13,16 +13,13 @@ import vn.root.domain.usecase.PagingNetworkUseCase
 @Module
 @InstallIn(ViewModelComponent::class)
 class DomainModule {
-	
-	@Provides
-	fun provideLoginUseCase(repository: AuthRepository): LoginUseCase =
-		LoginUseCase(repository = repository)
-	
-	@Provides
-	fun providePagingNetworkUseCase(repository: PagingRepository): PagingNetworkUseCase =
-		PagingNetworkUseCase(repository = repository)
-	
-	@Provides
-	fun providePagingLocalUseCase(repository: PagingRepository): PagingLocalUseCase =
-		PagingLocalUseCase(repository = repository)
+
+    @Provides
+    fun provideLoginUseCase(repository: AuthRepository): LoginUseCase = LoginUseCase(repository = repository)
+
+    @Provides
+    fun providePagingNetworkUseCase(repository: PagingRepository): PagingNetworkUseCase = PagingNetworkUseCase(repository = repository)
+
+    @Provides
+    fun providePagingLocalUseCase(repository: PagingRepository): PagingLocalUseCase = PagingLocalUseCase(repository = repository)
 }

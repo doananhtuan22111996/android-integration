@@ -15,22 +15,22 @@ import vn.core.composex.themex.ApplicationTheme
 
 @AndroidEntryPoint
 class RouteActivity : ComponentActivity() {
-	@OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
-	override fun onCreate(savedInstanceState: Bundle?) {
-		installSplashScreen()
-		super.onCreate(savedInstanceState)
-		enableEdgeToEdge()
-		setContent {
-			val windowSizeClass = calculateWindowSizeClass(this)
-			MyApp(windowSizeClass)
-		}
-	}
+    @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            val windowSizeClass = calculateWindowSizeClass(this)
+            MyApp(windowSizeClass)
+        }
+    }
 }
 
 @Composable
 fun MyApp(windowSizeClass: WindowSizeClass) {
-	val navController = rememberNavController()
-	ApplicationTheme {
-		RouteNavHost(windowSizeClass = windowSizeClass, navController = navController)
-	}
+    val navController = rememberNavController()
+    ApplicationTheme {
+        RouteNavHost(windowSizeClass = windowSizeClass, navController = navController)
+    }
 }

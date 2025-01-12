@@ -12,10 +12,8 @@ data class ItemRaw(
     val name: String? = "",
 ) : BaseRaw() {
 
-    override fun raw2Model(): BaseModel {
-        return ItemModel(
-            id = id,
-            name = name ?: "",
-        )
-    }
+    override fun raw2Model(): BaseModel = ItemModel(
+        id = id,
+        name = name ?: "",
+    )
 }

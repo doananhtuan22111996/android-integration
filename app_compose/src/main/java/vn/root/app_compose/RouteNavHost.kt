@@ -23,49 +23,49 @@ const val HOME_ROUTE = "home"
 
 @Composable
 fun RouteNavHost(windowSizeClass: WindowSizeClass, navController: NavHostController) {
-	NavHost(navController = navController, startDestination = ON_BOARDING_ROUTE) {
-		composable(ON_BOARDING_ROUTE) {
-			OnBoarding(navigate = {
-				navController.navigate(MAIN_ROUTE) {
-					popUpTo(MAIN_ROUTE) { inclusive = true }
-				}
-			})
-		}
-		composable(MAIN_ROUTE) {
-			Main(onItemClick = {
-				when (it) {
-					0 -> navController.navigate(EXERCISE_ONE_ROUTE)
-					1 -> navController.navigate(EXERCISE_TWO_ROUTE)
-					2 -> navController.navigate(EXERCISE_THREE_ROUTE)
-					3 -> navController.navigate(LOGIN_ROUTE)
-					else -> {}
-				}
-			})
-		}
-		composable(EXERCISE_ONE_ROUTE) {
-			ExerciseOne(onBackPress = {
-				navController.navigateUp()
-			})
-		}
-		composable(EXERCISE_TWO_ROUTE) {
-			ExerciseTwo(windowSizeClass = windowSizeClass, onBackPress = {
-				navController.navigateUp()
-			})
-		}
-		composable(EXERCISE_THREE_ROUTE) {
-			ExerciseThree(onBackPress = {
-				navController.navigateUp()
-			})
-		}
-		composable(LOGIN_ROUTE) {
-			LoginScreen(onBackPress = {
-				navController.navigateUp()
-			}, onLoginSuccess = {
-				navController.navigate(HOME_ROUTE)
-			})
-		}
-		composable(HOME_ROUTE) {
-			HomeScreen(onBackPress = { navController.navigateUp() })
-		}
-	}
+    NavHost(navController = navController, startDestination = ON_BOARDING_ROUTE) {
+        composable(ON_BOARDING_ROUTE) {
+            OnBoarding(navigate = {
+                navController.navigate(MAIN_ROUTE) {
+                    popUpTo(MAIN_ROUTE) { inclusive = true }
+                }
+            })
+        }
+        composable(MAIN_ROUTE) {
+            Main(onItemClick = {
+                when (it) {
+                    0 -> navController.navigate(EXERCISE_ONE_ROUTE)
+                    1 -> navController.navigate(EXERCISE_TWO_ROUTE)
+                    2 -> navController.navigate(EXERCISE_THREE_ROUTE)
+                    3 -> navController.navigate(LOGIN_ROUTE)
+                    else -> {}
+                }
+            })
+        }
+        composable(EXERCISE_ONE_ROUTE) {
+            ExerciseOne(onBackPress = {
+                navController.navigateUp()
+            })
+        }
+        composable(EXERCISE_TWO_ROUTE) {
+            ExerciseTwo(windowSizeClass = windowSizeClass, onBackPress = {
+                navController.navigateUp()
+            })
+        }
+        composable(EXERCISE_THREE_ROUTE) {
+            ExerciseThree(onBackPress = {
+                navController.navigateUp()
+            })
+        }
+        composable(LOGIN_ROUTE) {
+            LoginScreen(onBackPress = {
+                navController.navigateUp()
+            }, onLoginSuccess = {
+                navController.navigate(HOME_ROUTE)
+            })
+        }
+        composable(HOME_ROUTE) {
+            HomeScreen(onBackPress = { navController.navigateUp() })
+        }
+    }
 }

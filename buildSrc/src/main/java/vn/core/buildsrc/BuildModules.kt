@@ -1,4 +1,4 @@
 object BuildModules {
-     const val domain = ":domain"
-     const val data = ":data"
+    const val DOMAIN = ":domain"
+    const val DATA = ":data"
 }

@@ -16,16 +16,16 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-	pagingComposeNetworkUseCase: PagingNetworkUseCase,
-	pagingComposeLocalUseCase: PagingLocalUseCase,
+    pagingComposeNetworkUseCase: PagingNetworkUseCase,
+    pagingComposeLocalUseCase: PagingLocalUseCase,
 ) : ViewModel() {
-	
-	val networkScrollState by mutableStateOf(LazyListState())
-	val localScrollState by mutableStateOf(LazyListState())
-	
-	val networkPaging: Flow<PagingData<ItemModel>> =
-		pagingComposeNetworkUseCase.execute().cachedIn(viewModelScope)
-	
-	val localPaging: Flow<PagingData<ItemModel>> =
-		pagingComposeLocalUseCase.execute().cachedIn(viewModelScope)
+
+    val networkScrollState by mutableStateOf(LazyListState())
+    val localScrollState by mutableStateOf(LazyListState())
+
+    val networkPaging: Flow<PagingData<ItemModel>> =
+        pagingComposeNetworkUseCase.execute().cachedIn(viewModelScope)
+
+    val localPaging: Flow<PagingData<ItemModel>> =
+        pagingComposeLocalUseCase.execute().cachedIn(viewModelScope)
 }

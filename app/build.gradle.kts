@@ -1,9 +1,6 @@
 import com.android.build.api.dsl.ApplicationProductFlavor
 import vn.core.buildsrc.ConfigLoader
 import vn.core.buildsrc.Configs
-import vn.core.buildsrc.getCurrentFlavor
-import java.io.FileInputStream
-import java.util.Properties
 
 plugins {
     vn.core.plugins.androidApplication
@@ -12,11 +9,12 @@ plugins {
 }
 
 android {
-    namespace = Configs.MainApp.namespace
+    namespace = Configs.App.NAMESPACE_APP
 
     defaultConfig {
-        versionCode = Configs.MainApp.versionCode
-        versionName = Configs.MainApp.versionName
+        applicationId = Configs.App.APPLICATION_APP_ID
+        versionCode = Configs.App.VERSION_CODE
+        versionName = Configs.App.VERSION_NAME
     }
 
     flavorDimensions += "environment"
@@ -31,12 +29,12 @@ android {
                 appProperties.getProperty("application.name")
         }
 
-        create(Configs.Flavor.dev) {
+        create(Configs.Flavor.DEV) {
             dimension = "environment"
             loadConfig(this)
         }
 
-        create(Configs.Flavor.prod) {
+        create(Configs.Flavor.PROD) {
             dimension = "environment"
             loadConfig(this)
         }
@@ -44,8 +42,8 @@ android {
 }
 
 dependencies {
-    implementation(project(BuildModules.domain))
-    implementation(project(BuildModules.data))
+    implementation(project(BuildModules.DOMAIN))
+    implementation(project(BuildModules.DATA))
     implementation(libs.coreApp)
     implementation(libs.coreDomain)
     implementation(libs.coreMdc)

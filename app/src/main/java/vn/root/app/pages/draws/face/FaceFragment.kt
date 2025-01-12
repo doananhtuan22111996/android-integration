@@ -11,33 +11,35 @@ import vn.main.app.R
 import vn.main.app.databinding.FragmentFaceBinding
 
 class FaceFragment : Fragment() {
-	
-	private lateinit var viewBinding: FragmentFaceBinding
-	private lateinit var navController: NavController
-	
-	override fun onCreateView(
-		inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-	): View {
-		viewBinding = FragmentFaceBinding.inflate(inflater, container, false)
-		navController = findNavController()
-		return viewBinding.root
-	}
-	
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-		viewBinding.fragment = this
-		viewBinding.layoutHeader.toolbar.apply {
-			title = getString(R.string.face)
-			menu.clear()
-			setNavigationOnClickListener { navController.popBackStack() }
-		}
-	}
-	
-	fun onHappy() {
-		viewBinding.faceView.setFaceType(Face.Happy)
-	}
-	
-	fun onSad() {
-		viewBinding.faceView.setFaceType(Face.Sad)
-	}
+
+    private lateinit var viewBinding: FragmentFaceBinding
+    private lateinit var navController: NavController
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        viewBinding = FragmentFaceBinding.inflate(inflater, container, false)
+        navController = findNavController()
+        return viewBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewBinding.fragment = this
+        viewBinding.layoutHeader.toolbar.apply {
+            title = getString(R.string.face)
+            menu.clear()
+            setNavigationOnClickListener { navController.popBackStack() }
+        }
+    }
+
+    fun onHappy() {
+        viewBinding.faceView.setFaceType(Face.Happy)
+    }
+
+    fun onSad() {
+        viewBinding.faceView.setFaceType(Face.Sad)
+    }
 }

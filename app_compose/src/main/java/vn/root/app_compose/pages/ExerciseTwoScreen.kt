@@ -64,8 +64,8 @@ fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) 
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = stringResource(
-                        id = R.string.icon
-                    )
+                        id = R.string.icon,
+                    ),
                 )
             }
         },
@@ -77,7 +77,7 @@ fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) 
                             icon = {
                                 Icon(
                                     Icons.Filled.Home,
-                                    contentDescription = stringResource(R.string.icon)
+                                    contentDescription = stringResource(R.string.icon),
                                 )
                             },
                             label = {
@@ -89,7 +89,7 @@ fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) 
                             icon = {
                                 Icon(
                                     Icons.Filled.AccountCircle,
-                                    contentDescription = stringResource(R.string.icon)
+                                    contentDescription = stringResource(R.string.icon),
                                 )
                             },
                             label = {
@@ -104,8 +104,8 @@ fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) 
     ) { innerPadding ->
         Surface(
             modifier = Modifier
-				.fillMaxSize()
-				.padding(innerPadding)
+                .fillMaxSize()
+                .padding(innerPadding),
         ) {
             if (windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact) {
                 ExerciseTwoContainer()
@@ -118,7 +118,7 @@ fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) 
                                 icon = {
                                     Icon(
                                         Icons.Filled.Home,
-                                        contentDescription = stringResource(R.string.icon)
+                                        contentDescription = stringResource(R.string.icon),
                                     )
                                 },
                                 label = {
@@ -130,7 +130,7 @@ fun ExerciseTwo(windowSizeClass: WindowSizeClass, onBackPress: () -> Unit = {}) 
                                 icon = {
                                     Icon(
                                         Icons.Filled.AccountCircle,
-                                        contentDescription = stringResource(R.string.icon)
+                                        contentDescription = stringResource(R.string.icon),
                                     )
                                 },
                                 label = {
@@ -152,18 +152,20 @@ private fun ExerciseTwoContainer() {
     var search by rememberSaveable { mutableStateOf("") }
     Column(
         modifier = Modifier
-			.verticalScroll(rememberScrollState())
-			.padding(16.dp)
+            .verticalScroll(rememberScrollState())
+            .padding(16.dp),
     ) {
         SearchField(value = search, onValueChange = { text ->
             search = text
         })
         Text(
-            text = "Align your body - Alignment", modifier = Modifier.padding(vertical = 8.dp)
+            text = "Align your body - Alignment",
+            modifier = Modifier.padding(vertical = 8.dp),
         )
         AlignYourBodyRow()
         Text(
-            text = "Favorite collections - Favorite", modifier = Modifier.padding(vertical = 8.dp)
+            text = "Favorite collections - Favorite",
+            modifier = Modifier.padding(vertical = 8.dp),
         )
         FavoriteCollectionGrid()
     }
@@ -172,8 +174,13 @@ private fun ExerciseTwoContainer() {
 @Composable
 private fun AlignYourBodyRow(
     items: List<String> = listOf(
-        "Body 1", "Body 2", "Body 3", "Body 4", "Body 5", "Body 6"
-    )
+        "Body 1",
+        "Body 2",
+        "Body 3",
+        "Body 4",
+        "Body 5",
+        "Body 6",
+    ),
 ) {
     LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         items(items) {
@@ -189,9 +196,9 @@ private fun AlignYourBodyRowElement(name: String) {
             Image(
                 painter = painterResource(id = R.drawable.im_3d_avatar),
                 contentDescription = stringResource(
-                    id = R.string.image
+                    id = R.string.image,
                 ),
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier.padding(8.dp),
             )
             Text(text = name)
             Spacer(modifier = Modifier.height(4.dp))
@@ -207,14 +214,14 @@ private fun FavoriteCollectionGrid(
         "Collection 3",
         "Collection 4",
         "Collection 5",
-        "Collection 6"
-    )
+        "Collection 6",
+    ),
 ) {
     LazyHorizontalGrid(
         rows = GridCells.Fixed(2),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
-        modifier = Modifier.height(120.dp)
+        modifier = Modifier.height(120.dp),
     ) {
         items(items) {
             FavoriteCollectionGridElement(name = it)
@@ -229,9 +236,9 @@ private fun FavoriteCollectionGridElement(name: String) {
             Image(
                 painter = painterResource(id = R.drawable.im_3d_avatar),
                 contentDescription = stringResource(
-                    id = R.string.image
+                    id = R.string.image,
                 ),
-                modifier = Modifier.padding(8.dp)
+                modifier = Modifier.padding(8.dp),
             )
             Text(text = name, modifier = Modifier.padding(8.dp))
         }

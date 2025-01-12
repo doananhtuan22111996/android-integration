@@ -28,7 +28,8 @@ fun AccountCircleScreen(viewModel: HomeViewModel) {
     val paging = viewModel.localPaging.collectAsLazyPagingItems()
 
     Paging(
-        lazyPagingItems = paging, lazyListState = viewModel.localScrollState,
+        lazyPagingItems = paging,
+        lazyListState = viewModel.localScrollState,
         items = { index ->
             AccountItem(paging[index])
         },
@@ -39,12 +40,12 @@ fun AccountCircleScreen(viewModel: HomeViewModel) {
 private fun AccountItem(model: ItemModel?) {
     if (model == null) return
     Card(
-        modifier = Modifier.fillMaxWidth()
+        modifier = Modifier.fillMaxWidth(),
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(16.dp),
         ) {
             Text(text = model.id.toString(), style = MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))

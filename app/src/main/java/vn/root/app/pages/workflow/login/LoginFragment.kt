@@ -40,11 +40,8 @@ class LoginFragment : BaseFragment<RootViewModel, LoginViewModel, FragmentLoginB
                 viewModel.login.collect {
                     when (it) {
                         is ResultModel.Success -> navController.navigate(R.id.action_loginFragment_to_homeFragment)
-
                         is ResultModel.AppException -> viewModel.setAppException(it)
-
                         is ResultModel.Done -> viewModel.setLoadingOverlay(false)
-
                         else -> viewModel.setLoadingOverlay(true)
                     }
                 }

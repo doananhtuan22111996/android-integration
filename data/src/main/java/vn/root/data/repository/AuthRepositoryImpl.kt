@@ -16,32 +16,29 @@ import javax.inject.Inject
 
 class AuthRepositoryImpl @Inject constructor(
     @AnoRetrofitApiService private val apiService: ApiService,
-    private val preferenceWrapper: PreferenceWrapper
+    private val preferenceWrapper: PreferenceWrapper,
 ) : AuthRepository {
-    override fun login(): Flow<ResultModel<TokenModel>> =
-        object : NetworkBoundService<TokenRaw, TokenModel>() {
-            override suspend fun onApi(): Response<ObjectResponse<TokenRaw>> = apiService.login()
+    override fun login(): Flow<ResultModel<TokenModel>> = object : NetworkBoundService<TokenRaw, TokenModel>() {
+        override suspend fun onApi(): Response<ObjectResponse<TokenRaw>> = apiService.login()
 
-            override suspend fun processResponse(request: ObjectResponse<TokenRaw>?): ResultModel.Success<TokenModel> {
-                if (request?.data != null) {
-                    preferenceWrapper.saveString(
-                        Config.SharePreference.KEY_AUTH_TOKEN, request.data?.token ?: ""
-                    )
-                    preferenceWrapper.saveString(
-                        Config.SharePreference.KEY_AUTH_REFRESH_TOKEN,
-                        request.data?.refreshToken ?: ""
-                    )
-                }
-                return ResultModel.Success(data = request?.data?.raw2Model() as? TokenModel)
+        override suspend fun processResponse(request: ObjectResponse<TokenRaw>?): ResultModel.Success<TokenModel> {
+            if (request?.data != null) {
+                preferenceWrapper.saveString(
+                    Config.SharePreference.KEY_AUTH_TOKEN,
+                    request.data?.token ?: "",
+                )
+                preferenceWrapper.saveString(
+                    Config.SharePreference.KEY_AUTH_REFRESH_TOKEN,
+                    request.data?.refreshToken ?: "",
+                )
             }
-        }.build()
+            return ResultModel.Success(data = request?.data?.raw2Model() as? TokenModel)
+        }
+    }.build()
 
-    override fun logout(): Flow<ResultModel<Nothing>> =
-        object : NetworkBoundService<Nothing, Nothing>() {
-            override suspend fun onApi(): Response<ObjectResponse<Nothing>> = apiService.logout()
+    override fun logout(): Flow<ResultModel<Nothing>> = object : NetworkBoundService<Nothing, Nothing>() {
+        override suspend fun onApi(): Response<ObjectResponse<Nothing>> = apiService.logout()
 
-            override suspend fun processResponse(request: ObjectResponse<Nothing>?): ResultModel.Success<Nothing> =
-                ResultModel.Success()
-        }.build()
-
+        override suspend fun processResponse(request: ObjectResponse<Nothing>?): ResultModel.Success<Nothing> = ResultModel.Success()
+    }.build()
 }

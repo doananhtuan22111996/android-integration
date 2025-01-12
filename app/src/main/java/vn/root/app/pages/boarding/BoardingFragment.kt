@@ -28,7 +28,9 @@ class BoardingFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         viewBinding = FragmentBoardingBinding.inflate(inflater, container, false)
         navController = findNavController()
@@ -57,7 +59,6 @@ class BoardingFragment : Fragment() {
             it.root.setOnClickListener {
                 navController.navigate(R.id.action_boardingFragment_to_materialKitFragment)
             }
-
         }
         viewBinding.layoutContent2.let {
             it.tvHeader.text = getString(R.string.workflow)

@@ -36,9 +36,11 @@ class LeftFragment : BaseFragment<RootViewModel, LeftViewModel, FragmentLeftRigh
 
     override fun onInit(view: View, savedInstanceState: Bundle?) {
         viewBinding.rvHome.adapter =
-            adapter.withLoadStateFooter(PagingLoadStateAdapter(retryFunc = {
-                adapter.retry()
-            }))
+            adapter.withLoadStateFooter(
+                PagingLoadStateAdapter(retryFunc = {
+                    adapter.retry()
+                }),
+            )
         viewBinding.swRefresh.setOnRefreshListener {
             adapter.refresh()
         }

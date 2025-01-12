@@ -7,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = Configs.Data.namespace
+    namespace = Configs.Data.NAMESPACE
 
     flavorDimensions += "environment"
     productFlavors {
@@ -20,12 +20,12 @@ android {
             )
         }
 
-        create(Configs.Flavor.dev) {
+        create(Configs.Flavor.DEV) {
             dimension = "environment"
             loadConfig(this)
         }
 
-        create(Configs.Flavor.prod) {
+        create(Configs.Flavor.PROD) {
             dimension = "environment"
             loadConfig(this)
         }
@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-    implementation(project(BuildModules.domain))
+    implementation(project(BuildModules.DOMAIN))
     implementation(libs.coreDomain)
     implementation(libs.coreData)
 }

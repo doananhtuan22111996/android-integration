@@ -1,9 +1,9 @@
 [versions]
-corePlugins = "1.0.1"
+corePlugins = "1.0.2"
 coreApp = "1.0.0"
-coreCompose = "1.0.0"
+coreCompose = "1.0.5"
 coreMdc = "1.0.0"
-core = "1.0.0"
+core = "1.0.1"
 
 [libraries]
 corePlugins = { group = "vn.core.libs", name = "plugins", version.ref = "corePlugins" }

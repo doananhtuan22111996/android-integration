@@ -26,47 +26,48 @@ import vn.main.appCompose.R
 @Preview(showBackground = true)
 @Composable
 fun Main(onItemClick: (index: Int) -> Unit = {}) {
-	val items = listOf("Exercise One", "Exercise Two", "Exercise Three", "Workflow")
-	Container(appBarTitle = "Main", navigationIcon = {
-		Icon(
-			imageVector = Icons.Filled.Menu, contentDescription = stringResource(id = R.string.icon)
-		)
-	}) { innerPadding ->
-		LazyColumn(
-			modifier = Modifier
-				.fillMaxWidth()
-				.padding(innerPadding)
-		) {
-			items(items) {
-				MenuItem(name = it, onClick = { onItemClick(items.indexOf(it)) })
-			}
-		}
-	}
+    val items = listOf("Exercise One", "Exercise Two", "Exercise Three", "Workflow")
+    Container(appBarTitle = "Main", navigationIcon = {
+        Icon(
+            imageVector = Icons.Filled.Menu,
+            contentDescription = stringResource(id = R.string.icon),
+        )
+    }) { innerPadding ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(innerPadding),
+        ) {
+            items(items) {
+                MenuItem(name = it, onClick = { onItemClick(items.indexOf(it)) })
+            }
+        }
+    }
 }
 
 @Composable
 private fun MenuItem(name: String, onClick: () -> Unit) {
-	Card(
-		modifier = Modifier
-			.fillMaxWidth()
-			.padding(vertical = 8.dp, horizontal = 16.dp),
-		onClick = onClick
-	) {
-		Row(verticalAlignment = Alignment.CenterVertically) {
-			Image(
-				painter = painterResource(id = R.drawable.im_3d_avatar),
-				contentDescription = stringResource(R.string.image),
-				modifier = Modifier.padding(8.dp)
-			)
-			Text(
-				modifier = Modifier
-					.fillMaxWidth()
-					.padding(horizontal = 16.dp),
-				text = name,
-				style = MaterialTheme.typography.bodyLarge.copy(
-					fontWeight = FontWeight.Bold
-				)
-			)
-		}
-	}
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp, horizontal = 16.dp),
+        onClick = onClick,
+    ) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Image(
+                painter = painterResource(id = R.drawable.im_3d_avatar),
+                contentDescription = stringResource(R.string.image),
+                modifier = Modifier.padding(8.dp),
+            )
+            Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                text = name,
+                style = MaterialTheme.typography.bodyLarge.copy(
+                    fontWeight = FontWeight.Bold,
+                ),
+            )
+        }
+    }
 }

@@ -7,12 +7,12 @@ plugins {
 }
 
 android {
-    namespace = Configs.MainAppCompose.namespace
+    namespace = Configs.App.NAMESPACE_COMPOSE
 
     defaultConfig {
-        applicationId = Configs.MainAppCompose.namespace
-        versionCode = Configs.MainAppCompose.versionCode
-        versionName = Configs.MainAppCompose.versionName
+        applicationId = Configs.App.APPLICATION_COMPOSE_ID
+        versionCode = Configs.App.VERSION_CODE
+        versionName = Configs.App.VERSION_NAME
     }
 
     flavorDimensions += "environment"
@@ -28,12 +28,12 @@ android {
             //    appProperties.getProperty("application.name")
         }
 
-        create(Configs.Flavor.dev) {
+        create(Configs.Flavor.DEV) {
             dimension = "environment"
             loadConfig(this)
         }
 
-        create(Configs.Flavor.prod) {
+        create(Configs.Flavor.PROD) {
             dimension = "environment"
             loadConfig(this)
         }
@@ -41,8 +41,8 @@ android {
 }
 
 dependencies {
-    implementation(project(BuildModules.domain))
-    implementation(project(BuildModules.data))
+    implementation(project(BuildModules.DOMAIN))
+    implementation(project(BuildModules.DATA))
     implementation(libs.coreDomain)
     implementation(libs.coreCompose)
     implementation(libs.coreMdc)

@@ -16,7 +16,7 @@ import vn.root.data.model.TokenRaw
 import java.net.HttpURLConnection.HTTP_UNAUTHORIZED
 
 class HttpAuthenticatorInterceptor(
-    private val preferenceWrapper: PreferenceWrapper
+    private val preferenceWrapper: PreferenceWrapper,
 ) : Authenticator {
 
     override fun authenticate(route: Route?, response: Response): Request? {
@@ -54,10 +54,12 @@ class HttpAuthenticatorInterceptor(
                 val tokenRaw = objResponse.data as? TokenRaw
                 Timber.d("Refresh Token Success: ${tokenRaw?.refreshToken}")
                 preferenceWrapper.saveString(
-                    Config.SharePreference.KEY_AUTH_TOKEN, tokenRaw?.token ?: ""
+                    Config.SharePreference.KEY_AUTH_TOKEN,
+                    tokenRaw?.token ?: "",
                 )
                 preferenceWrapper.saveString(
-                    Config.SharePreference.KEY_AUTH_REFRESH_TOKEN, tokenRaw?.refreshToken ?: ""
+                    Config.SharePreference.KEY_AUTH_REFRESH_TOKEN,
+                    tokenRaw?.refreshToken ?: "",
                 )
                 onCallBack()
             } else {

@@ -1,10 +1,25 @@
 <a name="unreleased"></a>
 ## [Unreleased]
 
+
+<a name="5.0.0"></a>
+## [5.0.0] - 2024-11-17
+### Bug Fixes
+- Proguad for app compose ([#38](https://github.com/doananhtuan22111996/android_architecture/issues/38))
+
 ### Code Refactoring
 - Network Bound Service - flow with onStart, onCompletion ([#28](https://github.com/doananhtuan22111996/android_architecture/issues/28))
 
 ### Features
+- migrate to kotlin 2xx ([#43](https://github.com/doananhtuan22111996/android_architecture/issues/43))
+- integrate to libx-version ([#42](https://github.com/doananhtuan22111996/android_architecture/issues/42))
+- intergrate to libx modules ([#41](https://github.com/doananhtuan22111996/android_architecture/issues/41))
+- Per-app language for Android View Xml ([#35](https://github.com/doananhtuan22111996/android_architecture/issues/35))
+- Add Github Action - Unit Test ([#39](https://github.com/doananhtuan22111996/android_architecture/issues/39))
+- Github Action Enhance the message send to telegram ([#40](https://github.com/doananhtuan22111996/android_architecture/issues/40))
+- Add Github Action ([#36](https://github.com/doananhtuan22111996/android_architecture/issues/36))
+- Applied proguad for release build ([#37](https://github.com/doananhtuan22111996/android_architecture/issues/37))
+- Binary compatibility validator ([#34](https://github.com/doananhtuan22111996/android_architecture/issues/34))
 - migrate version libs ([#32](https://github.com/doananhtuan22111996/android_architecture/issues/32))
 - Release v4.0.0 ([#27](https://github.com/doananhtuan22111996/android_architecture/issues/27))
 
@@ -98,7 +113,8 @@
 - Merge pull request [#1](https://github.com/doananhtuan22111996/android_architecture/issues/1) from doananhtuan22111996/paging3-local
 
 
-[Unreleased]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/4.0.0/1...HEAD
+[Unreleased]: https://github.com/doananhtuan22111996/android_architecture/compare/5.0.0...HEAD
+[5.0.0]: https://github.com/doananhtuan22111996/android_architecture/compare/prod/4.0.0/1...5.0.0
 [prod/4.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/dev/4.0.0/1...prod/4.0.0/1
 [dev/4.0.0/1]: https://github.com/doananhtuan22111996/android_architecture/compare/release/v4.0.0...dev/4.0.0/1
 [release/v4.0.0]: https://github.com/doananhtuan22111996/android_architecture/compare/release/v3.0.1...release/v4.0.0

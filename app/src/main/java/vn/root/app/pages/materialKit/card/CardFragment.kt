@@ -11,24 +11,26 @@ import vn.main.app.R
 import vn.main.app.databinding.FragmentCardBinding
 
 class CardFragment : Fragment() {
-	
-	private lateinit var viewBiding: FragmentCardBinding
-	private lateinit var navController: NavController
-	
-	override fun onCreateView(
-		inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-	): View {
-		viewBiding = FragmentCardBinding.inflate(inflater, container, false)
-		navController = findNavController()
-		return viewBiding.root
-	}
-	
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-		viewBiding.layoutHeader.toolbar.apply {
-			title = getString(R.string.card)
-			setNavigationOnClickListener { navController.popBackStack() }
-			menu.clear()
-		}
-	}
+
+    private lateinit var viewBiding: FragmentCardBinding
+    private lateinit var navController: NavController
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        viewBiding = FragmentCardBinding.inflate(inflater, container, false)
+        navController = findNavController()
+        return viewBiding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewBiding.layoutHeader.toolbar.apply {
+            title = getString(R.string.card)
+            setNavigationOnClickListener { navController.popBackStack() }
+            menu.clear()
+        }
+    }
 }

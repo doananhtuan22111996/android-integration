@@ -16,16 +16,16 @@ import androidx.compose.ui.unit.dp
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun OnBoarding(navigate: () -> Unit) {
-	Scaffold { _ ->
-		Column(
-			modifier = Modifier.fillMaxSize(),
-			verticalArrangement = Arrangement.Center,
-			horizontalAlignment = Alignment.CenterHorizontally
-		) {
-			Text(text = "Welcome to the Basics Codelab!", modifier = Modifier.padding(16.dp))
-			Button(onClick = navigate) {
-				Text(text = "Continue")
-			}
-		}
-	}
+    Scaffold { _ ->
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Text(text = "Welcome to the Basics Codelab!", modifier = Modifier.padding(16.dp))
+            Button(onClick = navigate) {
+                Text(text = "Continue")
+            }
+        }
+    }
 }

@@ -66,7 +66,7 @@ fun HomeScreen(onBackPress: () -> Unit = {}) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = stringResource(
-                        id = R.string.icon
+                        id = R.string.icon,
                     ),
                 )
             }
@@ -80,7 +80,7 @@ fun HomeScreen(onBackPress: () -> Unit = {}) {
                                 icon = {
                                     Icon(
                                         Icons.Filled.Accessibility,
-                                        contentDescription = stringResource(R.string.icon)
+                                        contentDescription = stringResource(R.string.icon),
                                     )
                                 },
                                 label = {
@@ -89,13 +89,13 @@ fun HomeScreen(onBackPress: () -> Unit = {}) {
                                 onClick = {
                                     selectedItem = 0
                                 },
-                                selected = selectedItem == 0
+                                selected = selectedItem == 0,
                             ),
                             NavElement(
                                 icon = {
                                     Icon(
                                         Icons.Filled.AccountCircle,
-                                        contentDescription = stringResource(R.string.icon)
+                                        contentDescription = stringResource(R.string.icon),
                                     )
                                 },
                                 label = {
@@ -104,7 +104,7 @@ fun HomeScreen(onBackPress: () -> Unit = {}) {
                                 onClick = {
                                     selectedItem = 1
                                 },
-                                selected = selectedItem == 1
+                                selected = selectedItem == 1,
                             ),
                         ),
                     )
@@ -117,7 +117,7 @@ fun HomeScreen(onBackPress: () -> Unit = {}) {
                 FloatingActionButton(onClick = { /*TODO*/ }) {
                     Icon(
                         imageVector = Icons.Filled.Add,
-                        contentDescription = stringResource(id = R.string.icon)
+                        contentDescription = stringResource(id = R.string.icon),
                     )
                 }
             }

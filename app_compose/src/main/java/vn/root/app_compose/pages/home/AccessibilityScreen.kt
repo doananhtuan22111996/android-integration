@@ -17,32 +17,32 @@ import vn.root.domain.model.ItemModel
 
 @Composable
 fun AccessibilityScreen(viewModel: HomeViewModel) {
-	val paging = viewModel.networkPaging.collectAsLazyPagingItems()
-	
-	Paging(
-		lazyListState = viewModel.networkScrollState,
-		lazyPagingItems = paging,
-		items = { index -> AccessibilityItem(model = paging[index]) },
-	)
+    val paging = viewModel.networkPaging.collectAsLazyPagingItems()
+
+    Paging(
+        lazyListState = viewModel.networkScrollState,
+        lazyPagingItems = paging,
+        items = { index -> AccessibilityItem(model = paging[index]) },
+    )
 }
 
 @Composable
 private fun AccessibilityItem(model: ItemModel?) {
-	if (model == null) return
-	Card(
-		modifier = Modifier.fillMaxWidth()
-	) {
-		Column(
-			modifier = Modifier
-				.fillMaxWidth()
-				.padding(16.dp)
-		) {
-			Text(
-				text = model.id.toString(),
-				style = MaterialTheme.typography.titleMedium,
-			)
-			Spacer(modifier = Modifier.height(8.dp))
-			Text(text = model.name)
-		}
-	}
+    if (model == null) return
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+        ) {
+            Text(
+                text = model.id.toString(),
+                style = MaterialTheme.typography.titleMedium,
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(text = model.name)
+        }
+    }
 }

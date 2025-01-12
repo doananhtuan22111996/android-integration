@@ -3,34 +3,28 @@ package vn.core.buildsrc
 import org.gradle.api.JavaVersion
 
 object Configs {
-     val jvmTarget = JavaVersion.VERSION_11.toString()
-    const val mavenDomain = "https://maven.pkg.github.com"
+    val jvmTarget = JavaVersion.VERSION_11.toString()
+    const val MAVEN_DOMAIN = "https://maven.pkg.github.com"
 
     object Flavor {
-        const val dev = "dev"
-        const val prod = "prod"
+        const val DEV = "dev"
+        const val PROD = "prod"
     }
 
-    object MainApp {
-        const val namespace = "vn.main.app"
-        const val versionCode = 1
-        const val versionName = "4.1.0"
-    }
-
-    object MainAppCompose {
-        const val namespace = "vn.main.appCompose"
-        const val versionCode = 1
-        const val versionName = "1.0.0"
-        const val kotlinCompilerExtensionVersion = "1.5.14"
+    object App {
+        const val APPLICATION_APP_ID = "com.feature.app"
+        const val APPLICATION_COMPOSE_ID = "com.feature.app"
+        const val NAMESPACE_APP = "com.feature.app"
+        const val NAMESPACE_COMPOSE = "com.feature.compose"
+        const val VERSION_CODE = 1
+        const val VERSION_NAME = "1.0.0"
     }
 
     object Data {
-        const val namespace = "vn.main.data"
+        const val NAMESPACE = "vn.main.data"
     }
 
     object Domain {
-        const val namespace = "vn.main.domain"
+        const val NAMESPACE = "vn.main.domain"
     }
 }
-
-
