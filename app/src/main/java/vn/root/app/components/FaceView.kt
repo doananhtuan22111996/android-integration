@@ -8,7 +8,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import vn.main.app.R
+import com.feature.app.R
 import vn.root.app.pages.draws.face.Face
 import kotlin.math.min
 
@@ -28,22 +28,23 @@ class FaceView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
             try {
                 mFaceColor = getColor(
                     R.styleable.FaceView_face_color,
-                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primaryFixed)
+                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primaryFixed),
                 )
                 mEyeColor = getColor(
                     R.styleable.FaceView_eye_color,
-                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primary)
+                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primary),
                 )
                 mMouthColor = getColor(
                     R.styleable.FaceView_mouth_color,
-                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primary)
+                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primary),
                 )
                 mStrokeColor = getColor(
                     R.styleable.FaceView_stroke_color,
-                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primary)
+                    ContextCompat.getColor(context, vn.core.libx.mdc.R.color.md_theme_primary),
                 )
                 mStrokeWidth = getDimension(
-                    R.styleable.FaceView_stroke_width, 1f
+                    R.styleable.FaceView_stroke_width,
+                    1f,
                 )
             } finally {
                 recycle()
@@ -77,7 +78,7 @@ class FaceView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
         // Draw circle center screen
         paint.color = mFaceColor ?: ContextCompat.getColor(
             context,
-            vn.core.libx.mdc.R.color.md_theme_primaryFixed
+            vn.core.libx.mdc.R.color.md_theme_primaryFixed,
         )
         paint.style = Paint.Style.FILL
         // Draw circle center screen
@@ -98,7 +99,7 @@ class FaceView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private fun onDrawMouth(canvas: Canvas) {
         paint.color = mMouthColor ?: ContextCompat.getColor(
             context,
-            vn.core.libx.mdc.R.color.md_theme_primary
+            vn.core.libx.mdc.R.color.md_theme_primary,
         )
         paint.style = Paint.Style.FILL
         val radius = mSize / 8f

@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatDelegate
+import com.feature.app.databinding.LayoutBottomSheetPerAppLanguageBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import vn.main.app.databinding.LayoutBottomSheetPerAppLanguageBinding
 import vn.root.domain.model.LanguageCodeEnum
 
-class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: LanguageCodeEnum) -> Unit) :
-    BottomSheetDialogFragment() {
+class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: LanguageCodeEnum) -> Unit) : BottomSheetDialogFragment() {
 
     companion object {
         const val TAG = "PerAppLanguageBottomSheet"
@@ -19,7 +18,9 @@ class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: Lan
     private lateinit var viewBinding: LayoutBottomSheetPerAppLanguageBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View {
         viewBinding = LayoutBottomSheetPerAppLanguageBinding.inflate(inflater, container, false)
         return viewBinding.root
@@ -33,7 +34,7 @@ class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: Lan
 
     private fun initView() {
         val langCode = AppCompatDelegate.getApplicationLocales().get(0)?.language
-        when(langCode) {
+        when (langCode) {
             LanguageCodeEnum.EN.code -> viewBinding.radioEN.isChecked = true
             LanguageCodeEnum.VI.code -> viewBinding.radioVN.isChecked = true
         }
@@ -47,7 +48,6 @@ class PerAppLanguageBottomSheet(private val onLangCodeChangeListener: (lang: Lan
         viewBinding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
             when (checkedId) {
                 viewBinding.radioEN.id -> onLangCodeChangeListener.invoke(LanguageCodeEnum.EN)
-
                 viewBinding.radioVN.id -> onLangCodeChangeListener.invoke(LanguageCodeEnum.VI)
             }
             dismiss()

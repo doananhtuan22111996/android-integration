@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = Configs.Domain.namespace
+    namespace = Configs.Domain.NAMESPACE
 }
 
 dependencies {

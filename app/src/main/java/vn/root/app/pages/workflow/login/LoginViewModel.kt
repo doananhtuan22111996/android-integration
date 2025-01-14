@@ -13,17 +13,17 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-	private val loginUseCase: LoginUseCase
+    private val loginUseCase: LoginUseCase,
 ) : BaseViewModel() {
-	
-	private val _loginState = MutableStateFlow<ResultModel<TokenModel>>(value = ResultModel.Done)
-	val login: StateFlow<ResultModel<TokenModel>> = _loginState
-	
-	fun onLogin() {
-		viewModelScope.launch {
-			loginUseCase.execute().collect {
-				_loginState.value = it
-			}
-		}
-	}
+
+    private val _loginState = MutableStateFlow<ResultModel<TokenModel>>(value = ResultModel.Done)
+    val login: StateFlow<ResultModel<TokenModel>> = _loginState
+
+    fun onLogin() {
+        viewModelScope.launch {
+            loginUseCase.execute().collect {
+                _loginState.value = it
+            }
+        }
+    }
 }

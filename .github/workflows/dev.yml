@@ -1,4 +1,4 @@
-name: Dev CI
+name: Build Dev
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build Dev
     runs-on: ubuntu-latest
     env:
       GH_USERNAME: ${{ secrets.GH_USERNAME }}

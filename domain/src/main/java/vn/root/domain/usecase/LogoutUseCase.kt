@@ -11,9 +11,6 @@ interface LogoutUseCase {
     suspend fun logout(): Flow<ResultModel<Nothing>>
 }
 
-class LogoutComposeUseCase @Inject constructor(private var repository: AuthRepository) :
-    BaseUseCase<Any, ResultModel<Nothing>>() {
-    override fun execute(vararg params: Any?): Flow<ResultModel<Nothing>> {
-        return repository.logout()
-    }
+class LogoutComposeUseCase @Inject constructor(private var repository: AuthRepository) : BaseUseCase<Any, ResultModel<Nothing>>() {
+    override fun execute(vararg params: Any?): Flow<ResultModel<Nothing>> = repository.logout()
 }

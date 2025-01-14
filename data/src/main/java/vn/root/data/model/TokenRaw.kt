@@ -7,10 +7,12 @@ import vn.root.domain.model.TokenModel
 
 @Entity
 data class TokenRaw(
-    val token: String? = "", val refreshToken: String? = ""
+    val token: String? = "",
+    val refreshToken: String? = "",
 ) : BaseRaw() {
 
     override fun raw2Model(): BaseModel = TokenModel(
-        token = token, refreshToken = refreshToken
+        token = token,
+        refreshToken = refreshToken,
     )
 }

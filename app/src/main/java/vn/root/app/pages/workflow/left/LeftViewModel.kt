@@ -12,8 +12,7 @@ import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
-class LeftViewModel @Inject constructor(private val pagingUseCase: PagingNetworkUseCase) :
-    BaseViewModel() {
+class LeftViewModel @Inject constructor(private val pagingUseCase: PagingNetworkUseCase) : BaseViewModel() {
     private val langCode = Locale.getDefault().language
     private val _langCodeState = MutableStateFlow<String>(langCode)
 

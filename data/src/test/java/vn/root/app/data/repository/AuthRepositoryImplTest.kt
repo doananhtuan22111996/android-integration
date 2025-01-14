@@ -43,7 +43,7 @@ class AuthRepositoryImplTest {
     fun login_return_resultModel_success() = runTest {
         val mTokenRaw = TokenRaw(token = "This is token", refreshToken = "This is refreshToken")
         Mockito.`when`(service.login()).thenReturn(
-            Response.success(ObjectResponse(data = mTokenRaw))
+            Response.success(ObjectResponse(data = mTokenRaw)),
         )
         val values = mutableListOf<ResultModel<TokenModel>>()
         repository.login().collect {
@@ -55,9 +55,11 @@ class AuthRepositoryImplTest {
         Assert.assertEquals(
             ResultModel.Success(
                 TokenModel(
-                    "This is token", "This is refreshToken"
-                )
-            ), values[1]
+                    "This is token",
+                    "This is refreshToken",
+                ),
+            ),
+            values[1],
         )
         Assert.assertEquals(ResultModel.Done, values.last())
     }
@@ -68,10 +70,10 @@ class AuthRepositoryImplTest {
             "{\n" + "  \"metadata\": {\n" + "    \"status\": false,\n" + "    \"message\": \"testLogin_Return_ResultModel_Exception\"\n" + "  }\n" + "}"
         val mAppException = ResultModel.AppException(
             type = TypeException.Network(httpCode = 401),
-            message = "testLogin_Return_ResultModel_Exception"
+            message = "testLogin_Return_ResultModel_Exception",
         )
         Mockito.`when`(service.login()).thenReturn(
-            Response.error(401, mError.toResponseBody("application/json".toMediaTypeOrNull()))
+            Response.error(401, mError.toResponseBody("application/json".toMediaTypeOrNull())),
         )
         val values = mutableListOf<ResultModel<TokenModel>>()
         repository.login().collect {
@@ -80,7 +82,7 @@ class AuthRepositoryImplTest {
         Assert.assertEquals(ResultModel.Loading, values.first())
         Assert.assertEquals(
             ResultModel.AppException(type = mAppException.type, message = mAppException.message),
-            values[1]
+            values[1],
         )
         Assert.assertEquals(ResultModel.Done, values.last())
     }
@@ -89,10 +91,11 @@ class AuthRepositoryImplTest {
     fun login_return_resultModel_exception_network_somethings_wrong() = runTest {
         val mError = ""
         val mAppException = ResultModel.AppException(
-            type = TypeException.Network(httpCode = 502), message = "Network Somethings wrong!"
+            type = TypeException.Network(httpCode = 502),
+            message = "Network Somethings wrong!",
         )
         Mockito.`when`(service.login()).thenReturn(
-            Response.error(501, mError.toResponseBody("application/json".toMediaTypeOrNull()))
+            Response.error(501, mError.toResponseBody("application/json".toMediaTypeOrNull())),
         )
         val values = mutableListOf<ResultModel<TokenModel>>()
         repository.login().collect {

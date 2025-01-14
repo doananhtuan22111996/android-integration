@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
+import com.feature.app.R
 import dagger.hilt.android.AndroidEntryPoint
 import vn.core.ui.base.BaseActivity
-import vn.main.app.R
 
 @AndroidEntryPoint
 class RootActivity : BaseActivity<RootViewModel>() {

@@ -35,25 +35,22 @@ class PagingRepositoryImplTest {
     fun setup() {
         MockitoAnnotations.openMocks(this)
         dataSource = object : PagingByNetworkDataSource<ItemRaw, ItemModel>() {
-            override suspend fun onApi(page: Int?): Response<ListResponse<ItemRaw>> {
-                return service.getPaging(page = 1)
-            }
+            override suspend fun onApi(page: Int?): Response<ListResponse<ItemRaw>> = service.getPaging(page = 1)
 
             override suspend fun processResponse(request: ListResponse<ItemRaw>?): ListResponse<ItemModel> {
                 itemDao.insertAll(request?.data ?: listOf())
-                return ListResponse(data = request?.data?.map {
-                    it.raw2Model() as ItemModel
-                }, metadata = request?.metadata)
+                return ListResponse(
+                    data = request?.data?.map {
+                        it.raw2Model() as ItemModel
+                    },
+                    metadata = request?.metadata,
+                )
             }
         }
         localDataSource = object : PagingByLocalDataSource<ItemRaw, ItemModel>() {
-            override suspend fun onDatabase(offset: Int?): List<ItemRaw> {
-                return itemDao.getPagingItems(limit = 15, offset = 1)
-            }
+            override suspend fun onDatabase(offset: Int?): List<ItemRaw> = itemDao.getPagingItems(limit = 15, offset = 1)
 
-            override suspend fun processResponse(request: List<ItemRaw>?): List<ItemModel>? {
-                return request?.map { it.raw2Model() as ItemModel }
-            }
+            override suspend fun processResponse(request: List<ItemRaw>?): List<ItemModel>? = request?.map { it.raw2Model() as ItemModel }
         }
     }
 
@@ -71,7 +68,8 @@ class PagingRepositoryImplTest {
         val mError =
             "{\n" + "  \"metadata\": {\n" + "    \"status\": false,\n" + "    \"message\": \"onApi_return_correct_with_api_failure\"\n" + "  }\n" + "}"
         val request = Response.error<ListResponse<ItemRaw>>(
-            401, mError.toResponseBody("application/json".toMediaTypeOrNull())
+            401,
+            mError.toResponseBody("application/json".toMediaTypeOrNull()),
         )
         Mockito.`when`(service.getPaging(page = 1)).thenReturn(request)
         val result = dataSource.onApi(page = 1)

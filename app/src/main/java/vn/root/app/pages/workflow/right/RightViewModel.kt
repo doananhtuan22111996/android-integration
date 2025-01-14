@@ -11,13 +11,11 @@ import vn.root.domain.usecase.PagingLocalUseCase
 import javax.inject.Inject
 
 @HiltViewModel
-class RightViewModel @Inject constructor(private val pagingUseCase: PagingLocalUseCase) :
-	BaseViewModel() {
-	
-	// Key trigger
-	private val _pagingState = MutableStateFlow(Unit)
-	
-	@OptIn(ExperimentalCoroutinesApi::class)
-	val paging = _pagingState.flatMapLatest { pagingUseCase.execute() }.cachedIn(viewModelScope)
-	
+class RightViewModel @Inject constructor(private val pagingUseCase: PagingLocalUseCase) : BaseViewModel() {
+
+    // Key trigger
+    private val _pagingState = MutableStateFlow(Unit)
+
+    @OptIn(ExperimentalCoroutinesApi::class)
+    val paging = _pagingState.flatMapLatest { pagingUseCase.execute() }.cachedIn(viewModelScope)
 }

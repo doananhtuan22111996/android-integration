@@ -9,12 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.feature.app.R
+import com.feature.app.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import vn.core.domain.ResultModel
 import vn.core.ui.base.BaseFragment
-import vn.main.app.R
-import vn.main.app.databinding.FragmentLoginBinding
 import vn.root.app.pages.root.RootViewModel
 
 @AndroidEntryPoint
@@ -40,11 +40,8 @@ class LoginFragment : BaseFragment<RootViewModel, LoginViewModel, FragmentLoginB
                 viewModel.login.collect {
                     when (it) {
                         is ResultModel.Success -> navController.navigate(R.id.action_loginFragment_to_homeFragment)
-
                         is ResultModel.AppException -> viewModel.setAppException(it)
-
                         is ResultModel.Done -> viewModel.setLoadingOverlay(false)
-
                         else -> viewModel.setLoadingOverlay(true)
                     }
                 }

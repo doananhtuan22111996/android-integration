@@ -12,10 +12,10 @@ import vn.root.domain.repository.PagingRepository
 @Module
 @InstallIn(ViewModelComponent::class)
 abstract class DataModule {
-	
-	@Binds
-	abstract fun bindAuthRepository(impl: AuthRepositoryImpl): AuthRepository
-	
-	@Binds
-	abstract fun bindPagingRepository(impl: PagingRepositoryImpl): PagingRepository
+
+    @Binds
+    abstract fun bindAuthRepository(impl: AuthRepositoryImpl): AuthRepository
+
+    @Binds
+    abstract fun bindPagingRepository(impl: PagingRepositoryImpl): PagingRepository
 }

@@ -20,6 +20,6 @@ interface ApiService {
     @GET("/paging-page")
     suspend fun getPaging(
         @Query("page") page: Int = 1,
-        @Query("lang") lang: String = "en"
+        @Query("lang") lang: String = "en",
     ): Response<ListResponse<ItemRaw>>
 }
